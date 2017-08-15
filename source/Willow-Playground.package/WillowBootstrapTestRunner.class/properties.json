@@ -5,7 +5,10 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "WebTestRunner",
+	"instvars" : [
+		"contentView",
+		"componentSupplier"
+	],
+	"name" : "WillowBootstrapTestRunner",
 	"type" : "normal"
 }

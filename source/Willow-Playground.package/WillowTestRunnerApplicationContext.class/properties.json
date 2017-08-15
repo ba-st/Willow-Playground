@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 8/15/2017 14:03",
+	"super" : "Object",
+	"category" : "Willow-Playground",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"application",
+		"selectedPackages",
+		"selectedClasses"
+	],
+	"name" : "WillowTestRunnerApplicationContext",
+	"type" : "normal"
+}
