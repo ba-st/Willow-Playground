@@ -1,0 +1,9 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'WillowPlayground',
+      #directory : 'source',
+      #platforms : [  #pharo ]
+    }
+  ]
+}
