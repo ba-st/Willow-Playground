@@ -1,14 +1,14 @@
-Accessing
+accessing
 contentView
 
 	^ [ :canvas | 
+	canvas render: currentStepView.
+
+	canvas break.
 	canvas render: 'Welcome to the introduction to Willow'.
 	canvas orderedList
 		type: 'I';
-		with: [ canvas
-				listItem: 'Introduction: script para download + resumen visual de componentes'.
-			self renderComponentStepsOn: canvas.
-			self renderCommandsAndSupplierStepsOn: canvas.
+		with: [ self renderCommandsAndSupplierStepsOn: canvas.
 			self renderTestRunnerStepsOn: canvas.
 			self renderExampleStepsOn: canvas.
 			self renderGitHubStepsOn: canvas ] ]

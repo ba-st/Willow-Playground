@@ -1,15 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "WillowApplication",
+	"super" : "PresentationStepWebView",
 	"category" : "Willow-Playground-Smalltalks2017",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"currentStepView",
-		"currentStepIndex",
-		"stepViews"
-	],
-	"name" : "Smalltalks2017Presentation",
+	"instvars" : [ ],
+	"name" : "ButtonEvaluatingBlockStepWebView",
 	"type" : "normal"
 }

@@ -1,4 +1,4 @@
-Accessing
+accessing
 applicationTitle
 
 	^ 'Willow 101'

@@ -1,4 +1,4 @@
-private - Rendering
+private - notes
 renderGitHubStepsOn: canvas
 
 	canvas
