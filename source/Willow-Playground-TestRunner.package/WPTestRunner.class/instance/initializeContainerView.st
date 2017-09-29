@@ -9,7 +9,7 @@ initializeContainerView
 	contentView := GenericContainerWebView
 		wrapping: [ :canvas | 
 			canvas
-				render: (self rowWrapping: (self componentSupplier headingDisplaying: 'Willow Based Test Runner' withLevel: 1));
+				render: (self rowWrapping: (HeadingWebView displaying: 'Willow Based Test Runner' withLevel: 1));
 				render: (self rowWrapping: toolbar);
 				render: (self rowWrapping: testResult);
 				render: (self rowWrapping: suiteSelection) ]
