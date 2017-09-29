@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WAPresenter",
+	"category" : "Willow-Playground-TestRunner",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"dialog"
+	],
+	"name" : "WPTestRunnerTestResultDetailsDialog",
+	"type" : "normal"
+}

@@ -8,7 +8,12 @@ renderContentOn: html
 	notificationBuilder := self componentSupplier notificationBuilder.
 	notificationBuilder
 		success;
-		wrapping: testResult.
+		wrapping: [ :canvas | 
+			canvas
+				render: testResult;
+				render: $.;
+				space;
+				render: (self detailsLinkShowing: testResult) ].
 
 	testResult hasFailures
 		ifTrue: [ notificationBuilder warning ].
