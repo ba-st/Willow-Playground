@@ -5,7 +5,11 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"testCaseClassesListBox",
+		"identifiedTestCaseClassesSelection",
+		"packagesListBox"
+	],
 	"name" : "WPTestRunnerSuiteSelectionWebView",
 	"type" : "normal"
 }
