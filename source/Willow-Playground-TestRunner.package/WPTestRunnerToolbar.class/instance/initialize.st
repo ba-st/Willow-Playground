@@ -5,5 +5,4 @@ initialize
 	self
 		initializeRunSelectedTestsButton;
 		initializeRunProfiledButton;
-		initializeRunCoverageButton;
 		initializeExportResultButton

@@ -5,11 +5,8 @@ renderContentOn: html
 		class: BootstrapCssStyles buttonToolbar;
 		with: [ html div
 				class: BootstrapCssStyles buttonGroup;
-				with: runSelectedTestsButton.
-			html div
-				class: BootstrapCssStyles buttonGroup;
 				with: [ html
-						render: runProfiledButton;
-						render: runCoverageButton ].
+						render: runSelectedTestsButton;
+						render: runProfiledButton ].
 			html render: exportResultButton ].
 	html div: [ html space ]

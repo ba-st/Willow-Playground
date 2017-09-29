@@ -4,7 +4,7 @@ renderFailuresFor: aTestResult on: html
 	aTestResult hasFailures
 		ifTrue: [ | failuresTable |
 
-			html render: (HeadingWebView displaying: ('Failures (<1p>)' expandMacrosWith: aTestResult failureCount) withLevel: 1 applying: [ :heading | heading addClass bootstrap textWarning ]).
+			html render: (HeadingWebView displaying: ('Failures (<1p>)' expandMacrosWith: aTestResult failureCount) withLevel: 4 applying: [ :heading | heading addClass bootstrap textWarning ]).
 
 			failuresTable := self componentSupplier tableBuilder
 				addColumnTitled: 'Class'

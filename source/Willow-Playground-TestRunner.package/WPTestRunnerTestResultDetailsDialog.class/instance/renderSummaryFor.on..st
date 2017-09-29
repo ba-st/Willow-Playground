@@ -8,7 +8,9 @@ renderSummaryFor: aTestResult on: html
 				class: (BootstrapCssStyles columnSmall: 12);
 				class: (BootstrapCssStyles columnMedium: 12);
 				class: (BootstrapCssStyles columnLarge: 12);
+				class: BootstrapCssStyles textCenter;
 				with: [ html
+						render: (HeadingWebView displaying: 'Summary' withLevel: 4 applying: [ :heading | heading addClass bootstrap textInfo + heading addClass bootstrap textLeft ]);
 						render: (PhrasingContainerWebView wrapping: aTestResult runCount applying: [ :span | span addClass bootstrap label + span addClass bootstrap labelDefault ]);
 						space;
 						render: 'run';
