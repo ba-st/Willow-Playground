@@ -11,4 +11,5 @@ renderContentOn: html
 				with: [ html
 						render: runProfiledButton;
 						render: runCoverageButton ].
-			html render: exportResultButton ]
+			html render: exportResultButton ].
+	html div: [ html space ]
