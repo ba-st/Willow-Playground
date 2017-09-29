@@ -8,5 +8,5 @@ initializeIdentifiedTestCaseClassesSelection
 				render:
 					(self componentSupplier
 						delayedViewShowing: SpinKitCircle new
-						whileEvaluating: [  "testCaseClassesListBox allowAnyOf: self session applicationContext availableTestCaseClasses " ]
+						whileEvaluating: [  testCaseClassesListBox allowAnyOf: self session applicationContext availableTestCaseClasses  ]
 						thenRendering: testCaseClassesListBox) ]

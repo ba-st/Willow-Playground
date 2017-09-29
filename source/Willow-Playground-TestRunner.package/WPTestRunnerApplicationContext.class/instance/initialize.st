@@ -3,4 +3,5 @@ initialize
 
 	super initialize.
 	currentTestResult := TestAsserter classForTestResult new.
-	selectedTestCaseClasses := #()
+	selectedTestCaseClasses := #().
+	selectedPackageCategories := #()
