@@ -9,6 +9,13 @@ initializeContainerView
 		executeOnClient: [ :script :canvas | script << (canvas jQuery id: testResult identifier) html: SpinKitTripleBounce new ];
 		evaluate: [ self session applicationContext runTests ];
 		render: testResult.
+	toolbar onRunProfiledTrigger
+		executeOnClient: [ :script :canvas | script << (canvas jQuery id: testResult identifier) html: SpinKitTripleBounce new ];
+		determineBehaviorByEvaluating: [ :response | 
+			self session applicationContext runTestsProfiled.
+			response onReturn
+				open: WPTestRunnerMessageTallyDialog new;
+				render: testResult ].
 	suiteSelection := WPTestRunnerSuiteSelectionWebView new.
 	contentView := GenericContainerWebView
 		wrapping: [ :canvas | 

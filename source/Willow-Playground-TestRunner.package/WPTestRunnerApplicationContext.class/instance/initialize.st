@@ -4,4 +4,5 @@ initialize
 	super initialize.
 	self resetTestResult.
 	selectedTestCaseClasses := #().
-	selectedPackageCategories := #()
+	selectedPackageCategories := #().
+	messageTallyOptional := Optional unused

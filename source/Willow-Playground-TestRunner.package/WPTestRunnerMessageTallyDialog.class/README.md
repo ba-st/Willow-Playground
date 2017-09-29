@@ -1,0 +1,1 @@
+I'm a Dialog showing the message tally results.

@@ -9,7 +9,8 @@
 		"testRunner",
 		"currentTestResult",
 		"selectedTestCaseClasses",
-		"selectedPackageCategories"
+		"selectedPackageCategories",
+		"messageTallyOptional"
 	],
 	"name" : "WPTestRunnerApplicationContext",
 	"type" : "normal"
