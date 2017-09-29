@@ -5,6 +5,10 @@ initializeContainerView
 
 	testResult := IdentifiedWebView forDivNamed: 'test-result' containing: WPTestRunnerTestResultWebView new.
 	toolbar := WPTestRunnerToolbar new.
+	toolbar onRunSelectedTestsTrigger
+		executeOnClient: [ :script :canvas | script << (canvas jQuery id: testResult identifier) html: SpinKitTripleBounce new ];
+		evaluate: [ self session applicationContext runTests ];
+		render: testResult.
 	suiteSelection := WPTestRunnerSuiteSelectionWebView new.
 	contentView := GenericContainerWebView
 		wrapping: [ :canvas | 

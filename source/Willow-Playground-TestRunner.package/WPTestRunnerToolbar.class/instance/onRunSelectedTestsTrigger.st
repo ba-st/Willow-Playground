@@ -1,0 +1,4 @@
+Interaction
+onRunSelectedTestsTrigger
+
+	^ runSelectedTestsButton onTrigger

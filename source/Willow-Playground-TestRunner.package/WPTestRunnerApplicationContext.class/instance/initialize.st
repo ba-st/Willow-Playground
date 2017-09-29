@@ -2,6 +2,6 @@ initialization
 initialize
 
 	super initialize.
-	currentTestResult := TestAsserter classForTestResult new.
+	self resetTestResult.
 	selectedTestCaseClasses := #().
 	selectedPackageCategories := #()
