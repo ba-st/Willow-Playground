@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 9/29/2017 13:41",
+	"super" : "WAPresenter",
+	"category" : "Willow-Playground-TestRunner",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"runSelectedTestsButton",
+		"runProfiledButton",
+		"exportResultButton"
+	],
+	"name" : "WPTestRunnerToolbar",
+	"type" : "normal"
+}

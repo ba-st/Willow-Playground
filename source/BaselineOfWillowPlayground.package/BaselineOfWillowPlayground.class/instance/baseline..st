@@ -7,4 +7,5 @@ baseline: spec
 		do: [ self setUpDependencies: spec.
 			spec
 				package: 'Willow-Playground' with: [ spec requires: #('WillowBootstrap' 'WillowJQueryUI' 'WillowSpinKit') ];
-				group: 'default' with: #('Willow-Playground') ]
+				package: 'Willow-Playground-TestRunner' with: [ spec requires: #('WillowBootstrap' 'WillowJQueryUI' 'WillowSpinKit') ];
+				group: 'default' with: #('Willow-Playground' 'Willow-Playground-TestRunner') ]

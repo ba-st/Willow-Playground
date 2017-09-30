@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 9/29/2017 12:35",
+	"super" : "GRObject",
+	"category" : "Willow-Playground-TestRunner",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"testRunner",
+		"currentTestResult",
+		"selectedTestCaseClasses",
+		"selectedPackageCategories",
+		"messageTallyOptional"
+	],
+	"name" : "WPTestRunnerApplicationContext",
+	"type" : "normal"
+}
