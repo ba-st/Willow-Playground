@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 10/2/2017 12:51",
+	"super" : "WAPresenter",
+	"category" : "Willow-Playground-TestRunner",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"tally"
+	],
+	"name" : "WPMessageTallyWebView",
+	"type" : "normal"
+}

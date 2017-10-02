@@ -10,4 +10,4 @@ runTestsProfiled
 		openResultWindow: false
 		closeAfter: false.
 
-	messageTallyOptional := Optional containing: (String streamContents: [ :stream | messageTally fullPrintExactOn: stream ])
+	messageTallyOptional := Optional containing: messageTally
