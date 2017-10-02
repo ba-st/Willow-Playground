@@ -3,8 +3,7 @@ renderContentOn: aCanvas
 
 	| button |
 
-	button := self componentSupplier
-		asynchronicButtonLabeled: 'Click... then check your image'
-		applying: CompositeComponentCommand empty.
+	button := AsynchronicButtonWebView labeled: 'Click... then check your image'.
 	button onTrigger evaluate: [ 'The button was clicked on the browser' inspect ].
+
 	aCanvas render: button

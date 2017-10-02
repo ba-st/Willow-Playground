@@ -6,11 +6,10 @@ renderCurrentStepOn: aCanvas
 	view := stepViews at: currentStepIndex.
 	aCanvas heading: view description.
 
-	aCanvas div: view.
+	aCanvas div
+		class: Smalltalks2017CssStyles stepContent;
+		with: view.
 
-	aCanvas
-		fieldSet:
-			'Cambiar en los pasos antes de mostrar el supplier para que directamente se usen las clases de las views'.
 	aCanvas
 		fieldSet:
 			'Agregar a cada Step View algo que muestre el codigo renderizado (o en automatico desde el sender)'.

@@ -1,4 +1,8 @@
 rendering
 renderContentOn: aCanvas
 
-	aCanvas render: (self componentSupplier asynchronicButtonLabeled: 'Do not click' applying: CompositeComponentCommand empty)
+	| button |
+
+	button := AsynchronicButtonWebView labeled: 'Do not click'.
+
+	aCanvas render: button

@@ -3,8 +3,7 @@ renderContentOn: aCanvas
 
 	| input |
 
-	input := TextFieldWebView
-		singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	input := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :theInput |  ].
 
 	aCanvas form
 		doNotSubmit;

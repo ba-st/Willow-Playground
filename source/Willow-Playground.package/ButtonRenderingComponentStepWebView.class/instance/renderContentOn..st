@@ -3,11 +3,11 @@ renderContentOn: aCanvas
 
 	| button companion |
 
-	companion := IdentifiedWebView forSpanNamed: 'Companion' containing: [ :canvas | canvas render: Time now ].
+	companion := IdentifiedWebView
+		forSpanNamed: 'Companion'
+		containing: [ :canvas | canvas render: Time now ].
 
-	button := self componentSupplier
-		asynchronicButtonLabeled: 'Click for a change'
-		applying: CompositeComponentCommand empty.
+	button := AsynchronicButtonWebView labeled: 'Click for a change'.
 	button onTrigger render: companion.
 
 	aCanvas

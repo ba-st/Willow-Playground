@@ -3,12 +3,11 @@ renderContentOn: aCanvas
 
 	| input button |
 
-	input := TextFieldWebView
-		singleLineTriggeringOnChangeApplying: CompositeComponentCommand empty.
+	input := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :theInput |  ].
 
 	button := SynchronicSubmitButtonWebView
 		labeled: 'Ask it!'
-		applying: CompositeComponentCommand empty
+		applying: [ :theButton |  ]
 		evaluating: [  ].
 	button onTrigger
 		serializeContainerForm;

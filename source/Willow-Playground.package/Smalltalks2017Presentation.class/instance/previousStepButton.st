@@ -5,7 +5,7 @@ previousStepButton
 
 	button := self componentSupplier
 		asynchronicButtonLabeled: self previousStepView shortName
-		applying: CompositeComponentCommand empty.
+		applying: [ :theButton | theButton addClass smalltalks2017 previousStep ].
 	button onTrigger
 		evaluate: [ currentStepIndex := self previousStepIndex ];
 		render: currentStepView.

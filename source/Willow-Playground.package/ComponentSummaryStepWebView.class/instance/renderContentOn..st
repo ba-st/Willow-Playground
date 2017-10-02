@@ -4,7 +4,7 @@ renderContentOn: aCanvas
 	| dropdown checkbox image |
 
 	dropdown := DropDownListWebView
-		applying: (ListLabelingCommand with: [ :element | element reverse ]).
+		applying: [ :theDropdown | theDropdown labelItemsWith: [ :element | element reverse ] ].
 	dropdown allowAnyOf: #('Smartphone' 'Tablet' 'Destkop' 'Notebook' 'Arduino').
 	aCanvas render: dropdown.
 
@@ -12,10 +12,10 @@ renderContentOn: aCanvas
 		labeled: 'Make a choice'
 		onModel: 10
 		offModel: -10
-		applying: CompositeComponentCommand empty.
+		applying: [ :theCheckbox |  ].
 	aCanvas render: checkbox.
 
 	image := ImageWebView
 		locatedAt: 'https://upload.wikimedia.org/wikipedia/en/c/c0/Smalltalk80book.jpg'
-		applying: CompositeComponentCommand empty.
+		applying: [ :theImage |  ].
 	aCanvas render: image
