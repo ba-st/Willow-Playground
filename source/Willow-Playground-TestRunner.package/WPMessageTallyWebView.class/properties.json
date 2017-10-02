@@ -6,7 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"tally"
+		"rootTally"
 	],
 	"name" : "WPMessageTallyWebView",
 	"type" : "normal"

@@ -5,4 +5,4 @@ renderGarbageCollectionStatsOn: html
 		renderFullWithRowOn: html
 		with: [ html
 				render: (self headingRendering: 'Garbage Collection Stats');
-				text: (String streamContents: [ :s | tally reportGCStatsOn: s ]) ]
+				text: (String streamContents: [ :s | rootTally reportGCStatsOn: s ]) ]

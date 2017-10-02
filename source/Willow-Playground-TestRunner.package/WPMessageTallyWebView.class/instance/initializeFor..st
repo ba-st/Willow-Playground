@@ -1,4 +1,4 @@
 initialization
 initializeFor: aMessageTally
 
-	tally := aMessageTally
+	rootTally := aMessageTally

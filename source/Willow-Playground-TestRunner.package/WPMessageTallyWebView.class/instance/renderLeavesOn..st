@@ -1,22 +1,23 @@
 rendering
 renderLeavesOn: html
 
-	| dict table |
+	| table |
 
 	html render: (self headingRendering: 'Leaves').
 
 	table := self componentSupplier tableBuilder
-		addColumnTitled: 'Percent' rendering: [ :node | Percentage ratio: (node tally / tally tally asScaledDecimal: 1) ];
-		addColumnTitled: 'Time (ms)'
-			rendering: [ :node | ((Percentage ratio: node tally / tally tally) * tally time) rounded ]
+		addColumnTitled: 'Percent'
+			rendering: [ :node | Percentage ratio: (node tally / rootTally tally) asFloat ]
 			applyingToCells: [ :cell | cell addClass bootstrap textRight ]
 			applyingToHeading: [  ];
-		addColumnTitled: 'Class' rendering: [ :node | node method methodClass ];
+		addColumnTitled: 'Time (ms)'
+			rendering: [ :node | ((Percentage ratio: node tally / rootTally tally) * rootTally time) rounded ]
+			applyingToCells: [ :cell | cell addClass bootstrap textRight ]
+			applyingToHeading: [  ];
+		addColumnTitled: 'Class' rendering: [ :node | [ :canvas | canvas strong: node method methodClass ] ];
 		addColumnTitled: 'Selector' rendering: [ :node | node method selector ];
 		build.
 
-	dict := IdentityDictionary new: 100.
-	tally leavesInto: dict fromSender: nil.
-	table changeContentsTo: dict asSortedCollection.
+	table changeContentsTo: self tallyLeavesSorted.
 
 	html render: table
