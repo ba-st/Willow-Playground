@@ -7,4 +7,4 @@ initialize
 		content: [ :canvas | self session applicationContext withMessageTallyDo: [ :tally | canvas render: (WPMessageTallyWebView for: tally) ] ifNone: [ canvas render: 'Nothing here!' ] ]
 		footer: (BootstrapModalFooterWebView withCloseButtonLabeled: 'Close' applying: [ :button | button addClass bootstrap buttonLink ])
 		applyingToDialog: BootstrapSelfCleaningModalCommand new
-		andModalDocument: [  ]
+		andModalDocument: [ :document | document addClass bootstrap modalLarge ]

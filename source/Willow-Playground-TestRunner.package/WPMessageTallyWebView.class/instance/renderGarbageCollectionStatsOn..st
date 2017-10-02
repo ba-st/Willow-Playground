@@ -4,5 +4,5 @@ renderGarbageCollectionStatsOn: html
 	self
 		renderFullWithRowOn: html
 		with: [ html
-				render: (HeadingWebView displaying: 'Garbage Collection Stats' withLevel: 4 applying: [ :heading | heading addClass bootstrap textInfo + heading addClass bootstrap textLeft ]);
+				render: (self headingRendering: 'Garbage Collection Stats');
 				text: (String streamContents: [ :s | tally reportGCStatsOn: s ]) ]
