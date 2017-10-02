@@ -1,5 +1,0 @@
-Controlling
-startUpApplicationContextFor: aTestRunnerWebApp
-
-	super startUpApplicationContextFor: aTestRunnerWebApp.
-	applicationContext := WillowTestRunnerApplicationContext forApplication: aTestRunnerWebApp

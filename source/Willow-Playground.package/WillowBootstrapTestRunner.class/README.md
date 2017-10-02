@@ -1,1 +1,0 @@
-I'm an example of the Willow ecosystem. I will implement a web version of the Pharo test runner.
