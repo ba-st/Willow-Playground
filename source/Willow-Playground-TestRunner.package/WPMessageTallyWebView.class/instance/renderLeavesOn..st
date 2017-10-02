@@ -7,7 +7,7 @@ renderLeavesOn: html
 
 	leavesTable := self componentSupplier tableBuilder
 		addColumnTitled: 'Percent'
-			rendering: [ :node | self percentageFor: node ]
+			rendering: [ :node | self formattedPercentagFor: node ]
 			applyingToCells: [ :cell | cell addClass bootstrap textRight ]
 			applyingToHeading: [  ];
 		addColumnTitled: 'Time (ms)'
@@ -16,8 +16,8 @@ renderLeavesOn: html
 			applyingToHeading: [  ];
 		addColumnTitled: 'Class' rendering: [ :node | [ :canvas | canvas strong: node method methodClass ] ];
 		addColumnTitled: 'Selector' rendering: [ :node | node method selector ];
-		buildApplying: [ :table | table addClass bootstrap small ].
+		build.
 
 	leavesTable changeContentsTo: self tallyLeavesSorted.
 
-	html render: leavesTable
+	self renderBoundedContainerWrapping: leavesTable on: html

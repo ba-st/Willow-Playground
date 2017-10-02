@@ -2,4 +2,4 @@ rendering
 renderTreeOn: html
 
 	html render: (self headingRendering: 'Tree').
-	html render: (self unorderedListRendering: rootTally receivers)
+	self renderBoundedContainerWrapping: (self unorderedListRendering: rootTally receivers) on: html
