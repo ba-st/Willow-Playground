@@ -1,23 +1,23 @@
 rendering
 renderLeavesOn: html
 
-	| table |
+	| leavesTable |
 
 	html render: (self headingRendering: 'Leaves').
 
-	table := self componentSupplier tableBuilder
+	leavesTable := self componentSupplier tableBuilder
 		addColumnTitled: 'Percent'
-			rendering: [ :node | Percentage ratio: (node tally / rootTally tally) asFloat ]
+			rendering: [ :node | self percentageFor: node ]
 			applyingToCells: [ :cell | cell addClass bootstrap textRight ]
 			applyingToHeading: [  ];
 		addColumnTitled: 'Time (ms)'
-			rendering: [ :node | ((Percentage ratio: node tally / rootTally tally) * rootTally time) rounded ]
+			rendering: [ :node | self timeFor: node ]
 			applyingToCells: [ :cell | cell addClass bootstrap textRight ]
 			applyingToHeading: [  ];
 		addColumnTitled: 'Class' rendering: [ :node | [ :canvas | canvas strong: node method methodClass ] ];
 		addColumnTitled: 'Selector' rendering: [ :node | node method selector ];
-		build.
+		buildApplying: [ :table | table addClass bootstrap small ].
 
-	table changeContentsTo: self tallyLeavesSorted.
+	leavesTable changeContentsTo: self tallyLeavesSorted.
 
-	html render: table
+	html render: leavesTable
