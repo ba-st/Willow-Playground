@@ -10,4 +10,6 @@ runTestsProfiled
 		openResultWindow: false
 		closeAfter: false.
 
-	messageTallyOptional := Optional containing: messageTally
+	messageTallyOptional := (messageTally tally strictlyPositive and: [ messageTally time strictlyPositive ])
+		ifTrue: [ Optional containing: messageTally ]
+		ifFalse: [ Optional unused ]

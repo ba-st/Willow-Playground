@@ -20,4 +20,4 @@ renderLeavesOn: html
 
 	leavesTable changeContentsTo: self tallyLeavesSorted.
 
-	self renderBoundedContainerWrapping: leavesTable on: html
+	self renderBoundedContainerWrapping: leavesTable on: html upTo: 20 vh
