@@ -8,5 +8,4 @@ renderFullWithRowOn: html with: aRenderable
 				class: (BootstrapCssStyles columnSmall: 12);
 				class: (BootstrapCssStyles columnMedium: 12);
 				class: (BootstrapCssStyles columnLarge: 12);
-				class: BootstrapCssStyles textCenter;
 				with: aRenderable ]

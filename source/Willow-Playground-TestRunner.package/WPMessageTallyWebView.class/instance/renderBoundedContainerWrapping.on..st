@@ -11,5 +11,5 @@ renderBoundedContainerWrapping: aRenderable on: html
 							(div
 								setStyleTo: [ :style | 
 									style
-										maxHeight: 300 px;
+										maxHeight: 250 px;
 										overflowY: constants css scroll ]) ])
