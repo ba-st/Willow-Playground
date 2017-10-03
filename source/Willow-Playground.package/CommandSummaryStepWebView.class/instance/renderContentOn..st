@@ -1,15 +1,19 @@
 rendering
 renderContentOn: aCanvas
 
-	| tableBuilder table |
+	| anchors list |
 
-	tableBuilder := TableWebViewBuilder new.
-	tableBuilder
-		addColumnTitled: 'Selector' rendering: [ :selector | selector ];
-		addColumnTitled: 'Example'
-			rendering: [ :selector | 'Test, example, input for example, button to inspect source?' ].
-	table := tableBuilder buildApplying: [ :theTable |  ].
+	anchors := (WebComponentCommandBuilder localMethods sorted: [ :a :b | a selector <= b selector ])
+		collect: [ :method | 
+			| anchor |
 
-	table changeContentsTo: WebComponentCommandBuilder localSelectors.
+			anchor := AsynchronicAnchorWebView labeled: method selector.
+			anchor onTrigger evaluate: [ method browse ].
+			anchor ].
 
-	aCanvas render: table
+	list := UnorderedListWebView
+		applying: [ :theList |  ]
+		listing: anchors
+		applyingToEach: [ :theItem |  ].
+
+	aCanvas render: list

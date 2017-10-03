@@ -5,25 +5,28 @@ renderContentOn: aCanvas
 
 	tableBuilder := TableWebViewBuilder new.
 	tableBuilder
-		addColumnTitled: 'Selector' rendering: [ :method | method selector ];
-		addColumnTitled: 'Source Code' rendering: [ :method | method sourceCode ].
-	table := tableBuilder buildApplying: [ :theTable |  ].
+		addColumnTitled: 'Decimal' rendering: [ :number | number ];
+		addColumnTitled: 'Hex' rendering: [ :number | number printStringHex ];
+		addColumnTitled: 'Roman' rendering: [ :number | number printStringRoman ].
+	table := tableBuilder buildApplying: [ :theTable | theTable addClass bootstrap table ].
 
-	table changeContentsTo: WebComponentCommandBuilder localMethods.
-
-	delayed := DelayedViewRenderer
-		showing: SpinKitCubeGrid new
-		whileEvaluating: [ (Delay forSeconds: 5) wait ]
-		thenRendering: table.
+	table changeContentsTo: #(1 13 26 51 78 111).
 
 	periodical := PeriodicallyRenderedWebView
 		evaluating: [  ]
 		every: 1000
-		millisecondsThenRendering: [ :canvas | canvas strong: Time now seconds]
+		millisecondsThenRendering: [ :canvas | 
+			canvas
+				render: 'The time now is ';
+				strong: (GRPrinter isoTime print: Time now) ]
 		until: [ false ].
 
-	aCanvas
-		render: periodical;
-		render: delayed.
+	delayed := DelayedViewRenderer
+		showing: SpinKitCubeGrid new
+		whileEvaluating: [ (Delay forSeconds: 2) wait ]
+		thenRendering: [ :canvas | 
+			canvas
+				render: periodical;
+				render: table ].
 
-	aCanvas strong: 'algo con identified tambien? en otro slide?'
+	aCanvas render: delayed

@@ -8,7 +8,4 @@ contentView
 	canvas render: 'Welcome to the introduction to Willow'.
 	canvas orderedList
 		type: 'I';
-		with: [ self renderCommandsAndSupplierStepsOn: canvas.
-			self renderTestRunnerStepsOn: canvas.
-			self renderExampleStepsOn: canvas.
-			self renderGitHubStepsOn: canvas ] ]
+		with: [ self renderGitHubStepsOn: canvas ] ]
