@@ -1,9 +1,9 @@
 initialization
 initializeFor: aTestResult
 
-	dialog := BootstrapModalWebView
-		withHeader: (BootstrapModalHeaderWebView dismissableTitled: 'Test Result Details')
-		content: [ :canvas | self renderDetailsFor: aTestResult on: canvas ]
-		footer: (BootstrapModalFooterWebView withCloseButtonLabeled: 'Close' applying: [ :button | button addClass bootstrap buttonLink ])
-		applyingToDialog: BootstrapSelfCleaningModalCommand new
-		andModalDocument: [  ]
+	dialog := self componentSupplier dialogBuilder
+		headerTitled: 'Test Result Details';
+		wrapping: [ :canvas | self renderDetailsFor: aTestResult on: canvas ];
+		closeButtonLabeled: 'Close' applying: [ :button | button addClass bootstrap buttonLink ];
+		beSelfCleaning;
+		build
