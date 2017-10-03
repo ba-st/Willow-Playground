@@ -4,19 +4,15 @@ renderContentOn: html
 	html
 		render:
 			(self componentSupplier
-				fieldSetContaining: [ :canvas | 
-					canvas div
-						class: BootstrapCssStyles row;
-						with: [ canvas div
-								class: (BootstrapCssStyles columnMedium: 6);
-								with:
-									(self componentSupplier
-										delayedViewShowing: SpinKitCircle new
-										whileEvaluating: [ packagesListBox allowAnyOf: self session applicationContext availablePackageCategories ]
-										thenRendering: (self labeledViewDisplaying: 'Package Categories' boundTo: packagesListBox)).
-							canvas div
-								class: (BootstrapCssStyles columnMedium: 6);
-								with: identifiedTestCaseClassesSelection ] ]
+				fieldSetContaining:
+					(self componentSupplier gridBuilder
+						addContent:
+							(self componentSupplier
+								delayedViewShowing: SpinKitCircle new
+								whileEvaluating: [ packagesListBox allowAnyOf: self session applicationContext availablePackageCategories ]
+								thenRendering: (self labeledViewDisplaying: 'Package Categories' boundTo: packagesListBox));
+						addContent: identifiedTestCaseClassesSelection;
+						build)
 				applying: [  ]
 				withLegend: 'Test Case Selection'
 				applying: [  ])

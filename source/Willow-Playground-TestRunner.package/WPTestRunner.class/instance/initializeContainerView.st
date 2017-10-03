@@ -5,10 +5,12 @@ initializeContainerView
 
 	testResult := IdentifiedWebView forDivNamed: 'test-result' containing: WPTestRunnerTestResultWebView new.
 	contentView := GenericContainerWebView
-		wrapping: [ :canvas | 
-			canvas
-				render: (self rowWrapping: (HeadingWebView displaying: 'Willow Based Test Runner' withLevel: 1));
-				render: (self rowWrapping: testResult);
-				render: (self rowWrapping: (self toolbarRenderingOnAction: testResult));
-				render: (self rowWrapping: WPTestRunnerSuiteSelectionWebView new) ]
+		wrapping:
+			(self componentSupplier gridBuilder
+				columnsPerRow: 1;
+				addContent: (HeadingWebView displaying: 'Willow Based Test Runner' withLevel: 1);
+				addContent: testResult;
+				addContent: (self toolbarRenderingOnAction: testResult);
+				addContent: WPTestRunnerSuiteSelectionWebView new;
+				build)
 		applying: [ :div | div addClass bootstrap container ]

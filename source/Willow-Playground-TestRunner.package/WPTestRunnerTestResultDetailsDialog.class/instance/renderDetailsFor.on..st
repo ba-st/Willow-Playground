@@ -1,7 +1,7 @@
 rendering
 renderDetailsFor: aTestResult on: html
 
+	html render: (self summaryFor: aTestResult).
 	self
-		renderSummaryFor: aTestResult on: html;
 		renderFailuresFor: aTestResult on: html;
 		renderErrorsFor: aTestResult on: html
