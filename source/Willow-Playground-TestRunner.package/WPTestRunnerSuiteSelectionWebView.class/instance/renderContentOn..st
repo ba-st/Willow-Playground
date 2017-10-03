@@ -9,7 +9,11 @@ renderContentOn: html
 						class: BootstrapCssStyles row;
 						with: [ canvas div
 								class: (BootstrapCssStyles columnMedium: 6);
-								with: (self componentSupplier delayedViewShowing: SpinKitCircle new whileEvaluating: [ packagesListBox allowAnyOf: self session applicationContext availablePackageCategories ] thenRendering: packagesListBox).
+								with:
+									(self componentSupplier
+										delayedViewShowing: SpinKitCircle new
+										whileEvaluating: [ packagesListBox allowAnyOf: self session applicationContext availablePackageCategories ]
+										thenRendering: (self labeledViewDisplaying: 'Package Categories' boundTo: packagesListBox)).
 							canvas div
 								class: (BootstrapCssStyles columnMedium: 6);
 								with: identifiedTestCaseClassesSelection ] ]
