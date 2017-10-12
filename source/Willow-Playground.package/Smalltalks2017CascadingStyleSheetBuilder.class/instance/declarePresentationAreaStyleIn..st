@@ -6,5 +6,6 @@ declarePresentationAreaStyleIn: aBuilder
 		with: [ :style | 
 			style
 				width: 90 vw;
+				height: 95 vh;
 				marginLeft: CssConstants auto;
 				marginRight: CssConstants auto ]

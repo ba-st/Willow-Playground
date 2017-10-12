@@ -6,4 +6,7 @@ updateRoot: aRoot
 
 	super updateRoot: aRoot.
 	Smalltalks2017FileMetadataLibrary default updateRoot: aRoot.
-	SpinKitMetadataLibrary default updateRoot: aRoot
+	SpinKitMetadataLibrary default updateRoot: aRoot.
+
+	aRoot stylesheet url: 'http://yandex.st/highlightjs/8.0/styles/sunburst.min.css'.
+	aRoot javascript url: 'http://yandex.st/highlightjs/8.0/highlight.min.js'.

@@ -13,4 +13,5 @@ renderCurrentStepOn: aCanvas
 	aCanvas
 		fieldSet:
 			'Agregar a cada Step View algo que muestre el codigo renderizado (o en automatico desde el sender)'.
+	
 	self renderStepButtonsOn: aCanvas
