@@ -1,14 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "GRObject",
+	"super" : "WAPresenter",
 	"category" : "Willow-Playground-LiveDocs",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"selectedPackageOptional",
-		"selectedBehaviorOptional"
-	],
-	"name" : "WPLiveDocumentationContext",
+	"instvars" : [ ],
+	"name" : "WPLiveDocumentationBehaviorDetailedView",
 	"type" : "normal"
 }
