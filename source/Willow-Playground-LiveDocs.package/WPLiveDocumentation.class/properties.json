@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 10/14/2017 16:06",
+	"super" : "WillowApplication",
+	"category" : "Willow-Playground-LiveDocs",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"contentView"
+	],
+	"name" : "WPLiveDocumentation",
+	"type" : "normal"
+}

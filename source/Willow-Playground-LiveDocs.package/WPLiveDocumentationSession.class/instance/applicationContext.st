@@ -1,0 +1,4 @@
+accessing
+applicationContext
+
+	^ applicationContext

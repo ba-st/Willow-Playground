@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "GRObject",
+	"category" : "Willow-Playground-LiveDocs",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WPLiveDocumentationContext",
+	"type" : "normal"
+}
