@@ -6,7 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"packagesListBox"
+		"packagesListBox",
+		"classesListBox",
+		"traitsListBox",
+		"identifiedBehaviorSelection"
 	],
 	"name" : "WPLiveDocumentationScopeSelectionView",
 	"type" : "normal"
