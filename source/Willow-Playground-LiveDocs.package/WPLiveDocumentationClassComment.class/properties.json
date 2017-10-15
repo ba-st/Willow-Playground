@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WAPresenter",
+	"category" : "Willow-Playground-LiveDocs",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"selectedClass"
+	],
+	"name" : "WPLiveDocumentationClassComment",
+	"type" : "normal"
+}
