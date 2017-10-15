@@ -8,4 +8,5 @@ baseline: spec
 			spec
 				package: 'Willow-Playground' with: [ spec requires: #('WillowBootstrap' 'WillowJQueryUI' 'WillowSpinKit') ];
 				package: 'Willow-Playground-TestRunner' with: [ spec requires: #('WillowBootstrap' 'WillowJQueryUI' 'WillowSpinKit') ];
-				group: 'default' with: #('Willow-Playground' 'Willow-Playground-TestRunner') ]
+				package: 'Willow-Playground-LiveDocs' with: [ spec requires: #('WillowBootstrap' 'WillowSpinKit') ];
+				group: 'default' with: #('Willow-Playground' 'Willow-Playground-TestRunner' 'Willow-Playground-LiveDocs') ]
