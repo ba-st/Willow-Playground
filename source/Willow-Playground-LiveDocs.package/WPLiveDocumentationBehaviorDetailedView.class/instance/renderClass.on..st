@@ -8,4 +8,5 @@ renderClass: aClass on: html
 		render: (WPLiveDocumentationClassComment for: aClass);
 		render: (HeadingWebView displaying: 'Class methods' withLevel: 3).
 	(aClass class methods sorted: [ :a :b | a selector < b selector ])
-		do: [ :method | html render: (WPLiveDocumentationMethod for: method) ]
+		select: [ :method | method isExtension not ]
+		thenDo: [ :method | html render: (WPLiveDocumentationMethod for: method) ]

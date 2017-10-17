@@ -10,10 +10,11 @@ initializeFor: aMethod
 					(PhrasingContainerWebView
 						wrapping: aMethod protocol
 						applying: [ :badge | badge addClass bootstrap badge + badge addClass bootstrap pullRight ]) ];
-		wrapping: aMethod sourceCode;
+		wrapping: (self panelContentFor: aMethod);
 		footer: [ :canvas | 
 			canvas
 				strong: 'LOC:';
 				space;
-				render: aMethod linesOfCode ];
+				render: aMethod linesOfCode;
+				render: aMethod ast critiques ];
 		buildApplying: [ :panel | panel addClass bootstrap panelDefault ]
