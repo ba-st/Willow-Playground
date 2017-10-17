@@ -5,9 +5,5 @@ renderContentOn: html
 		withSelectedBehaviorDo: [ :behavior | 
 			behavior isTrait
 				ifTrue: [ html render: (self traitNameHeaderFor: behavior) ]
-				ifFalse: [ html
-						render: (self classNameHeaderFor: behavior);
-						render: (WPLiveDocumentationClassHiearchy for: behavior);
-						render: (WPLiveDocumentationClassDefinition for: behavior);
-						render: (WPLiveDocumentationClassComment for: behavior) ] ]
+				ifFalse: [ self renderClass: behavior on: html ] ]
 		ifNone: [ html render: 'Nothing' ]

@@ -1,4 +1,4 @@
-rendering
+private
 classNameHeaderFor: aClass
 
 	^ HeadingWebView

@@ -1,4 +1,4 @@
-rendering
+private
 traitNameHeaderFor: aTrait
 
 	^ HeadingWebView
