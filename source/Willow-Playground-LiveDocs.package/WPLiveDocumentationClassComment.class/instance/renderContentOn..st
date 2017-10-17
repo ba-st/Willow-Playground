@@ -1,8 +1,5 @@
 rendering
 renderContentOn: html
 
-	html
-		render:
-			(self selectedClassHasComment
-				ifTrue: [ self commentPanel ]
-				ifFalse: [ self missingCommentPanel ])
+	selectedClass hasComment
+		ifTrue: [ html blockquote: [ selectedClass comment lines do: [ :line | html render: line ] separatedBy: [ html break ] ] ]

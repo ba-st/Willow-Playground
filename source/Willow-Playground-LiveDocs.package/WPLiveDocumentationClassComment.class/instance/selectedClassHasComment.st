@@ -1,4 +1,0 @@
-Testing
-selectedClassHasComment
-
-	^ selectedClass hasComment
