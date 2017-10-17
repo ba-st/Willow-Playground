@@ -3,13 +3,10 @@ renderContentOn: aCanvas
 
 	| button companion |
 
-	companion := IdentifiedWebView
-		forSpanNamed: 'Companion'
-		containing: [ :canvas | canvas render: (GRPrinter isoTime print: Time now) ].
-
-	button := AsynchronicButtonWebView labeled: 'Click for a change'.
-	button onTrigger render: companion.
-
+	self renderSourceOf: #companionView on: aCanvas.
+	self renderSourceOf: #buttonRendering: on: aCanvas.
+	companion := self companionView.
+	button := self buttonRendering: companion.
 	aCanvas
 		render: button;
 		render: companion

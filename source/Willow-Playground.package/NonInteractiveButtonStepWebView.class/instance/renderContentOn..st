@@ -3,6 +3,7 @@ renderContentOn: aCanvas
 
 	| button |
 
-	button := AsynchronicButtonWebView labeled: 'Do not click'.
+	self renderSourceOf: #nonInteractiveButton on: aCanvas.
 
+	button := self nonInteractiveButton.
 	aCanvas render: button

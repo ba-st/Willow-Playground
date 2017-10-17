@@ -1,4 +1,4 @@
 accessing
 selectorsToInclude
 
-	^ #(csssmalltalks2017Css faviconIco)
+	^ #(csssmalltalks2017Css highlightsmalltalkminJs highlightthemesunburstCss faviconIco)
