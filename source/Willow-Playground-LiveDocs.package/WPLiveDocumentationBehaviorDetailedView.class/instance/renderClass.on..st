@@ -7,6 +7,6 @@ renderClass: aClass on: html
 		render: (WPLiveDocumentationClassDefinition for: aClass);
 		render: (WPLiveDocumentationClassComment for: aClass);
 		render: (HeadingWebView displaying: 'Class methods' withLevel: 3).
-	(aClass class methods sorted: [ :a :b | a selector < b selector ])
-		select: [ :method | method isExtension not ]
-		thenDo: [ :method | html render: (WPLiveDocumentationMethod for: method) ]
+	self renderMethodsIn: aClass class on: html.
+	html render: (HeadingWebView displaying: 'Instance methods' withLevel: 3).
+	self renderMethodsIn: aClass on: html
