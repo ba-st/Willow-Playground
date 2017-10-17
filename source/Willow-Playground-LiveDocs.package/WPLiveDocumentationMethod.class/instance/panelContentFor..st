@@ -7,12 +7,13 @@ panelContentFor: aMethod
 
 	tabsBuilder addTabHeadedBy: 'Source' containing: (self sourceCodeFor: aMethod).
 	aMethod comment
-		ifNotEmpty: [ tabsBuilder
+		ifNotNil: [ :comment | 
+			tabsBuilder
 				addTabHeadedBy: 'Comment'
 				containing: [ :canvas | 
 					canvas
 						break;
-						blockquote: aMethod comment ] ].
+						blockquote: comment ] ].
 	^ tabsBuilder
 		addTabHeadedBy: 'Bytecode' containing: (self symbolicBytecodesFor: aMethod);
 		build
