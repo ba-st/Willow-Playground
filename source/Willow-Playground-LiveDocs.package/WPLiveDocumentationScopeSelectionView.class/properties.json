@@ -7,9 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"packagesListBox",
-		"classesListBox",
-		"traitsListBox",
-		"identifiedBehaviorSelection"
+		"identifiedBehaviorSelection",
+		"behaviorsListBox"
 	],
 	"name" : "WPLiveDocumentationScopeSelectionView",
 	"type" : "normal"

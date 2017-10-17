@@ -5,5 +5,4 @@ initialize
 	self
 		initializeIdentifiedBehaviorSelection;
 		initializePackagesListBox;
-		initializeClassesListBox;
-		initializeTraitsListBox
+		initializeBehaviorsListBox

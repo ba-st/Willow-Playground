@@ -1,7 +1,4 @@
 configuring
 onBehaviorSelectedTrigger
 
-	^ CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
-			{classesListBox.
-			traitsListBox}
+	^ behaviorsListBox onTrigger 

@@ -8,13 +8,14 @@ renderContentOn: html
 				addContent:
 					(self componentSupplier
 						fieldSetContaining: (self componentSupplier delayedViewShowing: SpinKitCircle new whileEvaluating: [ packagesListBox allowAnyOf: self session applicationContext availablePackages ] thenRendering: packagesListBox)
-						applying: [  ]
+						applying: [ :fieldSet | fieldSet setStyleTo: [ :style | style height: 30 vh ] ]
 						withLegend: 'Packages'
 						applying: [  ]);
+				addContent: [ :canvas | canvas horizontalRule ];
 				addContent:
 					(self componentSupplier
 						fieldSetContaining: identifiedBehaviorSelection
 						applying: [  ]
-						withLegend: '-'
+						withLegend: 'Classes & Traits'
 						applying: [  ]);
 				buildApplying: [  ])
