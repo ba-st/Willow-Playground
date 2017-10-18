@@ -4,5 +4,5 @@ initialize
 	super initialize.
 	self
 		initializeIdentifiedBehaviorSelection;
-		initializePackagesListBox;
+		initializePackagesDropdown;
 		initializeBehaviorsListBox

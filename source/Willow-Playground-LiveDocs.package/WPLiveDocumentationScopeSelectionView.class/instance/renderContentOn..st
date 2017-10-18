@@ -7,8 +7,8 @@ renderContentOn: html
 				columnsPerRow: 1;
 				addContent:
 					(self componentSupplier
-						fieldSetContaining: (self componentSupplier delayedViewShowing: SpinKitCircle new whileEvaluating: [ packagesListBox allowAnyOf: self session applicationContext availablePackages ] thenRendering: packagesListBox)
-						applying: [ :fieldSet | fieldSet setStyleTo: [ :style | style height: 30 vh ] ]
+						fieldSetContaining: (self componentSupplier delayedViewShowing: SpinKitCircle new whileEvaluating: [ packagesDropdown allowAnyOf: self session applicationContext availablePackages ] thenRendering: packagesDropdown)
+						applying: [  ]
 						withLegend: 'Packages'
 						applying: [  ]);
 				addContent: [ :canvas | canvas horizontalRule ];
