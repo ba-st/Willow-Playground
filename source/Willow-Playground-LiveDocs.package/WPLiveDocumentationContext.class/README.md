@@ -1,0 +1,1 @@
+I'm the application context. My intent is to hold the state of the application.
