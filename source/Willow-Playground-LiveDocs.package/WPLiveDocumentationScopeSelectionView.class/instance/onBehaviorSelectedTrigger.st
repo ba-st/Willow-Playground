@@ -1,0 +1,4 @@
+configuring
+onBehaviorSelectedTrigger
+
+	^ behaviorsListBox onTrigger 

@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "GabrielOmarCotelli 10/18/2017 11:11",
+	"super" : "WAPresenter",
+	"category" : "Willow-Playground-LiveDocs",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"identifiedBehaviorSelection",
+		"behaviorsListBox",
+		"packagesDropdown"
+	],
+	"name" : "WPLiveDocumentationScopeSelectionView",
+	"type" : "normal"
+}
