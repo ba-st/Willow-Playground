@@ -6,4 +6,6 @@ renderContentOn: html
 			behavior isTrait
 				ifTrue: [ self renderTrait: behavior on: html ]
 				ifFalse: [ self renderClass: behavior on: html ] ]
-		ifNone: [ html render: 'Nothing' ]
+		ifNone: [ html
+				break;
+				render: self emptyPlaceholder ]
