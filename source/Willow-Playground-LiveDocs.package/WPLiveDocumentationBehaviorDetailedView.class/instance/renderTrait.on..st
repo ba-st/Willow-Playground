@@ -1,4 +1,4 @@
-rendering
+private
 renderTrait: trait on: html
 
 	html
