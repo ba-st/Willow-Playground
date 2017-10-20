@@ -1,0 +1,4 @@
+accessing
+contentView
+
+	^ currentStepView

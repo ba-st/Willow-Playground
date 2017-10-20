@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WillowFileMetadataLibrary",
+	"category" : "Willow-Playground-Smalltalks2017",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "Smalltalks2017FileMetadataLibrary",
+	"type" : "normal"
+}
