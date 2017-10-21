@@ -1,8 +1,12 @@
 rendering
 renderContentOn: aCanvas
 
-	self renderSourceOf: #initializeCompanionView withBrowseButtonOn: aCanvas.
-	self renderSourceOf: #initializeButton withBrowseButtonOn: aCanvas.
+	self
+		renderCarouselWithAll:
+			(Array
+				with: [ :canvas | self renderSourceOf: #initializeCompanionView on: canvas ]
+				with: [ :canvas | self renderSourceOf: #initializeButton on: canvas ])
+		on: aCanvas.
 
 	self
 		renderPanelWrapping: [ :canvas | 
