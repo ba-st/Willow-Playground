@@ -9,11 +9,12 @@ renderContentOn: aCanvas
 		on: aCanvas.
 
 	self
-		renderPanelWrapping: [ :canvas | 
-			canvas div
-				class: (BootstrapCssStyles columnMedium: 6);
-				with: button.
-			canvas div
-				class: (BootstrapCssStyles columnMedium: 6);
-				with: companionView ]
+		renderPanelWrapping:
+			(self componentSupplier gridBuilder
+				columnsWidths: #(2 5 4 1);
+				addContent: '';
+				addContent: button;
+				addContent: companionView;
+				addContent: '';
+				build)
 		on: aCanvas

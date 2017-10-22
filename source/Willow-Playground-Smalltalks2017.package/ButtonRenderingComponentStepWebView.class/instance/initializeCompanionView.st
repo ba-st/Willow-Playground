@@ -3,4 +3,4 @@ initializeCompanionView
 
 	companionView := IdentifiedWebView
 		forSpanNamed: 'Companion'
-		containing: [ self currentTime ]
+		containing: [ :canvas | canvas strong: self currentTime ]

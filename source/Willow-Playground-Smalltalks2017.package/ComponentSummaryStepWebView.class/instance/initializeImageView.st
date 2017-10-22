@@ -2,5 +2,5 @@ initialization
 initializeImageView
 
 	image := ImageWebView
-		locatedAt: 'https://upload.wikimedia.org/wikipedia/en/c/c0/Smalltalk80book.jpg'
+		locatedAt: Smalltalks2017FileMetadataLibrary / #smalltalk80bookJpg
 		applying: [ :theImage |  ]

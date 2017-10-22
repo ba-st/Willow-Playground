@@ -5,14 +5,14 @@ declareStepButtonsStyleIn: aBuilder
 		declareRuleSetFor: [ :selector | selector div class: Smalltalks2017CssStyles stepButtonContainer ]
 			with: [ :style | 
 			style
-				marginTop: 2 em;
+				position: CssConstants absolute;
 				width: 80 vw;
-				marginLeft: CssConstants auto;
-				marginRight: CssConstants auto ];
+				left: 10 vw;
+				bottom: 10 vh ];
 		declareRuleSetFor: [ :selector | 
 			(selector button class: Smalltalks2017CssStyles previousStep)
 				, (selector button class: Smalltalks2017CssStyles nextStep) ]
-			with: [ :style | style width: 200 px ];
+			with: [ :style | style width: 220 px ];
 		declareRuleSetFor: [ :selector | selector button class: Smalltalks2017CssStyles previousStep ]
 			with: [ :style | style float: CssConstants left ];
 		declareRuleSetFor: [ :selector | selector button class: Smalltalks2017CssStyles nextStep ]
