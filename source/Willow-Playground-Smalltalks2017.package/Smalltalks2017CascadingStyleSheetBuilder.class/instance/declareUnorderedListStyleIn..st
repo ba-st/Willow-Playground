@@ -7,11 +7,12 @@ declareUnorderedListStyleIn: aBuilder
 			with: [ :style | 
 			style
 				display: CssConstants block;
-				width: 40 vw ];
+				fontSize: CssFontConstants larger;
+				marginTop: 120 px ];
 		declareRuleSetFor: [ :selector | 
 			(selector div class: Smalltalks2017CssStyles stepContent)
 				> selector unorderedList listItem ]
 			with: [ :style | 
 				style
 					display: CssConstants inlineBlock;
-					width: 15 vw ]
+					width: 25 vw ]

@@ -9,4 +9,6 @@ renderContentOn: aCanvas
 				with: [ :canvas | self renderSourceOf: #renderFormOn: on: canvas ])
 		on: aCanvas.
 
-	self renderPanelWrapping: [ :canvas | self renderFormOn: canvas ] on: aCanvas
+	self
+		renderPanelWrapping: [ :canvas | self renderFormOn: canvas ]
+		on: aCanvas

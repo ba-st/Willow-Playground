@@ -1,10 +1,6 @@
 rendering
 renderContentOn: aCanvas
 
-	| input |
+	self renderSourceOf: #initializeField withBrowseButtonOn: aCanvas.
 
-	input := TextFieldWebView
-		singleLineTriggeringOnChangeApplying:
-			[ :theField | theField beAutofocused + theField bePasswordInput + (theField setPlaceholderTo: 'Tell me your secrets') ].
-
-	aCanvas render: input
+	self renderPanelWrapping: input on: aCanvas
