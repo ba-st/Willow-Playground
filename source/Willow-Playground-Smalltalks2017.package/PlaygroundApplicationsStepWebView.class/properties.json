@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "TestRunnerStepWebView",
+	"name" : "PlaygroundApplicationsStepWebView",
 	"type" : "normal"
 }
