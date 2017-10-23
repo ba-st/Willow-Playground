@@ -15,7 +15,7 @@ initializeStepViews
 		add: CommandSummaryStepWebView new;
 		add: AdvancedComponentsExampleStepWebView new;
 		add: ComponentSupplierStepWebView new;
-		add: TestRunnerStepWebView new;
+		add: PlaygroundApplicationsStepWebView new;
 		add: ScreenshotsStepWebView new;
 		add: ProjectLocationStepWebView new;
 		yourself

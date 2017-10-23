@@ -3,13 +3,7 @@ renderContentOn: aCanvas
 
 	| anchors list |
 
-	anchors := (WebComponentCommandBuilder localMethods sorted: [ :a :b | a selector <= b selector ])
-		collect: [ :method | 
-			| anchor |
-
-			anchor := AsynchronicAnchorWebView labeled: method selector.
-			anchor onTrigger evaluate: [ method browse ].
-			anchor ].
+	anchors := self availableCommands collect: [ :method | self anchorToBrowse: method ].
 
 	list := UnorderedListWebView
 		applying: [ :theList |  ]

@@ -1,18 +1,22 @@
 rendering
 renderContentOn: aCanvas
 
-	| button dropdown field |
+	self initializeSuppliedComponents.
 
-	button := self componentSupplier
-		asynchronicButtonLabeled: 'I am a button'
-		applying: [ :theButton |  ].
+	self
+		renderCarouselWithAll:
+			(Array
+				with: [ :canvas | self renderSourceOf: #initializeButton on: canvas ]
+				with: [ :canvas | self renderSourceOf: #initializeDropdown on: canvas ]
+				with: [ :canvas | self renderSourceOf: #initializeField on: canvas ])
+		on: aCanvas.
 
-	dropdown := self componentSupplier dropdownListApplying: [ :theDropdown |  ].
-	dropdown allowAnyOf: self supplyingSelectors.
-
-	field := self componentSupplier dateFieldApplying: [ :theField |  ].
-
-	aCanvas
-		render: button;
-		render: dropdown;
-		render: field
+	self
+		renderPanelWrapping:
+			(self componentSupplier gridBuilder
+				columnsWidths: #(4 4 4);
+				addContent: button;
+				addContent: dropdown;
+				addContent: field;
+				build)
+		on: aCanvas

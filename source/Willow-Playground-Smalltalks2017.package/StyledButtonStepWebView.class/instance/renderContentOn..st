@@ -1,10 +1,6 @@
 rendering
 renderContentOn: aCanvas
 
-	| button |
+	self renderSourceOf: #initializeButton withBrowseButtonOn: aCanvas.
 
-	button := AsynchronicButtonWebView
-		labeled: 'Primary Bootstrap Button'
-		applying: [ :theButton | theButton addClass bootstrap button + theButton addClass bootstrap buttonPrimary ].
-
-	aCanvas render: button
+	self renderPanelWrapping: button on: aCanvas

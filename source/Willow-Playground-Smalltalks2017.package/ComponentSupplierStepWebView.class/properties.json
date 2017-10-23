@@ -5,7 +5,11 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"button",
+		"dropdown",
+		"field"
+	],
 	"name" : "ComponentSupplierStepWebView",
 	"type" : "normal"
 }

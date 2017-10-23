@@ -5,7 +5,12 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"tableBuilder",
+		"table",
+		"periodical",
+		"delayed"
+	],
 	"name" : "AdvancedComponentsExampleStepWebView",
 	"type" : "normal"
 }
