@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WAPresenter",
+	"category" : "Willow-Playground-Smalltalks2017",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"panel"
+	],
+	"name" : "SpeakerCardWebView",
+	"type" : "normal"
+}
