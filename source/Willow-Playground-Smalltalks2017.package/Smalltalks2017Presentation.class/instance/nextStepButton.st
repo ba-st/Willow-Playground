@@ -9,7 +9,8 @@ nextStepButton
 				render: self nextStepView shortName;
 				space;
 				render: (BootstrapIconWebView representing: Glyphicons forward) ]
-		applying: [ :theButton | theButton addClass smalltalks2017 nextStep ].
+		applying:
+			[ :theButton | theButton addClass smalltalks2017 nextStep + theButton addClass bootstrap buttonDefault ].
 	button onTrigger
 		evaluate: [ currentStepIndex := self nextStepIndex ];
 		render: currentStepView.

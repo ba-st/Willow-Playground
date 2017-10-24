@@ -4,7 +4,7 @@ renderCurrentStepOn: aCanvas
 	| view |
 
 	view := stepViews at: currentStepIndex.
-	aCanvas heading: view description.
+	aCanvas heading: view shortName.
 
 	aCanvas div
 		class: Smalltalks2017CssStyles stepContent;

@@ -10,4 +10,4 @@ renderContentOn: aCanvas
 		listing: anchors
 		applyingToEach: [ :theItem |  ].
 
-	aCanvas render: list
+	self renderPanelWrapping: list on: aCanvas
