@@ -4,7 +4,7 @@ renderPanelWrapping: aRenderable on: aCanvas
 	| panel |
 
 	panel := self componentSupplier panelBuilder
-		headingDisplaying: 'Demo';
+		headingDisplaying: self description;
 		wrapping: aRenderable;
 		buildApplying: [ :thePanel | thePanel addClass bootstrap panelDefault ].
 

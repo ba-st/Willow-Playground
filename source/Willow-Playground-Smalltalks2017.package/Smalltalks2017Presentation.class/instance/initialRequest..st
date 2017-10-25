@@ -1,7 +1,8 @@
 initialization
-initialize
+initialRequest: request
 
-	super initialize.
+	super initialRequest: request.
+	
 	self initializeStepViews.
 	currentStepIndex := 1.
 	self initializeCurrentStepView

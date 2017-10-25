@@ -7,7 +7,6 @@ initializeStepViews
 		add: ButtonExecutingOnClientStepWebView new;
 		add: ButtonEvaluatingBlockStepWebView new;
 		add: ButtonRenderingComponentStepWebView new;
-		add: InputInFormStepWebView new;
 		add: FormTriggeringStepWebView new;
 		add: ComponentSummaryStepWebView new;
 		add: StyledButtonStepWebView new;

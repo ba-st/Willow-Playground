@@ -1,6 +1,8 @@
 rendering
 renderContentOn: aCanvas
 
+	self renderPanelWrapping: delayed on: aCanvas.
+	
 	self
 		renderCarouselWithAll:
 			(Array
@@ -8,5 +10,3 @@ renderContentOn: aCanvas
 				with: [ :canvas | self renderSourceOf: #initializePeriodical on: canvas ]
 				with: [ :canvas | self renderSourceOf: #initializeTable on: canvas ])
 		on: aCanvas.
-
-	self renderPanelWrapping: delayed on: aCanvas

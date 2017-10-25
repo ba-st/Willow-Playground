@@ -9,10 +9,5 @@ renderCarouselWithAll: aRenderableCollection on: aCanvas
 		id: carouselIdentifier;
 		classes: (Array with: 'carousel' with: 'slide');
 		attributeAt: 'data-ride' put: 'carousel';
-		with: [ aCanvas orderedList
-				class: 'carousel-indicators';
-				with: [ self renderIndicatorsForAll: aRenderableCollection in: carouselIdentifier on: aCanvas ].
-			aCanvas div
-				class: 'carousel-inner';
-				attributeAt: 'role' put: 'listbox';
-				with: [ self renderSlidesForAll: aRenderableCollection on: aCanvas ] ]
+		with: [ self renderCarouselSlidesContainerForAll: aRenderableCollection on: aCanvas.
+			self renderCarouselControlsIn: carouselIdentifier on: aCanvas ]

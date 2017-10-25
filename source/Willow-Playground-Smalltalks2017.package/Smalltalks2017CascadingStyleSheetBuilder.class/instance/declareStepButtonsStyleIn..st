@@ -8,7 +8,7 @@ declareStepButtonsStyleIn: aBuilder
 				position: CssConstants absolute;
 				width: 80 vw;
 				left: 10 vw;
-				bottom: 10 vh ];
+				bottom: 3 vh ];
 		declareRuleSetFor: [ :selector | 
 			(selector button class: Smalltalks2017CssStyles previousStep)
 				, (selector button class: Smalltalks2017CssStyles nextStep) ]
