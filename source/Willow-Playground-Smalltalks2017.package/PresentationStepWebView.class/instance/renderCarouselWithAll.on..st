@@ -3,7 +3,6 @@ renderCarouselWithAll: aRenderableCollection on: aCanvas
 
 	| carouselIdentifier |
 
-	aCanvas render: self browseStepButton.
 	carouselIdentifier := 'theCarousel'.
 	aCanvas div
 		id: carouselIdentifier;

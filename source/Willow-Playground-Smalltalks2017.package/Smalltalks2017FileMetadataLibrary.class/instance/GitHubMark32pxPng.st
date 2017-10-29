@@ -1,7 +1,8 @@
-uploaded metadata
-GitHubMark32pxPng
+private
+gitHubMark32pxPng
+
 	^ WAFileLibraryResource
-		filepath: 'GitHub-Mark-32px.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #GitHubMark32pxPngContent)
+		filepath: 'gitHub-Mark-32px.png'
+		mimeType: WAMimeType imagePng
+		cacheDuration: self class defaultCacheDuration
+		contents: (GRDelayedSend receiver: self selector: #gitHubMark32pxPngContent)

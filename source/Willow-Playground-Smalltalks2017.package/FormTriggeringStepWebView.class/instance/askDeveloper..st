@@ -1,4 +1,4 @@
 private-rendering
-askDeveloper: a
+askDeveloper: aQuestion
 
-	^ UIManager default textEntry: a
+	^ UIManager default textEntry: aQuestion

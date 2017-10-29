@@ -1,4 +1,10 @@
 initialization
 initializeField
 
-	input := TextFieldWebView singleLineTriggeringOnChangeApplying: [ :theInput |  ]
+
+	input := TextFieldWebView
+		 singleLineTriggeringOnChangeApplying: [ :theInput |  ]
+		
+		
+		
+		 

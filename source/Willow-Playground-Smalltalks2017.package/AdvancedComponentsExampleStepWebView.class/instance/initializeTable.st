@@ -1,6 +1,5 @@
 initialization
 initializeTable
-
 	table := TableWebViewBuilder new
 	  addColumnTitled: 'Decimal' rendering: [ :number | number ];
 	  addColumnTitled: 'Hex' rendering: [ :number | number printStringHex ];
