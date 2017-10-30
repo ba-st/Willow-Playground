@@ -15,6 +15,6 @@ renderContentOn: aCanvas
 	self
 		renderCodeCarouselWithAll:
 			(Array
-				with: [ :canvas | self renderSourceOf: #initializeCompanionView on: canvas ]
-				with: [ :canvas | self renderSourceOf: #initializeButton on: canvas ])
+				with: [ :canvas | self renderSourceOf: #initializeCompanionView withBrowseButtonOn: canvas ]
+				with: [ :canvas | self renderSourceOf: #initializeButton withBrowseButtonOn: canvas ])
 		on: aCanvas

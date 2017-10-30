@@ -7,7 +7,7 @@ renderContentOn: aCanvas
 	self
 		renderCodeCarouselWithAll:
 			(Array
-				with: [ :canvas | self renderSourceOf: #initializeDelayed on: canvas ]
-				with: [ :canvas | self renderSourceOf: #initializePeriodical on: canvas ]
-				with: [ :canvas | self renderSourceOf: #initializeTable on: canvas ])
+				with: [ :canvas | self renderSourceOf: #initializeDelayed withBrowseButtonOn: canvas ]
+				with: [ :canvas | self renderSourceOf: #initializePeriodical withBrowseButtonOn: canvas ]
+				with: [ :canvas | self renderSourceOf: #initializeTable withBrowseButtonOn: canvas ])
 		on: aCanvas
