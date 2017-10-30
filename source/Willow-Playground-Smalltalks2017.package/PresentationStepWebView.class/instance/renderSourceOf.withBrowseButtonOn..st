@@ -1,5 +1,7 @@
 private-rendering
 renderSourceOf: aSelector withBrowseButtonOn: aCanvas
 
-	aCanvas render: self browseStepButton.
-	self renderSourceOf: aSelector on: aCanvas
+	self
+		renderSourceOf: aSelector
+		andBrowseButton: (Optional containing: (self browseStepButtonEvaluating: [ (self class >> aSelector) browse ]))
+		on: aCanvas

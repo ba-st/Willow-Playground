@@ -7,5 +7,6 @@ declareBrowseStepButtonStyleIn: aBuilder
 			style
 				zIndex: 1;
 				position: CssConstants absolute;
-				marginTop: (3.3 newMeasureWith: CssLengthUnits onePercentOfViewportHeight);
-				right: (6.4 newMeasureWith: CssLengthUnits onePercentOfViewportWidth) ]
+				marginTop: 5 px;
+				right: 9 vh;
+				fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' ]

@@ -1,5 +1,5 @@
 private-rendering
 renderCodeCarouselWithAll: aRenderableCollection on: aCanvas
 
-	aCanvas render: self browseStepButton.
+	aCanvas render: (self browseStepButtonEvaluating: [ self browse ]).
 	self renderCarouselWithAll: aRenderableCollection on: aCanvas
