@@ -13,7 +13,7 @@ renderContentOn: aCanvas
 		on: aCanvas.
 
 	self
-		renderCarouselWithAll:
+		renderCodeCarouselWithAll:
 			(Array
 				with: [ :canvas | self renderSourceOf: #initializeCompanionView on: canvas ]
 				with: [ :canvas | self renderSourceOf: #initializeButton on: canvas ])

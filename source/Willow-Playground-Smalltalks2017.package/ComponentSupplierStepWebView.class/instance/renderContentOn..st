@@ -12,7 +12,7 @@ renderContentOn: aCanvas
 		on: aCanvas.
 
 	self
-		renderCarouselWithAll:
+		renderCodeCarouselWithAll:
 			(Array
 				with: [ :canvas | self renderSourceOf: #initializeButton on: canvas ]
 				with: [ :canvas | self renderSourceOf: #initializeDropdown on: canvas ]

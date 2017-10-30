@@ -6,6 +6,6 @@ declareBrowseStepButtonStyleIn: aBuilder
 		with: [ :style | 
 			style
 				zIndex: 1;
-				position: CssConstants fixed;
-				right: (6.5 newMeasureWith: CssLengthUnits onePercentOfViewportWidth);
-				top: 110 px ]
+				position: CssConstants absolute;
+				marginTop: (3.3 newMeasureWith: CssLengthUnits onePercentOfViewportHeight);
+				right: (6.4 newMeasureWith: CssLengthUnits onePercentOfViewportWidth) ]

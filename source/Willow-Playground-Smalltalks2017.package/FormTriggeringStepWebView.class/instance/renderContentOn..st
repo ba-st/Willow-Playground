@@ -4,7 +4,7 @@ renderContentOn: aCanvas
 	self renderPanelWrapping: [ :canvas | self renderFormOn: canvas ] on: aCanvas.
 
 	self
-		renderCarouselWithAll:
+		renderCodeCarouselWithAll:
 			(Array
 				with: [ :canvas | self renderSourceOf: #initializeField on: canvas ]
 				with: [ :canvas | self renderSourceOf: #initializeButton on: canvas ]

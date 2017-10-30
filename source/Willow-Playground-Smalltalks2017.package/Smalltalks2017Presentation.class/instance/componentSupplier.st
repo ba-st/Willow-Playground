@@ -1,8 +1,6 @@
 accessing
 componentSupplier
 
-	"^JQueryUIComponentSupplier new"
-
 	^ BootstrapComponentSupplier
 		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme
 		selectLibrary: ((self deploymentMode libraryFor: BootstrapSelectLibrary) using: self language)

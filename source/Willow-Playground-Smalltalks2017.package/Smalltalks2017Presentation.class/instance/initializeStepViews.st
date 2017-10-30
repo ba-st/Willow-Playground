@@ -3,6 +3,7 @@ initializeStepViews
 
 	stepViews := OrderedCollection new
 		add: IntroductionStepWebView new;
+		add: RenderingStepWebView new;
 		add: NonInteractiveButtonStepWebView new;
 		add: ButtonExecutingOnClientStepWebView new;
 		add: ButtonEvaluatingBlockStepWebView new;
