@@ -8,9 +8,8 @@ nextStepButton
 			canvas
 				render: self nextStepView shortName;
 				space;
-				render: (BootstrapIconWebView representing: Glyphicons forward) ]
-		applying:
-			[ :theButton | theButton addClass smalltalks2017 nextStep + theButton addClass bootstrap buttonDefault ].
+				render: (BootstrapIconWebView representing: Glyphicons chevronRight) ]
+		applying: [ :theButton | theButton addClass smalltalks2017 nextStep + theButton addClass bootstrap buttonDefault ].
 	button onTrigger
 		evaluate: [ currentStepIndex := self nextStepIndex ];
 		render: currentStepView.

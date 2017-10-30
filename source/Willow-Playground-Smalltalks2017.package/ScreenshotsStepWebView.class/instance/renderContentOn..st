@@ -4,7 +4,7 @@ renderContentOn: aCanvas
 	self
 		renderCarouselWithAll:
 			(Array
-				with: (self screenshotFor: #eraJpg)
-				with: (self screenshotFor: #bortJpg)
-				with: (self screenshotFor: #tradingRoomJpg))
+				with: self eraForRolemasterScreenshot
+				with: self abbacoScreenshot
+				with: self tradingRoomScreenshot)
 		on: aCanvas
