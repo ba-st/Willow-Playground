@@ -14,7 +14,7 @@ renderContentOn: aCanvas
 		on: aCanvas.
 
 	self
-		renderCodeCarouselWithAll:
+		renderCarouselWithAll:
 			(Array
 				with: [ :canvas | self renderSourceOf: #initializeDropDownListView withBrowseButtonOn: canvas ]
 				with: [ :canvas | self renderSourceOf: #initializeCheckboxView withBrowseButtonOn: canvas ]

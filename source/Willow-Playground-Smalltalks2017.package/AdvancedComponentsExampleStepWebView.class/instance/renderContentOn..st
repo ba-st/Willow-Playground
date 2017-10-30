@@ -5,7 +5,7 @@ renderContentOn: aCanvas
 	self renderPanelWrapping: delayed on: aCanvas.
 
 	self
-		renderCodeCarouselWithAll:
+		renderCarouselWithAll:
 			(Array
 				with: [ :canvas | self renderSourceOf: #initializeDelayed withBrowseButtonOn: canvas ]
 				with: [ :canvas | self renderSourceOf: #initializePeriodical withBrowseButtonOn: canvas ]

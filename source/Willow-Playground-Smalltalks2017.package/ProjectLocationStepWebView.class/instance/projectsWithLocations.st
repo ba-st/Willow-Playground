@@ -31,4 +31,4 @@ projectsWithLocations
 			{'Willow-Playground'.
 			'This presentation, Test Runner and Live Docs applications'.
 			self stableLabel.
-			'Willow-Playground'}
+			'ba-st/Willow-Playground'}
