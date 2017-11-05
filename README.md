@@ -36,8 +36,8 @@ You can now evaluate
 Smalltalks2017Presentation start
 ```
 
-and go to [localhost:8080/willow101](localhost:8080/willow101) to find an interactive tutorial.
+and go to [localhost:8080/willow101](http://localhost:8080/willow101) to find an interactive tutorial.
 
 To learn how to use Willow, you can check the applications included in this repository:
-- Live Documentation: start by browsing WPLiveDocumentation. Access the application at [localhost:8080/live-docs](localhost:8080/live-docs)
-- Test Runner: start by browsing WPTestRunner. Access the application at [localhost:8080/test-runner-bootstrap3](localhost:8080/test-runner-bootstrap3)
+- Live Documentation: start by browsing WPLiveDocumentation. Access the application at [localhost:8080/live-docs](http://localhost:8080/live-docs)
+- Test Runner: start by browsing WPTestRunner. Access the application at [localhost:8080/test-runner-bootstrap3](http://localhost:8080/test-runner-bootstrap3)
