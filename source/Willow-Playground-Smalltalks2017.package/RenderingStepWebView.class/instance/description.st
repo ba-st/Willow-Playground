@@ -1,4 +1,4 @@
 accessing
 description
 
-	^ 'Willow components use Seaside''s render: method'
+	^ 'Willow components can be easily rendered'

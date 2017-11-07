@@ -1,0 +1,1 @@
+I'm a step showing a component with commands.

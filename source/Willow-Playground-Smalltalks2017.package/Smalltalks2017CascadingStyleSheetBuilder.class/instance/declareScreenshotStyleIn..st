@@ -6,4 +6,5 @@ declareScreenshotStyleIn: aBuilder
 		with: [ :style | 
 			style
 				maxHeight: 70 vh;
-				margin: CssConstants auto ]
+				margin: CssConstants auto;
+				paddingBottom: 40 px ]

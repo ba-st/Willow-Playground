@@ -12,9 +12,9 @@ renderContentOn: aCanvas
 		on: aCanvas.
 
 	self
-		renderCodeCarouselWithAll:
+		renderCarouselWithAll:
 			(Array
-				with: [ :canvas | self renderSourceOf: #initializeButton on: canvas ]
-				with: [ :canvas | self renderSourceOf: #initializeDropdown on: canvas ]
-				with: [ :canvas | self renderSourceOf: #initializeField on: canvas ])
+				with: [ :canvas | self renderSourceOf: #initializeButton withBrowseButtonOn: canvas ]
+				with: [ :canvas | self renderSourceOf: #initializeDropdown withBrowseButtonOn: canvas ]
+				with: [ :canvas | self renderSourceOf: #initializeField withBrowseButtonOn: canvas ])
 		on: aCanvas

@@ -4,12 +4,24 @@ renderContentOn: aCanvas
 	| grid |
 
 	grid := self componentSupplier gridBuilder
-		columnsWidths: #(5 2 5);
-		addContent: '';
+		columnsWidths: #(2 10);
+		applyingToCells: [ :cell :constants | cell setStyleTo: [ :style | style textAlign: constants css justify ] ];
 		addContent: self willowLogoView;
-		addContent:
-				[ :canvas | canvas strong: 'Willow is a library used to reify interactive web applications' ];
+		addContent: [ :html | 
+			html
+				strong: 'Willow is a Web Interaction Library that eases the burden of creating AJAX-based web applications.';
+				break;
+				break;
+				render: 'It''s built on top of the Seaside Web Framework providing a set of composable components, easier AJAX interaction and licensed under MIT.' ];
 		build.
-	aCanvas render: grid.
-	self renderSourceOf: #loadWillowFromGitHubCode on: aCanvas.
-	self renderSourceOf: #loadWillowPlaygroundFromGitHubCode on: aCanvas
+	aCanvas
+		render: grid;
+		break;
+		render:
+			(self componentSupplier
+				fieldSetContaining: [ :html | 
+					self renderSourceOf: #loadWillowFromGitHubCode on: html.
+					self renderSourceOf: #loadWillowPlaygroundFromGitHubCode on: html ]
+				applying: [  ]
+				withLegend: 'Get Started!'
+				applying: [  ])

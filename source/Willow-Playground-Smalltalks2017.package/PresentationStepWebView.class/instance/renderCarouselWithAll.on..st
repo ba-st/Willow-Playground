@@ -6,7 +6,9 @@ renderCarouselWithAll: aRenderableCollection on: aCanvas
 	carouselIdentifier := 'theCarousel'.
 	aCanvas div
 		id: carouselIdentifier;
-		classes: (Array with: 'carousel' with: 'slide');
+		class: 'carousel';
+		class: 'slide';
 		attributeAt: 'data-ride' put: 'carousel';
+		script: ((aCanvas jQuery class: 'carousel') call: 'carousel' with: 'pause');
 		with: [ self renderCarouselSlidesContainerForAll: aRenderableCollection on: aCanvas.
 			self renderCarouselControlsIn: carouselIdentifier on: aCanvas ]

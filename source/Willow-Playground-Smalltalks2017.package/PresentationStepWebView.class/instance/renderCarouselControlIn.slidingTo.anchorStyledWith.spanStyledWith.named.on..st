@@ -8,6 +8,10 @@ renderCarouselControlIn: carouselIdentifier slidingTo: aSlideTarget anchorStyled
 		url: ('#<1s>' expandMacrosWith: carouselIdentifier);
 		attributeAt: 'role' put: 'button';
 		attributeAt: 'data-slide' put: aSlideTarget;
+		style:
+			(CssDeclarationBlock new
+				maxWidth: 50 px;
+				background: CssConstants none);
 		with: [ aCanvas span
 				classes:
 					{BootstrapCssStyles glyphicon.
