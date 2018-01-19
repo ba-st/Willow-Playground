@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 9/29/2017 16:23",
-	"super" : "WAPresenter",
+	"super" : "WAPainter",
 	"category" : "Willow-Playground-TestRunner",
 	"classinstvars" : [ ],
 	"pools" : [ ],
