@@ -1,5 +1,5 @@
-Accessing
-componentSupplier
+accessing
+newComponentSupplier
 
 	^ BootstrapComponentSupplier
 		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme

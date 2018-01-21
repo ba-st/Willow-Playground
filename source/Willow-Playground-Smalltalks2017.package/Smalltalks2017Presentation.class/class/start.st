@@ -1,4 +1,4 @@
-private-Utility
+private-utility
 start
 
 	Smalltalks2017Presentation registerAsDevelopmentApplication.
