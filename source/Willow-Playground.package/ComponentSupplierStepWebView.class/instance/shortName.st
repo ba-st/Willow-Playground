@@ -1,4 +1,0 @@
-accessing
-shortName
-
-	^ 'Component Supplier'
