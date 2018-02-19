@@ -1,6 +1,4 @@
 private-accessing
 liveDocumentationAnchor
 
-	^ self componentSupplier
-		asynchronicAnchorLabeled: 'Open the Live Documentation!'
-		applying: (OpenNewLocationCommand navigatingTo: WPLiveDocumentation handlerName)
+	^ self componentSupplier asynchronicLinkLabeled: 'Open the Live Documentation!' applying: (OpenLocationCommand forNewBrowsingContextNavigatingTo: WPLiveDocumentation handlerName)
