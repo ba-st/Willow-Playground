@@ -29,6 +29,7 @@ Metacello new
   repository: 'github://ba-st/Willow-Playground:master/source';
   load
 ```
+or get a ready to use image from the [releases page](https://github.com/ba-st/Willow-Playground/releases).
 
 You can now evaluate
 
