@@ -1,4 +1,4 @@
-private-Utility
+private-utility
 stop
 
 	ZnServer stopDefault.

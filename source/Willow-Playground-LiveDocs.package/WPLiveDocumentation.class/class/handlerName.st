@@ -1,4 +1,4 @@
-Accessing
+accessing
 handlerName
 
 	^ 'live-docs'
