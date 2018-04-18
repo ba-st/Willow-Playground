@@ -1,5 +1,0 @@
-Controlling
-startUpApplicationContextFor: liveDocumenationApp
-
-	super startUpApplicationContextFor: liveDocumenationApp.
-	applicationContext := WPLiveDocumentationContext new

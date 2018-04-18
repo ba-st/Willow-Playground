@@ -1,1 +1,0 @@
-I'm a panel showing an specific method 

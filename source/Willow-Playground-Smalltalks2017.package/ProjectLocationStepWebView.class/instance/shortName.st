@@ -1,4 +1,0 @@
-accessing
-shortName
-
-	^ 'Project Location'

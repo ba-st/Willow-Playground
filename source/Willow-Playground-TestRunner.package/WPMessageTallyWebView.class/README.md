@@ -1,1 +1,0 @@
-I'm a web view showing a message tally result

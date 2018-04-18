@@ -1,4 +1,0 @@
-Interaction
-onRunSelectedTestsTrigger
-
-	^ runSelectedTestsButton onTrigger

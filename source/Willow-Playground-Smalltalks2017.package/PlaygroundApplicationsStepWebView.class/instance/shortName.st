@@ -1,4 +1,0 @@
-accessing
-shortName
-
-	^ 'Some Examples'
