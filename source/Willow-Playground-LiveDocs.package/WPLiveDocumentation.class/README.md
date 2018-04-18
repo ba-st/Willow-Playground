@@ -1,1 +1,0 @@
-I'm a web version of the Pharo live documentation

@@ -1,1 +1,0 @@
-I'm a web view responsible for selecting the current scope (class or trait to navigate)

@@ -1,1 +1,0 @@
-I'm a step showing the component supplier.

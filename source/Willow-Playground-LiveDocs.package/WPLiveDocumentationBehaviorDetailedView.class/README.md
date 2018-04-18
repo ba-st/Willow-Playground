@@ -1,1 +1,0 @@
-í'm a web view showing the details for a class or trait

@@ -1,4 +1,0 @@
-accessing
-handlerName
-
-	^ 'live-docs'

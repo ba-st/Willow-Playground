@@ -1,0 +1,89 @@
+"
+I'm a panel showing an specific method 
+"
+Class {
+	#name : #WPLiveDocumentationMethod,
+	#superclass : #WAPainter,
+	#instVars : [
+		'method',
+		'methodPanel'
+	],
+	#category : 'Willow-Playground-LiveDocs'
+}
+
+{ #category : #'instance creation' }
+WPLiveDocumentationMethod class >> for: aMethod [
+
+	^self new initializeFor: aMethod 
+]
+
+{ #category : #initialization }
+WPLiveDocumentationMethod >> initializeFor: aMethod [
+
+	method := aMethod.
+	methodPanel := self componentSupplier panelBuilder
+		headingDisplaying: [ :canvas | 
+			canvas strong: aMethod selector.
+			canvas
+				render:
+					(PhrasingContainerWebView
+						wrapping: aMethod protocol
+						applying: [ :badge | badge addClass bootstrap badge + badge addClass bootstrap pullRight ]) ];
+		wrapping: (self panelContentFor: aMethod);
+		buildApplying: [ :panel | panel addClass bootstrap panelDefault ]
+]
+
+{ #category : #initialization }
+WPLiveDocumentationMethod >> panelContentFor: aMethod [
+
+	| tabsBuilder |
+
+	tabsBuilder := self componentSupplier tabsBuilder.
+
+	tabsBuilder addTabHeadedBy: 'Source' containing: (self sourceCodeFor: aMethod).
+	aMethod comment
+		ifNotNil: [ :comment | 
+			tabsBuilder
+				addTabHeadedBy: 'Comment'
+				containing: [ :canvas | 
+					canvas
+						break;
+						blockquote: comment ] ].
+	^ tabsBuilder
+		addTabHeadedBy: 'Bytecode' containing: (self symbolicBytecodesFor: aMethod);
+		build
+]
+
+{ #category : #initialization }
+WPLiveDocumentationMethod >> renderContentOn: html [
+
+	html render: methodPanel
+]
+
+{ #category : #initialization }
+WPLiveDocumentationMethod >> sourceCodeFor: aMethod [
+
+	^ [ :canvas | 
+	canvas
+		break;
+		preformatted: [ canvas
+				code:
+					('<1s><n><n><2s>'
+						expandMacrosWith: aMethod ast selectorAndArgumentNames
+						with: aMethod ast body formattedCode) ] ]
+]
+
+{ #category : #initialization }
+WPLiveDocumentationMethod >> symbolicBytecodesFor: aMethod [
+
+	^ [ :canvas | 
+	canvas
+		break;
+		preformatted: [ canvas
+				code:
+					(String
+						streamContents: [ :stream | 
+							aMethod symbolicBytecodes
+								do: [ :bytecode | stream nextPutAll: bytecode greaseString ]
+								separatedBy: [ stream cr ] ]) ] ]
+]

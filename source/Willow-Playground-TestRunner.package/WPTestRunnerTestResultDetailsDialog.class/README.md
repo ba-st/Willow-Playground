@@ -1,1 +1,0 @@
-I show the test result details

@@ -1,1 +1,0 @@
-I'm a library providing some static assets, javascript and css

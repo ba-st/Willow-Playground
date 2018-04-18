@@ -1,4 +1,0 @@
-Interaction
-onRunProfiledTrigger
-
-	^ runProfiledButton onTrigger

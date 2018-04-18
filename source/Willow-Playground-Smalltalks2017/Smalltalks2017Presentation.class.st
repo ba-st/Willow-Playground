@@ -1,0 +1,230 @@
+"
+I'm the presentation :)
+"
+Class {
+	#name : #Smalltalks2017Presentation,
+	#superclass : #WillowApplication,
+	#instVars : [
+		'currentStepView',
+		'currentStepIndex',
+		'stepViews'
+	],
+	#category : 'Willow-Playground-Smalltalks2017'
+}
+
+{ #category : #accessing }
+Smalltalks2017Presentation class >> applicationTitle [
+
+	^ 'Willow 101'
+]
+
+{ #category : #accessing }
+Smalltalks2017Presentation class >> handlerName [
+
+	^ 'willow101'
+]
+
+{ #category : #'private-utility' }
+Smalltalks2017Presentation class >> registerAsApplicationUsing: deploymentModeClass [
+
+	| application |
+
+	application := super registerAsApplicationUsing: deploymentModeClass.
+	application configuration at: #maximumRelativeAge put: 3600.
+	application cache: application createCache.
+	^ application
+]
+
+{ #category : #'private-utility' }
+Smalltalks2017Presentation class >> start [
+
+	Smalltalks2017Presentation registerAsDevelopmentApplication.
+	WPTestRunner registerAsDevelopmentApplication.
+	WPLiveDocumentation registerAsDevelopmentApplication.
+	(ZnZincServerAdaptor port: 8080)
+		codec: GRPharoUtf8Codec new;
+		start
+]
+
+{ #category : #'private-utility' }
+Smalltalks2017Presentation class >> stop [
+
+	ZnServer stopDefault.
+	ZnZincServerAdaptor allInstancesDo: [ :each | each shutDown ].
+	Smalltalks2017Presentation unregisterFromApplications.
+	WPTestRunner unregisterFromApplications.
+	WPLiveDocumentation unregisterFromApplications.
+	Smalltalk garbageCollect
+]
+
+{ #category : #accessing }
+Smalltalks2017Presentation >> componentSupplierForApplication [
+
+	^ BootstrapComponentSupplier
+		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme
+		selectLibrary: ((self deploymentMode libraryFor: BootstrapSelectLibrary) using: self language)
+		datepickerLibrary: ((self deploymentMode libraryFor: BootstrapDatepickerLibrary) using: self language)
+		typeaheadLibrary: (self deploymentMode libraryFor: BootstrapTypeaheadLibrary) new
+]
+
+{ #category : #accessing }
+Smalltalks2017Presentation >> contentView [
+
+	^ currentStepView
+]
+
+{ #category : #initialization }
+Smalltalks2017Presentation >> initialRequest: request [
+
+	super initialRequest: request.
+	
+	self initializeStepViews.
+	currentStepIndex := 1.
+	self initializeCurrentStepView
+]
+
+{ #category : #initialization }
+Smalltalks2017Presentation >> initializeCurrentStepView [
+
+	currentStepView := IdentifiedWebView
+		forDivNamed: 'currentStep'
+		containing: [ :canvas | self renderCurrentStepOn: canvas ]
+		applying: [ :div | div addClass smalltalks2017 presentationArea ]
+]
+
+{ #category : #initialization }
+Smalltalks2017Presentation >> initializeStepViews [
+
+	stepViews := OrderedCollection new
+		add: IntroductionStepWebView new;
+		add: RenderingStepWebView new;
+		add: NonInteractiveButtonStepWebView new;
+		add: ButtonExecutingOnClientStepWebView new;
+		add: ButtonEvaluatingBlockStepWebView new;
+		add: ButtonRenderingComponentStepWebView new;
+		add: FormTriggeringStepWebView new;
+		add: ComponentSummaryStepWebView new;
+		add: StyledButtonStepWebView new;
+		add: ComponentWithCommandsStepWebView new;
+		add: CommandSummaryStepWebView new;
+		add: AdvancedComponentsExampleStepWebView new;
+		add: ComponentSupplierStepWebView new;
+		add: PlaygroundApplicationsStepWebView new;
+		add: ScreenshotsStepWebView new;
+		add: ProjectLocationStepWebView new;
+		yourself
+]
+
+{ #category : #accessing }
+Smalltalks2017Presentation >> jQueryLibrary [
+
+	^(self deploymentMode libraryFor: JQuery3MetadataLibrary) default
+]
+
+{ #category : #accessing }
+Smalltalks2017Presentation >> newComponentSupplier [
+
+	^ BootstrapComponentSupplier
+		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme
+		selectLibrary: ((self deploymentMode libraryFor: BootstrapSelectLibrary) using: self language)
+		datepickerLibrary: ((self deploymentMode libraryFor: BootstrapDatepickerLibrary) using: self language)
+		typeaheadLibrary: (self deploymentMode libraryFor: BootstrapTypeaheadLibrary) new
+]
+
+{ #category : #'private - accessing' }
+Smalltalks2017Presentation >> nextStepButton [
+
+	| button |
+
+	button := self componentSupplier
+		asynchronicButtonLabeled: [ :canvas | 
+			canvas
+				render: self nextStepView shortName;
+				space;
+				render: (BootstrapIconWebView representing: Glyphicons chevronRight) ]
+		applying: [ :theButton | theButton addClass bootstrap pullRight + theButton addClass bootstrap buttonDefault ].
+	button onTrigger
+		evaluate: [ currentStepIndex := self nextStepIndex ];
+		render: currentStepView.
+	^ button
+]
+
+{ #category : #'private - accessing' }
+Smalltalks2017Presentation >> nextStepIndex [
+
+	^ currentStepIndex + 1 min: stepViews size
+]
+
+{ #category : #'private - accessing' }
+Smalltalks2017Presentation >> nextStepView [
+
+	^ stepViews at: self nextStepIndex
+]
+
+{ #category : #'private - accessing' }
+Smalltalks2017Presentation >> previousStepButton [
+
+	| button |
+
+	button := self componentSupplier
+		asynchronicButtonLabeled: [ :canvas | 
+			canvas
+				render: (BootstrapIconWebView representing: Glyphicons chevronLeft);
+				space;
+				render: self previousStepView shortName ]
+		applying: [ :theButton | theButton addClass bootstrap pullLeft + theButton addClass bootstrap buttonDefault ].
+	button onTrigger
+		evaluate: [ currentStepIndex := self previousStepIndex ];
+		render: currentStepView.
+	^ button
+]
+
+{ #category : #'private - accessing' }
+Smalltalks2017Presentation >> previousStepIndex [
+
+	^ currentStepIndex - 1 max: 1
+]
+
+{ #category : #'private - accessing' }
+Smalltalks2017Presentation >> previousStepView [
+
+	^ stepViews at: self previousStepIndex
+]
+
+{ #category : #'private - rendering' }
+Smalltalks2017Presentation >> renderCurrentStepOn: aCanvas [
+
+	| view |
+
+	view := stepViews at: currentStepIndex.
+	aCanvas heading: view shortName.
+
+	aCanvas div
+		class: Smalltalks2017CssStyles stepContent;
+		with: view.
+
+	self renderStepButtonsOn: aCanvas
+]
+
+{ #category : #'private - rendering' }
+Smalltalks2017Presentation >> renderStepButtonsOn: aCanvas [
+
+	aCanvas div
+		class: Smalltalks2017CssStyles stepButtonContainer;
+		with: [ currentStepIndex = 1
+				ifFalse: [ aCanvas render: self previousStepButton ].
+
+			currentStepIndex = stepViews size
+				ifFalse: [ aCanvas render: self nextStepButton ] ]
+]
+
+{ #category : #updating }
+Smalltalks2017Presentation >> updateRoot: aRoot [
+
+	" Libraries added here are not considered until the server is restarted.
+	  Including a library with a favicon.ico will automatically use it.	"
+
+	super updateRoot: aRoot.
+	Smalltalks2017FileMetadataLibrary default updateRoot: aRoot.
+	SpinKitMetadataLibrary default updateRoot: aRoot
+]
