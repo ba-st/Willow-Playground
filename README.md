@@ -1,5 +1,6 @@
 ![Logo](resources/logos/128x128.png) Willow-Playground
 ======
+![GitHub release](https://img.shields.io/github/release/ba-st/Willow-Playground.svg)
 [![Build Status](https://travis-ci.org/ba-st/Willow-Playground.svg?branch=master)](https://travis-ci.org/ba-st/Willow-Playground)
 
 *Willow-Playground provides examples on how to use [Willow](https://github.com/ba-st/Willow) to develop a complete interactive web application*
@@ -14,7 +15,7 @@ The project source code is [MIT](LICENSE) licensed. Any contribution submitted t
 The documentation is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ### Highlights:
-- **Supported Platforms**: [Pharo 5 / Pharo 6](http://www.pharo.org/)
+- **Supported Platforms**: [Pharo 6.1 / Pharo 7](http://www.pharo.org/)
 - **Source Code Repository** and **Issue Tracking**: In this GitHub repository.
 
 ### Get started!
