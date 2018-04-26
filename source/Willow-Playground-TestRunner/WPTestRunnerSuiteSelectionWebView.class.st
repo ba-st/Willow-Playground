@@ -9,7 +9,7 @@ Class {
 		'identifiedTestCaseClassesSelection',
 		'packagesListBox'
 	],
-	#category : 'Willow-Playground-TestRunner'
+	#category : #'Willow-Playground-TestRunner-WebViews'
 }
 
 { #category : #initialization }

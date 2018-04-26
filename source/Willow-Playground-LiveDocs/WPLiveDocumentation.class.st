@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'contentView'
 	],
-	#category : 'Willow-Playground-LiveDocs'
+	#category : #'Willow-Playground-LiveDocs-Application'
 }
 
 { #category : #accessing }
@@ -65,17 +65,15 @@ WPLiveDocumentation >> initializeContainerView [
 
 	behaviorDetails := IdentifiedWebView
 		forDivNamed: 'behavior-details'
-		containing: WPLiveDocumentationBehaviorDetailedView new
+		containing: WPLiveDocumentationBehaviorWebView new
 		applying: [ :div :constants | 
 			div
 				setStyleTo: [ :style | 
 					style
 						maxHeight: 100 vh;
 						overflowY: constants css scroll ] ].
-	scopeSelection := WPLiveDocumentationScopeSelectionView new.
-	scopeSelection onBehaviorSelectedTrigger
-		executeOnClient: [ :script :canvas | script << (canvas jQuery id: behaviorDetails identifier) html: SpinKitTripleBounce new ];
-		render: behaviorDetails.
+	scopeSelection := WPLiveDocumentationScopeSelectionWebView new.
+	scopeSelection onBehaviorSelectedTrigger show: SpinKitTripleBounce new whileCallingServerToRender: behaviorDetails.
 
 	contentView := GenericContainerWebView
 		wrapping:

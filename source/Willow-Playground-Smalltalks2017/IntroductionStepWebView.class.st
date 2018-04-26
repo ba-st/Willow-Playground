@@ -4,7 +4,7 @@ I'm the introduction step
 Class {
 	#name : #IntroductionStepWebView,
 	#superclass : #PresentationStepWebView,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-WebViews'
 }
 
 { #category : #accessing }

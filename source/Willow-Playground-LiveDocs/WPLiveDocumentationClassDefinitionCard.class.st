@@ -2,28 +2,28 @@
 I'm a panel showing the class definition
 "
 Class {
-	#name : #WPLiveDocumentationClassDefinition,
+	#name : #WPLiveDocumentationClassDefinitionCard,
 	#superclass : #WAPainter,
 	#instVars : [
 		'selectedClass'
 	],
-	#category : 'Willow-Playground-LiveDocs'
+	#category : #'Willow-Playground-LiveDocs-WebViews'
 }
 
 { #category : #'instance creation' }
-WPLiveDocumentationClassDefinition class >> for: aClass [
+WPLiveDocumentationClassDefinitionCard class >> for: aClass [
 
 	^ self new initializeFor: aClass
 ]
 
 { #category : #initialization }
-WPLiveDocumentationClassDefinition >> initializeFor: aClass [
+WPLiveDocumentationClassDefinitionCard >> initializeFor: aClass [
 
 	selectedClass := aClass
 ]
 
 { #category : #initialization }
-WPLiveDocumentationClassDefinition >> renderContentOn: html [
+WPLiveDocumentationClassDefinitionCard >> renderContentOn: html [
 
 	html
 		render:

@@ -2,13 +2,13 @@
 í'm a web view showing the details for a class or trait
 "
 Class {
-	#name : #WPLiveDocumentationBehaviorDetailedView,
+	#name : #WPLiveDocumentationBehaviorWebView,
 	#superclass : #WAPainter,
-	#category : 'Willow-Playground-LiveDocs'
+	#category : #'Willow-Playground-LiveDocs-WebViews'
 }
 
 { #category : #private }
-WPLiveDocumentationBehaviorDetailedView >> buttonToBrowse: aBehavior [
+WPLiveDocumentationBehaviorWebView >> buttonToBrowse: aBehavior [
 
 	| browseButton |
 
@@ -20,7 +20,7 @@ WPLiveDocumentationBehaviorDetailedView >> buttonToBrowse: aBehavior [
 ]
 
 { #category : #private }
-WPLiveDocumentationBehaviorDetailedView >> classNameHeaderFor: aClass [
+WPLiveDocumentationBehaviorWebView >> classNameHeaderFor: aClass [
 
 	^ HeadingWebView
 		displaying: [ :canvas | 
@@ -33,7 +33,7 @@ WPLiveDocumentationBehaviorDetailedView >> classNameHeaderFor: aClass [
 ]
 
 { #category : #private }
-WPLiveDocumentationBehaviorDetailedView >> emptyPlaceholder [
+WPLiveDocumentationBehaviorWebView >> emptyPlaceholder [
 
 	^ self componentSupplier notificationBuilder
 		informational;
@@ -51,13 +51,13 @@ WPLiveDocumentationBehaviorDetailedView >> emptyPlaceholder [
 ]
 
 { #category : #private }
-WPLiveDocumentationBehaviorDetailedView >> renderClass: aClass on: html [
+WPLiveDocumentationBehaviorWebView >> renderClass: aClass on: html [
 
 	html
 		render: (self classNameHeaderFor: aClass);
-		render: (WPLiveDocumentationClassComment for: aClass);
-		render: (WPLiveDocumentationClassHiearchy for: aClass);
-		render: (WPLiveDocumentationClassDefinition for: aClass);
+		render: (WPLiveDocumentationClassCommentWebView for: aClass);
+		render: (WPLiveDocumentationClassHierarchyCard for: aClass);
+		render: (WPLiveDocumentationClassDefinitionCard for: aClass);
 		render: (HeadingWebView displaying: 'Class methods' withLevel: 3).
 	self renderMethodsIn: aClass class on: html.
 	html render: (HeadingWebView displaying: 'Instance methods' withLevel: 3).
@@ -65,7 +65,7 @@ WPLiveDocumentationBehaviorDetailedView >> renderClass: aClass on: html [
 ]
 
 { #category : #rendering }
-WPLiveDocumentationBehaviorDetailedView >> renderContentOn: html [
+WPLiveDocumentationBehaviorWebView >> renderContentOn: html [
 
 	self session applicationContext
 		withSelectedBehaviorDo: [ :behavior | 
@@ -78,15 +78,15 @@ WPLiveDocumentationBehaviorDetailedView >> renderContentOn: html [
 ]
 
 { #category : #private }
-WPLiveDocumentationBehaviorDetailedView >> renderMethodsIn: aBehavior on: html [
+WPLiveDocumentationBehaviorWebView >> renderMethodsIn: aBehavior on: html [
 
 	(aBehavior methods sorted: [ :a :b | a selector < b selector ])
 		select: [ :method | method isExtension not and: [ (method protocol includesSubstring: 'private') not ] ]
-		thenDo: [ :method | html render: (WPLiveDocumentationMethod for: method) ]
+		thenDo: [ :method | html render: (WPLiveDocumentationMethodCard for: method) ]
 ]
 
 { #category : #private }
-WPLiveDocumentationBehaviorDetailedView >> renderTrait: trait on: html [
+WPLiveDocumentationBehaviorWebView >> renderTrait: trait on: html [
 
 	html
 		render: (self traitNameHeaderFor: trait);
@@ -95,7 +95,7 @@ WPLiveDocumentationBehaviorDetailedView >> renderTrait: trait on: html [
 ]
 
 { #category : #private }
-WPLiveDocumentationBehaviorDetailedView >> traitNameHeaderFor: aTrait [
+WPLiveDocumentationBehaviorWebView >> traitNameHeaderFor: aTrait [
 
 	^ HeadingWebView
 		displaying: [ :canvas | 

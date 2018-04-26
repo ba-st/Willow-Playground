@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'applicationContext'
 	],
-	#category : 'Willow-Playground-LiveDocs'
+	#category : #'Willow-Playground-LiveDocs-Application'
 }
 
 { #category : #accessing }

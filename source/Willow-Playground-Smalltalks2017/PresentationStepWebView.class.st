@@ -4,7 +4,7 @@ I'm an abstract presentation step. Providing facilities used by all the steps.
 Class {
 	#name : #PresentationStepWebView,
 	#superclass : #WAPainter,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-WebViews'
 }
 
 { #category : #'private-accessing' }

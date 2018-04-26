@@ -2,18 +2,18 @@
 I'm a web view responsible for selecting the current scope (class or trait to navigate)
 "
 Class {
-	#name : #WPLiveDocumentationScopeSelectionView,
+	#name : #WPLiveDocumentationScopeSelectionWebView,
 	#superclass : #WAPainter,
 	#instVars : [
 		'identifiedBehaviorSelection',
 		'behaviorsListBox',
 		'packagesDropdown'
 	],
-	#category : 'Willow-Playground-LiveDocs'
+	#category : #'Willow-Playground-LiveDocs-WebViews'
 }
 
 { #category : #initialization }
-WPLiveDocumentationScopeSelectionView >> initialize [
+WPLiveDocumentationScopeSelectionWebView >> initialize [
 
 	super initialize.
 	self
@@ -23,7 +23,7 @@ WPLiveDocumentationScopeSelectionView >> initialize [
 ]
 
 { #category : #initialization }
-WPLiveDocumentationScopeSelectionView >> initializeBehaviorsListBox [
+WPLiveDocumentationScopeSelectionWebView >> initializeBehaviorsListBox [
 
 	behaviorsListBox := self componentSupplier singleSelectionListBoxDisplayingAtOnce: 30 applying: [ :listBox | listBox labelItemsWith: [ :class | class name ] ].
 	behaviorsListBox onTrigger
@@ -32,7 +32,7 @@ WPLiveDocumentationScopeSelectionView >> initializeBehaviorsListBox [
 ]
 
 { #category : #initialization }
-WPLiveDocumentationScopeSelectionView >> initializeIdentifiedBehaviorSelection [
+WPLiveDocumentationScopeSelectionWebView >> initializeIdentifiedBehaviorSelection [
 
 	identifiedBehaviorSelection := IdentifiedWebView
 		forDivNamed: 'behavior-selection'
@@ -46,7 +46,7 @@ WPLiveDocumentationScopeSelectionView >> initializeIdentifiedBehaviorSelection [
 ]
 
 { #category : #initialization }
-WPLiveDocumentationScopeSelectionView >> initializePackagesDropdown [
+WPLiveDocumentationScopeSelectionWebView >> initializePackagesDropdown [
 
 	packagesDropdown := self componentSupplier dropdownListApplying: [ :dropdown | (dropdown labelItemsWith: [ :package | package name ]) + BootstrapSelectLiveSearchCommand default ].
 	packagesDropdown onTrigger
@@ -56,7 +56,7 @@ WPLiveDocumentationScopeSelectionView >> initializePackagesDropdown [
 ]
 
 { #category : #private }
-WPLiveDocumentationScopeSelectionView >> labeledViewDisplaying: aLabel boundTo: aField [
+WPLiveDocumentationScopeSelectionWebView >> labeledViewDisplaying: aLabel boundTo: aField [
 
 	^ BootstrapLabeledWebView
 		displaying: aLabel
@@ -66,13 +66,13 @@ WPLiveDocumentationScopeSelectionView >> labeledViewDisplaying: aLabel boundTo: 
 ]
 
 { #category : #configuring }
-WPLiveDocumentationScopeSelectionView >> onBehaviorSelectedTrigger [
+WPLiveDocumentationScopeSelectionWebView >> onBehaviorSelectedTrigger [
 
 	^ behaviorsListBox onTrigger 
 ]
 
 { #category : #rendering }
-WPLiveDocumentationScopeSelectionView >> renderContentOn: html [
+WPLiveDocumentationScopeSelectionWebView >> renderContentOn: html [
 
 	html
 		render:
@@ -91,5 +91,5 @@ WPLiveDocumentationScopeSelectionView >> renderContentOn: html [
 						applying: [  ]
 						withLegend: 'Classes & Traits'
 						applying: [  ]);
-				buildApplying: [  ])
+				build)
 ]

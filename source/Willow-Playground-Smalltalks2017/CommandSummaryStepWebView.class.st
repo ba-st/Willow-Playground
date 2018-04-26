@@ -4,7 +4,7 @@ I'm a step showing a command summary.
 Class {
 	#name : #CommandSummaryStepWebView,
 	#superclass : #PresentationStepWebView,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-WebViews'
 }
 
 { #category : #'private-accessing' }

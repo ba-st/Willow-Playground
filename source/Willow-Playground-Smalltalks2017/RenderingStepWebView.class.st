@@ -4,7 +4,7 @@ I'm a step showing the rendering basics.
 Class {
 	#name : #RenderingStepWebView,
 	#superclass : #PresentationStepWebView,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-WebViews'
 }
 
 { #category : #'private-accessing' }

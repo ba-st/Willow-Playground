@@ -4,7 +4,7 @@ I rprovide some CSS constants
 Class {
 	#name : #Smalltalks2017CssStyles,
 	#superclass : #Object,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-Libraries'
 }
 
 { #category : #accessing }

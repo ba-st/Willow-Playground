@@ -10,7 +10,7 @@ Class {
 		'selectedPackageCategories',
 		'messageTallyOptional'
 	],
-	#category : 'Willow-Playground-TestRunner'
+	#category : #'Willow-Playground-TestRunner-Application'
 }
 
 { #category : #Querying }
