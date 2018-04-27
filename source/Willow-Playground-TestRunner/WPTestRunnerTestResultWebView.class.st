@@ -4,7 +4,7 @@ I will show the test result
 Class {
 	#name : #WPTestRunnerTestResultWebView,
 	#superclass : #WAPainter,
-	#category : 'Willow-Playground-TestRunner'
+	#category : #'Willow-Playground-TestRunner-WebViews'
 }
 
 { #category : #rendering }

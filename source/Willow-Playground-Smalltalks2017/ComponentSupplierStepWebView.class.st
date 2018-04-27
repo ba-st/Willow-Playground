@@ -9,7 +9,7 @@ Class {
 		'dropdown',
 		'field'
 	],
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-WebViews'
 }
 
 { #category : #accessing }

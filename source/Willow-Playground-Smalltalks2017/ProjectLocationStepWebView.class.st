@@ -4,7 +4,7 @@ I'm a step showing the related projects and his locations.
 Class {
 	#name : #ProjectLocationStepWebView,
 	#superclass : #PresentationStepWebView,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-WebViews'
 }
 
 { #category : #'private-accessing' }

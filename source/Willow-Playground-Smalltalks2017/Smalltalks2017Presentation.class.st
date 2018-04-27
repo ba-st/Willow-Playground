@@ -9,7 +9,7 @@ Class {
 		'currentStepIndex',
 		'stepViews'
 	],
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-Application'
 }
 
 { #category : #accessing }

@@ -4,7 +4,7 @@ I'm a step showing a non interactive button
 Class {
 	#name : #NonInteractiveButtonStepWebView,
 	#superclass : #PresentationStepWebView,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-WebViews'
 }
 
 { #category : #accessing }

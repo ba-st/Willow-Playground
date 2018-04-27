@@ -4,7 +4,7 @@ I generate the necessary CSS
 Class {
 	#name : #Smalltalks2017CascadingStyleSheetBuilder,
 	#superclass : #ReflectiveCascadingStyleSheetBuilder,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-Libraries'
 }
 
 { #category : #'style declaration' }

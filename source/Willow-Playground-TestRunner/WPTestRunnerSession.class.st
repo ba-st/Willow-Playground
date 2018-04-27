@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'applicationContext'
 	],
-	#category : 'Willow-Playground-TestRunner'
+	#category : #'Willow-Playground-TestRunner-Application'
 }
 
 { #category : #accessing }

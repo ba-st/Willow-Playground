@@ -8,7 +8,7 @@ Class {
 		'selectedPackageOptional',
 		'selectedBehaviorOptional'
 	],
-	#category : 'Willow-Playground-LiveDocs'
+	#category : #'Willow-Playground-LiveDocs-Application'
 }
 
 { #category : #Querying }

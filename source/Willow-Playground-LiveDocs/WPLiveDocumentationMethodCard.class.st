@@ -2,23 +2,23 @@
 I'm a panel showing an specific method 
 "
 Class {
-	#name : #WPLiveDocumentationMethod,
+	#name : #WPLiveDocumentationMethodCard,
 	#superclass : #WAPainter,
 	#instVars : [
 		'method',
 		'methodPanel'
 	],
-	#category : 'Willow-Playground-LiveDocs'
+	#category : #'Willow-Playground-LiveDocs-WebViews'
 }
 
 { #category : #'instance creation' }
-WPLiveDocumentationMethod class >> for: aMethod [
+WPLiveDocumentationMethodCard class >> for: aMethod [
 
 	^self new initializeFor: aMethod 
 ]
 
 { #category : #initialization }
-WPLiveDocumentationMethod >> initializeFor: aMethod [
+WPLiveDocumentationMethodCard >> initializeFor: aMethod [
 
 	method := aMethod.
 	methodPanel := self componentSupplier panelBuilder
@@ -34,7 +34,7 @@ WPLiveDocumentationMethod >> initializeFor: aMethod [
 ]
 
 { #category : #initialization }
-WPLiveDocumentationMethod >> panelContentFor: aMethod [
+WPLiveDocumentationMethodCard >> panelContentFor: aMethod [
 
 	| tabsBuilder |
 
@@ -55,13 +55,13 @@ WPLiveDocumentationMethod >> panelContentFor: aMethod [
 ]
 
 { #category : #initialization }
-WPLiveDocumentationMethod >> renderContentOn: html [
+WPLiveDocumentationMethodCard >> renderContentOn: html [
 
 	html render: methodPanel
 ]
 
 { #category : #initialization }
-WPLiveDocumentationMethod >> sourceCodeFor: aMethod [
+WPLiveDocumentationMethodCard >> sourceCodeFor: aMethod [
 
 	^ [ :canvas | 
 	canvas
@@ -74,7 +74,7 @@ WPLiveDocumentationMethod >> sourceCodeFor: aMethod [
 ]
 
 { #category : #initialization }
-WPLiveDocumentationMethod >> symbolicBytecodesFor: aMethod [
+WPLiveDocumentationMethodCard >> symbolicBytecodesFor: aMethod [
 
 	^ [ :canvas | 
 	canvas

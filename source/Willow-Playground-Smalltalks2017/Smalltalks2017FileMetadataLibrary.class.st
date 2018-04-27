@@ -4,7 +4,7 @@ I'm a library providing some static assets, javascript and css
 Class {
 	#name : #Smalltalks2017FileMetadataLibrary,
 	#superclass : #WADeploymentAwareFileMetadataLibrary,
-	#category : 'Willow-Playground-Smalltalks2017'
+	#category : #'Willow-Playground-Smalltalks2017-Libraries'
 }
 
 { #category : #accessing }

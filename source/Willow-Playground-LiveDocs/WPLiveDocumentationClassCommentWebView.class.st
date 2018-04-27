@@ -2,28 +2,28 @@
 I'm responsible of showing the class comment if available
 "
 Class {
-	#name : #WPLiveDocumentationClassComment,
+	#name : #WPLiveDocumentationClassCommentWebView,
 	#superclass : #WAPainter,
 	#instVars : [
 		'selectedClass'
 	],
-	#category : 'Willow-Playground-LiveDocs'
+	#category : #'Willow-Playground-LiveDocs-WebViews'
 }
 
 { #category : #'instance creation' }
-WPLiveDocumentationClassComment class >> for: aClass [
+WPLiveDocumentationClassCommentWebView class >> for: aClass [
 
 	^ self new initializeFor: aClass
 ]
 
 { #category : #initialization }
-WPLiveDocumentationClassComment >> initializeFor: aClass [
+WPLiveDocumentationClassCommentWebView >> initializeFor: aClass [
 
 	selectedClass := aClass
 ]
 
 { #category : #rendering }
-WPLiveDocumentationClassComment >> renderContentOn: html [
+WPLiveDocumentationClassCommentWebView >> renderContentOn: html [
 
 	selectedClass hasComment
 		ifTrue: [ html blockquote: [ selectedClass comment lines do: [ :line | html render: line ] separatedBy: [ html break ] ] ]
