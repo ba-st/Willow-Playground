@@ -219,12 +219,10 @@ Smalltalks2017Presentation >> renderStepButtonsOn: aCanvas [
 ]
 
 { #category : #updating }
-Smalltalks2017Presentation >> updateRoot: aRoot [
+Smalltalks2017Presentation >> requiredLibraries [
 
 	" Libraries added here are not considered until the server is restarted.
 	  Including a library with a favicon.ico will automatically use it.	"
 
-	super updateRoot: aRoot.
-	Smalltalks2017FileMetadataLibrary default updateRoot: aRoot.
-	SpinKitMetadataLibrary default updateRoot: aRoot
+	^ {Smalltalks2017FileMetadataLibrary default. 	SpinKitMetadataLibrary default}
 ]

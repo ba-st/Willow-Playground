@@ -102,8 +102,7 @@ WPLiveDocumentation >> newComponentSupplier [
 ]
 
 { #category : #updating }
-WPLiveDocumentation >> updateRoot: aRoot [
+WPLiveDocumentation >> requiredLibraries [
 
-	super updateRoot: aRoot.
-	SpinKitMetadataLibrary default updateRoot: aRoot
+	^ {SpinKitMetadataLibrary default}
 ]

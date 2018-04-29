@@ -92,6 +92,12 @@ WPTestRunner >> newComponentSupplier [
 		typeaheadLibrary: (self deploymentMode libraryFor: BootstrapTypeaheadLibrary) default
 ]
 
+{ #category : #updating }
+WPTestRunner >> requiredLibraries [
+
+	^ {SpinKitMetadataLibrary default}
+]
+
 { #category : #private }
 WPTestRunner >> toolbarRenderingOnAction: testResult [
 
@@ -113,11 +119,4 @@ WPTestRunner >> toolbarRenderingOnAction: testResult [
 				render: testResult ].
 
 	^ toolbar
-]
-
-{ #category : #updating }
-WPTestRunner >> updateRoot: aRoot [
-
-	super updateRoot: aRoot.
-	SpinKitMetadataLibrary default updateRoot: aRoot
 ]
