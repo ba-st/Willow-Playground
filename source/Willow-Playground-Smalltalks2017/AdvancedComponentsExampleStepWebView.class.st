@@ -55,10 +55,11 @@ AdvancedComponentsExampleStepWebView >> initializePeriodical [
 
 { #category : #initialization }
 AdvancedComponentsExampleStepWebView >> initializeTable [
+
 	table := TableWebViewBuilder new
-	  addColumnTitled: 'Decimal' rendering: [ :number | number ];
-	  addColumnTitled: 'Hex' rendering: [ :number | number printStringHex ];
-	  addColumnTitled: 'Roman' rendering: [ :number | number printStringRoman ];
+	  addColumn: [:column | column titled: 'Decimal'; rendering: [ :number | number ]];
+	  addColumn: [:column | column titled: 'Hex'; rendering: [ :number | number printStringHex ]];
+	  addColumn: [:column | column titled: 'Roman'; rendering: [ :number | number printStringRoman ]];
 	  buildApplying: [ :theTable | theTable addClass bootstrap table ].
 	table changeContentsTo: #(26 51 78)
 ]

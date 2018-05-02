@@ -32,14 +32,14 @@ BaselineOfWillowPlayground >> setUpDependencies: spec [
 	spec
 		baseline: 'WillowBootstrap'
 			with: [ spec
-				repository: 'github://ba-st/Willow-Bootstrap:v8/source';
+				repository: 'github://ba-st/Willow-Bootstrap:v9/source';
 				loads: #('Deployment') ];
 		import: 'WillowBootstrap'.
 
 	spec
 		baseline: 'WillowJQueryUI'
 			with: [ spec
-				repository: 'github://ba-st/Willow-JQueryUI:v7/source';
+				repository: 'github://ba-st/Willow-JQueryUI:v8/source';
 				loads: #('Deployment') ];
 		import: 'WillowJQueryUI'.
 
