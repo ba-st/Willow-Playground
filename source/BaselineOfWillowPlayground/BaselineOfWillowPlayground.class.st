@@ -16,9 +16,9 @@ BaselineOfWillowPlayground >> baseline: spec [
 		do: [ self setUpDependencies: spec.
 			spec
 				package: 'Willow-Playground-Smalltalks2017'
-					with: [ spec requires: #('WillowBootstrap' 'WillowJQueryUI' 'WillowSpinKit') ];
+					with: [ spec requires: #('WillowBootstrap' 'WillowSpinKit') ];
 				package: 'Willow-Playground-TestRunner'
-					with: [ spec requires: #('WillowBootstrap' 'WillowJQueryUI' 'WillowSpinKit') ];
+					with: [ spec requires: #('WillowBootstrap' 'WillowSpinKit') ];
 				package: 'Willow-Playground-LiveDocs'
 					with: [ spec requires: #('WillowBootstrap' 'WillowSpinKit') ];
 				group: 'default'
@@ -35,13 +35,6 @@ BaselineOfWillowPlayground >> setUpDependencies: spec [
 				repository: 'github://ba-st/Willow-Bootstrap:v9/source';
 				loads: #('Deployment') ];
 		import: 'WillowBootstrap'.
-
-	spec
-		baseline: 'WillowJQueryUI'
-			with: [ spec
-				repository: 'github://ba-st/Willow-JQueryUI:v8/source';
-				loads: #('Deployment') ];
-		import: 'WillowJQueryUI'.
 
 	spec
 		baseline: 'WillowSpinKit'
