@@ -51,14 +51,14 @@ WPTestRunnerTestResultDetailsDialog >> renderErrorsFor: aTestResult on: html [
 			html render: (HeadingWebView displaying: ('Errors (<1p>)' expandMacrosWith: aTestResult errorCount) withLevel: 4 applying: [ :heading | heading addClass bootstrap textDanger ]).
 
 			errorsTable := self componentSupplier tableBuilder
-				addColumnTitled: 'Class'
-					rendering: [ :failure | failure class name ]
-					applyingToCells: [  ]
-					applyingToHeading: [ :headingCell | headingCell addClass bootstrap textDanger ];
-				addColumnTitled: 'Selector'
-					rendering: [ :failure | failure selector ]
-					applyingToCells: [  ]
-					applyingToHeading: [ :headingCell | headingCell addClass bootstrap textDanger ];
+				addColumn: [ :column | 
+					column
+						titled: 'Class' applying: [ :headingCell | headingCell addClass bootstrap textDanger ];
+						rendering: [ :failure | failure class name ] ];
+				addColumn: [ :column | 
+					column
+						titled: 'Selector' applying: [ :headingCell | headingCell addClass bootstrap textDanger ];
+						rendering: [ :failure | failure selector ] ];
 				build.
 			errorsTable changeContentsTo: aTestResult errors.
 			html render: errorsTable ]
@@ -73,14 +73,14 @@ WPTestRunnerTestResultDetailsDialog >> renderFailuresFor: aTestResult on: html [
 			html render: (HeadingWebView displaying: ('Failures (<1p>)' expandMacrosWith: aTestResult failureCount) withLevel: 4 applying: [ :heading | heading addClass bootstrap textWarning ]).
 
 			failuresTable := self componentSupplier tableBuilder
-				addColumnTitled: 'Class'
-					rendering: [ :failure | failure class name ]
-					applyingToCells: [  ]
-					applyingToHeading: [ :headingCell | headingCell addClass bootstrap textWarning ];
-				addColumnTitled: 'Selector'
-					rendering: [ :failure | failure selector ]
-					applyingToCells: [  ]
-					applyingToHeading: [ :headingCell | headingCell addClass bootstrap textWarning ];
+				addColumn: [ :column | 
+					column
+						titled: 'Class' applying: [ :headingCell | headingCell addClass bootstrap textWarning ];
+						rendering: [ :failure | failure class name ] ];
+				addColumn: [ :column | 
+					column
+						titled: 'Selector' applying: [ :headingCell | headingCell addClass bootstrap textWarning ];
+						rendering: [ :failure | failure selector ] ];
 				build.
 			failuresTable changeContentsTo: aTestResult failures.
 			html render: failuresTable ]

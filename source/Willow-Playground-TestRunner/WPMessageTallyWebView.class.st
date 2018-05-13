@@ -97,16 +97,24 @@ WPMessageTallyWebView >> renderLeavesOn: html [
 	html render: (self headingRendering: 'Leaves').
 
 	leavesTable := self componentSupplier tableBuilder
-		addColumnTitled: 'Percent'
-			rendering: [ :node | self formattedPercentagFor: node ]
-			applyingToCells: [ :cell | cell addClass bootstrap textRight ]
-			applyingToHeading: [  ];
-		addColumnTitled: 'Time (ms)'
-			rendering: [ :node | self timeFor: node ]
-			applyingToCells: [ :cell | cell addClass bootstrap textRight ]
-			applyingToHeading: [  ];
-		addColumnTitled: 'Class' rendering: [ :node | [ :canvas | canvas strong: node method methodClass ] ];
-		addColumnTitled: 'Selector' rendering: [ :node | node method selector ];
+		addColumn: [ :column | 
+			column
+				titled: 'Percent';
+				rendering: [ :node | self formattedPercentagFor: node ];
+				applyingToCells: [ :cell | cell addClass bootstrap textRight ] ];
+		addColumn: [ :column | 
+			column
+				titled: 'Time (ms)';
+				rendering: [ :node | self timeFor: node ];
+				applyingToCells: [ :cell | cell addClass bootstrap textRight ] ];
+		addColumn: [ :column | 
+			column
+				titled: 'Class';
+				rendering: [ :node | [ :canvas | canvas strong: node method methodClass ] ] ];
+		addColumn: [ :column | 
+			column
+				titled: 'Selector';
+				rendering: [ :node | node method selector ] ];
 		build.
 
 	leavesTable changeContentsTo: self tallyLeavesSorted.
