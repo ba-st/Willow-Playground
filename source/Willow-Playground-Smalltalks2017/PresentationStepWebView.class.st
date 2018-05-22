@@ -35,7 +35,7 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 		url: ('#<1s>' expandMacrosWith: carouselIdentifier);
 		attributeAt: 'role' put: 'button';
 		attributeAt: 'data-slide' put: aSlideTarget;
-		setStyleTo: [ :style :constants | 
+		setInlineStyleTo: [ :style :constants | 
 			style
 				maxWidth: 50 px;
 				background: constants >> #none ];

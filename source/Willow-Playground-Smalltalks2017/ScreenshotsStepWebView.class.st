@@ -57,7 +57,7 @@ ScreenshotsStepWebView >> screenshotFor: aSymbol describedBy: aCaption [
 	html render: (ImageWebView locatedAt: Smalltalks2017FileMetadataLibrary / aSymbol applying: [ :theImage | theImage addClass smalltalks2017 screenshot ]).
 	html div
 		class: 'carousel-caption';
-		setStyleTo: [ :style :constants | 
+		setInlineStyleTo: [ :style :constants | 
 			style
 				color: constants >> #colors >> #black;
 				paddingBottom: 0 ];
