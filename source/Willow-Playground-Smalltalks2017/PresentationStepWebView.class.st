@@ -35,10 +35,10 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 		url: ('#<1s>' expandMacrosWith: carouselIdentifier);
 		attributeAt: 'role' put: 'button';
 		attributeAt: 'data-slide' put: aSlideTarget;
-		style:
-			(CssDeclarationBlock new
+		setStyleTo: [ :style :constants | 
+			style
 				maxWidth: 50 px;
-				background: aCanvas constants >> #css >> #none);
+				background: constants >> #none ];
 		with: [ aCanvas span
 				classes:
 					{BootstrapCssStyles glyphicon.
