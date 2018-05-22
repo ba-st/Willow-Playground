@@ -38,7 +38,7 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 		style:
 			(CssDeclarationBlock new
 				maxWidth: 50 px;
-				background: CssConstants none);
+				background: aCanvas constants >> #css >> #none);
 		with: [ aCanvas span
 				classes:
 					{BootstrapCssStyles glyphicon.

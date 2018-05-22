@@ -59,7 +59,7 @@ ScreenshotsStepWebView >> screenshotFor: aSymbol describedBy: aCaption [
 		class: 'carousel-caption';
 		style:
 			(CssDeclarationBlock new
-				color: CssSVGColors black;
+				color: html constants >> #css >> #colors >> #black;
 				paddingBottom: 0);
 		with: aCaption ]
 ]
