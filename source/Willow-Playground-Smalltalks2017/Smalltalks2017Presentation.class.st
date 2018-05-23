@@ -200,7 +200,7 @@ Smalltalks2017Presentation >> renderCurrentStepOn: aCanvas [
 	aCanvas heading: view shortName.
 
 	aCanvas div
-		class: Smalltalks2017CssStyles stepContent;
+		class: Willow classes >> #smalltalks2017 >> #stepContent;
 		with: view.
 
 	self renderStepButtonsOn: aCanvas
@@ -210,7 +210,7 @@ Smalltalks2017Presentation >> renderCurrentStepOn: aCanvas [
 Smalltalks2017Presentation >> renderStepButtonsOn: aCanvas [
 
 	aCanvas div
-		class: Smalltalks2017CssStyles stepButtonContainer;
+		class: Willow classes >> #smalltalks2017 >> #stepButtonContainer;
 		with: [ currentStepIndex = 1
 				ifFalse: [ aCanvas render: self previousStepButton ].
 
