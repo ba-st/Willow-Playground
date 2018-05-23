@@ -1,37 +1,37 @@
 Extension { #name : #ComponentClassificationCommandBuilder }
 
-{ #category : #'*Willow-Playground-Smalltalks2017-Smalltalks2017' }
+{ #category : #'*Willow-Playground-Smalltalks2017' }
 ComponentClassificationCommandBuilder >> browseStep [
 
-	^ self commandStyledWith: styleProviderBinding content browseStep
+	^ self commandStyledWith: #browseStep
 ]
 
-{ #category : #'*Willow-Playground-Smalltalks2017-Smalltalks2017' }
+{ #category : #'*Willow-Playground-Smalltalks2017' }
 ComponentClassificationCommandBuilder >> nextStep [
 
-	^ self commandStyledWith: styleProviderBinding content nextStep
+	^ self commandStyledWith: #nextStep
 ]
 
-{ #category : #'*Willow-Playground-Smalltalks2017-Smalltalks2017' }
+{ #category : #'*Willow-Playground-Smalltalks2017' }
 ComponentClassificationCommandBuilder >> presentationArea [
 
-	^ self commandStyledWith: styleProviderBinding content presentationArea
+	^ self commandStyledWith: #presentationArea
 ]
 
-{ #category : #'*Willow-Playground-Smalltalks2017-Smalltalks2017' }
+{ #category : #'*Willow-Playground-Smalltalks2017' }
 ComponentClassificationCommandBuilder >> previousStep [
 
-	^ self commandStyledWith: styleProviderBinding content previousStep
+	^ self commandStyledWith: #previousStep
 ]
 
-{ #category : #'*Willow-Playground-Smalltalks2017-Smalltalks2017' }
+{ #category : #'*Willow-Playground-Smalltalks2017' }
 ComponentClassificationCommandBuilder >> screenshot [
 
-	^ self commandStyledWith: styleProviderBinding content screenshot
+	^ self commandStyledWith: #screenshot
 ]
 
-{ #category : #'*Willow-Playground-Smalltalks2017-Smalltalks2017' }
+{ #category : #'*Willow-Playground-Smalltalks2017' }
 ComponentClassificationCommandBuilder >> smalltalks2017 [
 
-	styleProviderBinding := Binding to: Smalltalks2017CssStyles
+	classesProvider := classesProvider >> #smalltalks2017
 ]
