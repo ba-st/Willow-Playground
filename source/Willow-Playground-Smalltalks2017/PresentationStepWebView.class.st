@@ -29,23 +29,21 @@ PresentationStepWebView >> description [
 PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo: aSlideTarget anchorStyledWith: anAnchorClass spanStyledWith: aSpanClass named: aName on: aCanvas [
 
 	aCanvas anchor
-		classes:
-			{anAnchorClass.
-			'carousel-control'};
+		class: anAnchorClass;
+		class: 'carousel-control';
 		url: ('#<1s>' expandMacrosWith: carouselIdentifier);
 		attributeAt: 'role' put: 'button';
 		attributeAt: 'data-slide' put: aSlideTarget;
-		setInlineStyleTo: [ :style :constants | 
+		setStyleTo: [ :style :constants | 
 			style
 				maxWidth: 50 px;
 				background: constants >> #none ];
 		with: [ aCanvas span
-				classes:
-					{Willow classes >> #bootstrap >>#glyphicon.
-					aSpanClass};
+				class: Willow classes >> #bootstrap >> #glyphicon;
+				class: aSpanClass;
 				attributeAt: 'aria-hidden' put: true.
 			aCanvas span
-				class: Willow classes  >> #bootstrap >> #screenReaderOnly;
+				class: Willow classes >> #bootstrap >> #screenReaderOnly;
 				with: aName ]
 ]
 

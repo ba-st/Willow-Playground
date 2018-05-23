@@ -73,12 +73,12 @@ WPMessageTallyWebView >> renderBoundedContainerWrapping: aRenderable on: html up
 		render:
 			(GenericContainerWebView
 				wrapping: aRenderable
-				applying: [ :div :constants | 
+				applying: [ :div  | 
 					(div
-						setStyleTo: [ :style | 
+						setStyleTo: [ :style :constants| 
 							style
 								maxHeight: aMaxHeight;
-								overflowY: constants >> #css >> #scroll ]) + div addClass bootstrap small ])
+								overflowY: constants >> #scroll ]) + div addClass bootstrap small ])
 ]
 
 { #category : #rendering }
