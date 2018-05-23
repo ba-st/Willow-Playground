@@ -45,7 +45,7 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 					aSpanClass};
 				attributeAt: 'aria-hidden' put: true.
 			aCanvas span
-				class: 'sr-only';
+				class: Willow classes  >> #bootstrap >> #screenReaderOnly;
 				with: aName ]
 ]
 

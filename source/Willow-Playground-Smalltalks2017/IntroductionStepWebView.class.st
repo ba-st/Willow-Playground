@@ -36,7 +36,7 @@ IntroductionStepWebView >> renderContentOn: aCanvas [
 
 	grid := self componentSupplier gridBuilder
 		columnsWidths: #(2 10);
-		applyingToCells: [ :cell :constants | cell setStyleTo: [ :style | style textAlign: constants css justify ] ];
+		applyingToCells: [ :cell :constants | cell setStyleTo: [ :style | style textAlign: constants >> #css >> #justify ] ];
 		addContent: self willowLogoView;
 		addContent: [ :html | 
 			html
