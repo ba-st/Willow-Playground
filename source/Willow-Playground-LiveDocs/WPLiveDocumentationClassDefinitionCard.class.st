@@ -31,7 +31,7 @@ WPLiveDocumentationClassDefinitionCard >> renderContentOn: html [
 				headingDisplaying: 'Definition';
 				wrapping: [ :canvas | 
 					canvas definitionList
-						class: BootstrapCssStyles definitionListHorizontal;
+						class: Willow classes >> #bootstrap >>#definitionListHorizontal;
 						with: [ canvas
 								definitionTerm: 'Superclass';
 								definitionData: (selectedClass superclass ifNotNil: [ :superclass | superclass name ]);

@@ -41,7 +41,7 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 				background: constants >> #none ];
 		with: [ aCanvas span
 				classes:
-					{BootstrapCssStyles glyphicon.
+					{Willow classes >> #bootstrap >>#glyphicon.
 					aSpanClass};
 				attributeAt: 'aria-hidden' put: true.
 			aCanvas span
@@ -116,7 +116,7 @@ PresentationStepWebView >> renderSlidesForAll: aRenderableCollection on: aCanvas
 			component := aCanvas div.
 			component class: 'item'.
 			renderable = aRenderableCollection first
-				ifTrue: [ component class: BootstrapCssStyles active ].
+				ifTrue: [ component class: Willow classes >> #bootstrap >>#active ].
 			component with: renderable ]
 ]
 

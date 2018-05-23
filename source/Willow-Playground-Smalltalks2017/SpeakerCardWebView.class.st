@@ -27,7 +27,7 @@ SpeakerCardWebView >> contactInfoByEMail: mailUser andGithub: githubUser [
 	^ [ :html | 
 	html
 		small: [ html definitionList
-				class: BootstrapCssStyles definitionListHorizontal;
+				class: Willow classes >> #bootstrap >>#definitionListHorizontal;
 				with: [ html
 						definitionTerm: 'Work E-Mail';
 						definitionData: ('<1s>@mercapsoftware.com' expandMacrosWith: mailUser);

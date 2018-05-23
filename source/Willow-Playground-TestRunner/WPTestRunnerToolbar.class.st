@@ -69,9 +69,9 @@ WPTestRunnerToolbar >> onRunSelectedTestsTrigger [
 WPTestRunnerToolbar >> renderContentOn: html [
 
 	html div
-		class: BootstrapCssStyles buttonToolbar;
+		class: Willow classes >> #bootstrap >>#buttonToolbar;
 		with: [ html div
-				class: BootstrapCssStyles buttonGroup;
+				class: Willow classes >> #bootstrap >>#buttonGroup;
 				with: [ html
 						render: runSelectedTestsButton;
 						render: runProfiledButton ].
