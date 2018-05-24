@@ -4,6 +4,9 @@ I generate the necessary CSS
 Class {
 	#name : #Smalltalks2017CascadingStyleSheetBuilder,
 	#superclass : #ReflectiveCascadingStyleSheetBuilder,
+	#pools : [
+		'Willow'
+	],
 	#category : #'Willow-Playground-Smalltalks2017-Libraries'
 }
 
@@ -11,8 +14,8 @@ Class {
 Smalltalks2017CascadingStyleSheetBuilder class >> initialize [
 
 	<ignoreForCoverage>
-	Willow classes bind: #smalltalks2017 to: Namespace new.
-	(Willow classes >> #smalltalks2017)
+	Classification bind: #smalltalks2017 to: Namespace new.
+	(Classification >> #smalltalks2017)
 		bind: #stepContent to: 'stepContent';
 		bind: #screenshot to: 'screenshot';
 		bind: #previousStep to: 'previousStep';
@@ -26,7 +29,7 @@ Smalltalks2017CascadingStyleSheetBuilder class >> initialize [
 Smalltalks2017CascadingStyleSheetBuilder >> declareBrowseStepButtonStyleIn: aBuilder [
 
 	aBuilder
-		declareRuleSetFor: [ :selector | selector class: Willow classes >> #smalltalks2017 >> #browseStep ]
+		declareRuleSetFor: [ :selector | selector class: self smalltalks2017 >> #browseStep ]
 			with: [ :style :constants | 
 			style
 				zIndex: 1;
@@ -34,7 +37,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareBrowseStepButtonStyleIn: aBui
 				marginTop: 5 px;
 				right: 9 vh;
 				fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' ];
-		declareRuleSetFor: [ :selector | (selector div class: 'carousel-inner') button class: Willow classes >> #smalltalks2017 >> #browseStep ] with: [ :style | style right: 2 vh ]
+		declareRuleSetFor: [ :selector | (selector div class: 'carousel-inner') button class: self smalltalks2017 >> #browseStep ] with: [ :style | style right: 2 vh ]
 ]
 
 { #category : #'style declaration' }
@@ -53,7 +56,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareDisabledButtonStyleIn: aBuild
 Smalltalks2017CascadingStyleSheetBuilder >> declarePresentationAreaStyleIn: aBuilder [
 
 	aBuilder
-		declareRuleSetFor: [ :selector | selector class: Willow classes >> #smalltalks2017 >> #presentationArea ]
+		declareRuleSetFor: [ :selector | selector class: self smalltalks2017 >> #presentationArea ]
 		with: [ :style :constants | 
 			style
 				width: 90 vw;
@@ -65,7 +68,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declarePresentationAreaStyleIn: aBui
 Smalltalks2017CascadingStyleSheetBuilder >> declareScreenshotStyleIn: aBuilder [
 
 	aBuilder
-		declareRuleSetFor: [ :selector | selector image class: Willow classes >> #smalltalks2017 >> #screenshot ]
+		declareRuleSetFor: [ :selector | selector image class: self smalltalks2017 >> #screenshot ]
 		with: [ :style :constants | 
 			style
 				maxHeight: 70 vh;
@@ -83,7 +86,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareSourceCodeStyleIn: aBuilder [
 Smalltalks2017CascadingStyleSheetBuilder >> declareStepButtonsStyleIn: aBuilder [
 
 	aBuilder
-		declareRuleSetFor: [ :selector | selector div class: Willow classes >> #smalltalks2017 >> #stepButtonContainer ]
+		declareRuleSetFor: [ :selector | selector div class: self smalltalks2017 >> #stepButtonContainer ]
 		with: [ :style :constants | 
 			style
 				position: constants >> #fixed;
@@ -95,7 +98,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareStepButtonsStyleIn: aBuilder 
 Smalltalks2017CascadingStyleSheetBuilder >> declareStepContentStyleIn: aBuilder [
 
 	aBuilder
-		declareRuleSetFor: [ :selector | selector div class: Willow classes >> #smalltalks2017 >> #stepContent ]
+		declareRuleSetFor: [ :selector | selector div class: self smalltalks2017 >> #stepContent ]
 		with: [ :style :constants | 
 			style
 				maxHeight: 80 vh;
@@ -106,14 +109,20 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareStepContentStyleIn: aBuilder 
 Smalltalks2017CascadingStyleSheetBuilder >> declareUnorderedListStyleIn: aBuilder [
 
 	aBuilder
-		declareRuleSetFor: [ :selector | (selector div class: Willow classes >> #smalltalks2017 >> #stepContent) * selector unorderedList ]
+		declareRuleSetFor: [ :selector | (selector div class: self smalltalks2017 >> #stepContent) * selector unorderedList ]
 			with: [ :style :constants | 
 			style
 				display: constants >> #block;
 				fontSize: constants >> #larger ];
-		declareRuleSetFor: [ :selector | (selector div class: Willow classes >> #smalltalks2017 >> #stepContent) * selector unorderedList listItem ]
+		declareRuleSetFor: [ :selector | (selector div class: self smalltalks2017 >> #stepContent) * selector unorderedList listItem ]
 			with: [ :style :constants | 
 			style
 				display: constants >> #inlineBlock;
 				width: 25 vw ]
+]
+
+{ #category : #accessing }
+Smalltalks2017CascadingStyleSheetBuilder >> smalltalks2017 [
+
+	^ self classification >> #smalltalks2017
 ]
