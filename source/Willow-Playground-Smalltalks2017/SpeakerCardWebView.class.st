@@ -27,7 +27,6 @@ SpeakerCardWebView >> contactInfoByEMail: mailUser andGithub: githubUser [
 	^ [ :html | 
 	html
 		small: [ html definitionList
-				class: Willow classes >> #bootstrap >>#definitionListHorizontal;
 				with: [ html
 						definitionTerm: 'Work E-Mail';
 						definitionData: ('<1s>@mercapsoftware.com' expandMacrosWith: mailUser);
@@ -36,7 +35,8 @@ SpeakerCardWebView >> contactInfoByEMail: mailUser andGithub: githubUser [
 						definitionTerm: 'GitHub Profile';
 						definitionData: [ html anchor
 								url: ('https://www.github.com/<1s>' expandMacrosWith: githubUser);
-								with: githubUser ] ] ] ]
+								with: githubUser ] ]
+				applying: [ :list | list addClass bootstrap definitionListHorizontal ] ] ]
 ]
 
 { #category : #private }
