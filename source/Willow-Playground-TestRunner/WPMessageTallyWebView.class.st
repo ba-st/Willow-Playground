@@ -69,16 +69,14 @@ WPMessageTallyWebView >> percentageFor: node [
 { #category : #rendering }
 WPMessageTallyWebView >> renderBoundedContainerWrapping: aRenderable on: html upTo: aMaxHeight [
 
-	html
-		render:
-			(GenericContainerWebView
-				wrapping: aRenderable
-				applying: [ :div  | 
-					(div
-						setStyleTo: [ :style :constants| 
-							style
-								maxHeight: aMaxHeight;
-								overflowY: constants >> #scroll ]) + div addClass bootstrap small ])
+	html div
+		with: aRenderable
+		applying: [ :div | 
+			(div
+				setStyleTo: [ :style :constants | 
+					style
+						maxHeight: aMaxHeight;
+						overflowY: constants >> #scroll ]) + div addClass bootstrap small ]
 ]
 
 { #category : #rendering }

@@ -39,12 +39,9 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 				maxWidth: 50 px;
 				background: constants >> #none ];
 		with: [ aCanvas span
-				class: Willow classes >> #bootstrap >> #glyphicon;
-				class: aSpanClass;
-				attributeAt: 'aria-hidden' put: true.
-			aCanvas span
-				class: Willow classes >> #bootstrap >> #screenReaderOnly;
-				with: aName ]
+				apply: [ :span | span addClass bootstrap glyphicon + (span setAttribute: 'aria-hidden' to: true) ];
+				class: aSpanClass.
+			aCanvas span with: aName applying: [ :div | div addClass bootstrap screenReaderOnly ] ]
 ]
 
 { #category : #'private-rendering' }
@@ -114,7 +111,7 @@ PresentationStepWebView >> renderSlidesForAll: aRenderableCollection on: aCanvas
 			component := aCanvas div.
 			component class: 'item'.
 			renderable = aRenderableCollection first
-				ifTrue: [ component class: Willow classes >> #bootstrap >>#active ].
+				ifTrue: [ component apply: [ :div | div addClass bootstrap active ] ].
 			component with: renderable ]
 ]
 
