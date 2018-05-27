@@ -30,10 +30,10 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareBrowseStepButtonStyleIn: aBui
 
 	aBuilder
 		declareRuleSetFor: [ :selector | selector class: self smalltalks2017 >> #browseStep ]
-			with: [ :style :constants | 
+			with: [ :style | 
 			style
 				zIndex: 1;
-				position: constants >> #absolute;
+				position: #absolute;
 				marginTop: 5 px;
 				right: 9 vh;
 				fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' ];
@@ -45,11 +45,11 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareDisabledButtonStyleIn: aBuild
 
 	aBuilder
 		declareRuleSetFor: [ :selector | selector button disabled ]
-		with: [ :style :constants | 
+		with: [ :style | 
 			style
-				color: constants >> #colors >> #grey;
-				background: constants >> #colors >> #lightGrey;
-				cursor: constants >> #notAllowed ]
+				color: #grey;
+				background: #lightGrey;
+				cursor: #notAllowed ]
 ]
 
 { #category : #'style declaration' }
@@ -57,11 +57,11 @@ Smalltalks2017CascadingStyleSheetBuilder >> declarePresentationAreaStyleIn: aBui
 
 	aBuilder
 		declareRuleSetFor: [ :selector | selector class: self smalltalks2017 >> #presentationArea ]
-		with: [ :style :constants | 
+		with: [ :style | 
 			style
 				width: 90 vw;
-				marginLeft: constants >> #auto;
-				marginRight: constants >> #auto ]
+				marginLeft: #auto;
+				marginRight: #auto ]
 ]
 
 { #category : #'style declaration' }
@@ -69,10 +69,10 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareScreenshotStyleIn: aBuilder [
 
 	aBuilder
 		declareRuleSetFor: [ :selector | selector image class: self smalltalks2017 >> #screenshot ]
-		with: [ :style :constants | 
+		with: [ :style | 
 			style
 				maxHeight: 70 vh;
-				margin: constants >> #auto;
+				margin: #auto;
 				paddingBottom: 40 px ]
 ]
 
@@ -87,9 +87,9 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareStepButtonsStyleIn: aBuilder 
 
 	aBuilder
 		declareRuleSetFor: [ :selector | selector div class: self smalltalks2017 >> #stepButtonContainer ]
-		with: [ :style :constants | 
+		with: [ :style | 
 			style
-				position: constants >> #fixed;
+				position: #fixed;
 				width: 90 vw;
 				bottom: 3 vh ]
 ]
@@ -99,10 +99,10 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareStepContentStyleIn: aBuilder 
 
 	aBuilder
 		declareRuleSetFor: [ :selector | selector div class: self smalltalks2017 >> #stepContent ]
-		with: [ :style :constants | 
+		with: [ :style | 
 			style
 				maxHeight: 80 vh;
-				fontSize: constants >> #larger ]
+				fontSize: #larger ]
 ]
 
 { #category : #'style declaration' }
@@ -110,14 +110,14 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareUnorderedListStyleIn: aBuilde
 
 	aBuilder
 		declareRuleSetFor: [ :selector | (selector div class: self smalltalks2017 >> #stepContent) * selector unorderedList ]
-			with: [ :style :constants | 
+			with: [ :style | 
 			style
-				display: constants >> #block;
-				fontSize: constants >> #larger ];
+				display: #block;
+				fontSize: #larger ];
 		declareRuleSetFor: [ :selector | (selector div class: self smalltalks2017 >> #stepContent) * selector unorderedList listItem ]
-			with: [ :style :constants | 
+			with: [ :style | 
 			style
-				display: constants >> #inlineBlock;
+				display: #inlineBlock;
 				width: 25 vw ]
 ]
 
