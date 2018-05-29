@@ -39,18 +39,16 @@ WPMessageTallyWebView >> initializeFor: aMessageTally [
 { #category : #rendering }
 WPMessageTallyWebView >> itemRenderingCommandFor: node [
 
-	^ [ :canvas | 
-	canvas
-		render: (PhrasingContainerWebView wrapping: (self formattedPercentagFor: node) applying: [ :label | label addClass bootstrap label + label addClass bootstrap labelPrimary ]);
-		space;
-		render:
-			(PhrasingContainerWebView
-				wrapping: [ :span | 
-					span
-						render: (self timeFor: node);
-						space;
-						render: 'ms' ]
-				applying: [ :label | label addClass bootstrap label + label addClass bootstrap labelDefault ]);
+	^ [ :html | 
+	html span with: (self formattedPercentagFor: node) applying: [ :label | label addClass bootstrap label + label addClass bootstrap labelPrimary ].
+	html space.
+	html span
+		with: [ html
+				render: (self timeFor: node);
+				space;
+				render: 'ms' ]
+		applying: [ :label | label addClass bootstrap label + label addClass bootstrap labelDefault ].
+	html
 		space;
 		render: node method methodClass;
 		space;
@@ -76,7 +74,7 @@ WPMessageTallyWebView >> renderBoundedContainerWrapping: aRenderable on: html up
 				setStyleTo: [ :style :constants | 
 					style
 						maxHeight: aMaxHeight;
-						overflowY: constants >> #scroll ]) + div addClass bootstrap small ]
+						overflowY: #scroll ]) + div addClass bootstrap small ]
 ]
 
 { #category : #rendering }

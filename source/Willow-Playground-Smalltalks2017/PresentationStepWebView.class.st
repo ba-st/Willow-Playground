@@ -34,12 +34,12 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 		url: ('#<1s>' expandMacrosWith: carouselIdentifier);
 		attributeAt: 'role' put: 'button';
 		attributeAt: 'data-slide' put: aSlideTarget;
-		setStyleTo: [ :style :constants | 
+		setStyleTo: [ :style | 
 			style
 				maxWidth: 50 px;
-				background: constants >> #none ];
+				background: #none ];
 		with: [ aCanvas span
-				apply: [ :span | span addClass bootstrap glyphicon + (span setAttribute: 'aria-hidden' to: true) ];
+				apply: [ :span | span addClass bootstrap glyphicon + (span setARIAAttribute: 'hidden' to: true) ];
 				class: aSpanClass.
 			aCanvas span with: aName applying: [ :div | div addClass bootstrap screenReaderOnly ] ]
 ]

@@ -23,12 +23,12 @@ WPLiveDocumentationBehaviorWebView >> buttonToBrowse: aBehavior [
 WPLiveDocumentationBehaviorWebView >> classNameHeaderFor: aClass [
 
 	^ HeadingWebView
-		displaying: [ :canvas | 
-			canvas
+		displaying: [ :html | 
+			html
 				render: aClass name;
-				space;
-				render: (PhrasingContainerWebView wrapping: 'CLASS' applying: [ :span | span addClass bootstrap badge ]).
-			canvas render: (self buttonToBrowse: aClass) ]
+				space.
+			html span with: 'CLASS' applying: [ :span | span addClass bootstrap badge ].
+			html render: (self buttonToBrowse: aClass) ]
 		withLevel: 2
 ]
 
@@ -98,10 +98,10 @@ WPLiveDocumentationBehaviorWebView >> renderTrait: trait on: html [
 WPLiveDocumentationBehaviorWebView >> traitNameHeaderFor: aTrait [
 
 	^ HeadingWebView
-		displaying: [ :canvas | 
-			canvas
+		displaying: [ :html | 
+			html
 				render: aTrait name;
-				space;
-				render: (PhrasingContainerWebView wrapping: 'TRAIT' applying: [ :span | span addClass bootstrap badge ]) ]
+				space.
+			html span with: 'TRAIT' applying: [ :span | span addClass bootstrap badge ] ]
 		withLevel: 2
 ]

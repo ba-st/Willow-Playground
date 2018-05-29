@@ -33,5 +33,17 @@ ComponentClassificationCommandBuilder >> screenshot [
 { #category : #'*Willow-Playground-Smalltalks2017' }
 ComponentClassificationCommandBuilder >> smalltalks2017 [
 
-	classesProvider := classesProvider >> #smalltalks2017
+	classificationNamespace := classificationNamespace >> #smalltalks2017
+]
+
+{ #category : #'*Willow-Playground-Smalltalks2017' }
+ComponentClassificationCommandBuilder >> stepButtonContainer [
+
+	^ self commandStyledWith: #stepButtonContainer
+]
+
+{ #category : #'*Willow-Playground-Smalltalks2017' }
+ComponentClassificationCommandBuilder >> stepContent [
+
+	^ self commandStyledWith: #stepContent
 ]

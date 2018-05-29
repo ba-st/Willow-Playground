@@ -68,10 +68,10 @@ WPLiveDocumentation >> initializeContainerView [
 		containing: WPLiveDocumentationBehaviorWebView new
 		applying: [ :div | 
 			div
-				setStyleTo: [ :style :constants | 
+				setStyleTo: [ :style  | 
 					style
 						maxHeight: 100 vh;
-						overflowY: constants >> #scroll ] ].
+						overflowY: #scroll ] ].
 	scopeSelection := WPLiveDocumentationScopeSelectionWebView new.
 	scopeSelection onBehaviorSelectedTrigger show: SpinKitTripleBounce new whileCallingServerToRender: behaviorDetails.
 
