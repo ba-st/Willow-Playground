@@ -29,24 +29,19 @@ PresentationStepWebView >> description [
 PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo: aSlideTarget anchorStyledWith: anAnchorClass spanStyledWith: aSpanClass named: aName on: aCanvas [
 
 	aCanvas anchor
-		classes:
-			{anAnchorClass.
-			'carousel-control'};
+		class: anAnchorClass;
+		class: 'carousel-control';
 		url: ('#<1s>' expandMacrosWith: carouselIdentifier);
 		attributeAt: 'role' put: 'button';
 		attributeAt: 'data-slide' put: aSlideTarget;
-		style:
-			(CssDeclarationBlock new
+		setStyleTo: [ :style | 
+			style
 				maxWidth: 50 px;
-				background: CssConstants none);
+				background: #none ];
 		with: [ aCanvas span
-				classes:
-					{BootstrapCssStyles glyphicon.
-					aSpanClass};
-				attributeAt: 'aria-hidden' put: true.
-			aCanvas span
-				class: 'sr-only';
-				with: aName ]
+				apply: [ :span | span addClass bootstrap glyphicon + (span setARIAAttribute: 'hidden' to: true) ];
+				class: aSpanClass.
+			aCanvas span with: aName applying: [ :div | div addClass bootstrap screenReaderOnly ] ]
 ]
 
 { #category : #'private-rendering' }
@@ -116,7 +111,7 @@ PresentationStepWebView >> renderSlidesForAll: aRenderableCollection on: aCanvas
 			component := aCanvas div.
 			component class: 'item'.
 			renderable = aRenderableCollection first
-				ifTrue: [ component class: BootstrapCssStyles active ].
+				ifTrue: [ component apply: [ :div | div addClass bootstrap active ] ].
 			component with: renderable ]
 ]
 

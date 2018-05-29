@@ -22,7 +22,7 @@ WPLiveDocumentationClassDefinitionCard >> initializeFor: aClass [
 	selectedClass := aClass
 ]
 
-{ #category : #initialization }
+{ #category : #rendering }
 WPLiveDocumentationClassDefinitionCard >> renderContentOn: html [
 
 	html
@@ -31,7 +31,6 @@ WPLiveDocumentationClassDefinitionCard >> renderContentOn: html [
 				headingDisplaying: 'Definition';
 				wrapping: [ :canvas | 
 					canvas definitionList
-						class: BootstrapCssStyles definitionListHorizontal;
 						with: [ canvas
 								definitionTerm: 'Superclass';
 								definitionData: (selectedClass superclass ifNotNil: [ :superclass | superclass name ]);
@@ -46,6 +45,7 @@ WPLiveDocumentationClassDefinitionCard >> renderContentOn: html [
 								definitionTerm: 'Pool Dictionaries';
 								definitionData: [ selectedClass sharedPools do: [ :pool | canvas render: pool name ] separatedBy: [ canvas break ] ];
 								definitionTerm: 'Category';
-								definitionData: selectedClass category ] ];
+								definitionData: selectedClass category ]
+						applying: [ :list | list addClass bootstrap definitionListHorizontal ] ];
 				buildApplying: [ :panel | panel addClass bootstrap panelDefault ])
 ]

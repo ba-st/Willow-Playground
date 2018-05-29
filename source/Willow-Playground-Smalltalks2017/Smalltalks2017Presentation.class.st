@@ -198,10 +198,7 @@ Smalltalks2017Presentation >> renderCurrentStepOn: aCanvas [
 
 	view := stepViews at: currentStepIndex.
 	aCanvas heading: view shortName.
-
-	aCanvas div
-		class: Smalltalks2017CssStyles stepContent;
-		with: view.
+	aCanvas div with: view applying: [ :div | div addClass smalltalks2017 stepContent ].
 
 	self renderStepButtonsOn: aCanvas
 ]
@@ -210,12 +207,12 @@ Smalltalks2017Presentation >> renderCurrentStepOn: aCanvas [
 Smalltalks2017Presentation >> renderStepButtonsOn: aCanvas [
 
 	aCanvas div
-		class: Smalltalks2017CssStyles stepButtonContainer;
 		with: [ currentStepIndex = 1
 				ifFalse: [ aCanvas render: self previousStepButton ].
 
 			currentStepIndex = stepViews size
 				ifFalse: [ aCanvas render: self nextStepButton ] ]
+		applying: [ :div | div addClass smalltalks2017 stepButtonContainer ]
 ]
 
 { #category : #updating }

@@ -69,12 +69,13 @@ WPTestRunnerToolbar >> onRunSelectedTestsTrigger [
 WPTestRunnerToolbar >> renderContentOn: html [
 
 	html div
-		class: BootstrapCssStyles buttonToolbar;
-		with: [ html div
-				class: BootstrapCssStyles buttonGroup;
+		with: [ 
+			html div
 				with: [ html
 						render: runSelectedTestsButton;
-						render: runProfiledButton ].
-			html render: exportResultButton ].
+						render: runProfiledButton ]
+				applying: [ :div | div addClass bootstrap buttonGroup ].
+			html render: exportResultButton ]
+		applying: [ :div | div addClass bootstrap buttonToolbar ].
 	html div: [ html space ]
 ]
