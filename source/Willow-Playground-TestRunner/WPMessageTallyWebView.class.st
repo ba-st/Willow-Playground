@@ -97,12 +97,12 @@ WPMessageTallyWebView >> renderLeavesOn: html [
 			column
 				titled: 'Percent';
 				rendering: [ :node | self formattedPercentagFor: node ];
-				applyingToCells: [ :cell | cell addClass bootstrap textRight ] ];
+				applyingToEachCell: [ :cell | cell addClass bootstrap textRight ] ];
 		addColumn: [ :column | 
 			column
 				titled: 'Time (ms)';
 				rendering: [ :node | self timeFor: node ];
-				applyingToCells: [ :cell | cell addClass bootstrap textRight ] ];
+				applyingToEachCell: [ :cell | cell addClass bootstrap textRight ] ];
 		addColumn: [ :column | 
 			column
 				titled: 'Class';
