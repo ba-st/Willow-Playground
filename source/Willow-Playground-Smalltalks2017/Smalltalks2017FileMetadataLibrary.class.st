@@ -320,7 +320,7 @@ Smalltalks2017FileMetadataLibrary >> reportSessionExpiredToUserUsing: aScripting
 		closeButtonLabeled: 'Close' applying: [ :closeButton | closeButton addClass bootstrap buttonLink ];
 		buildApplying: [ :document | document addClass bootstrap modalLarge ].
 
-	dialog onCloseTrigger executeOnClient: [ :script :canvas | script << (JSStream on: 'window.location.replace(window.location.pathname)') ].
+	dialog onCloseTrigger executeOnClient: [ JSStream on: 'window.location.replace(window.location.pathname)' ].
 
 	^ DialogOpener new open: dialog on: aScriptingCanvas
 ]
