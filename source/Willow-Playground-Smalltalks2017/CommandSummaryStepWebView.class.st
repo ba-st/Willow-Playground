@@ -12,7 +12,7 @@ CommandSummaryStepWebView >> anchorToBrowse: method [
 
 	| anchor |
 
-	anchor := AsynchronicAnchorWebView labeled: method selector.
+	anchor := self componentSupplier asynchronicLinkActingAsButtonLabeled: method selector applying: [ :button | button addClass bootstrap buttonLink ].
 	anchor onTrigger evaluate: [ method browse ].
 	^ anchor
 ]
