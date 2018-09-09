@@ -26,12 +26,8 @@ ButtonExecutingOnClientStepWebView >> initialize [
 { #category : #initialization }
 ButtonExecutingOnClientStepWebView >> initializeButton [
 
- button := AsynchronicButtonWebView labeled: 'Now it''s time to click'.
- button onTrigger
-	executeOnClient: [ :script :scriptCanvas |
-				script << scriptCanvas
-				javascript alert: 'You just clicked a button' ]
- 
+	button := AsynchronicButtonWebView labeled: 'Now it''s time to click'.
+	button onTrigger executeOnClient: [ :canvas | canvas javascript alert: 'You just clicked a button' ]
 ]
 
 { #category : #rendering }
