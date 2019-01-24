@@ -1,36 +1,32 @@
-![Logo](resources/logos/128x128.png) Willow-Playground
-======
-![GitHub release](https://img.shields.io/github/release/ba-st/Willow-Playground.svg)
-[![Build Status](https://travis-ci.org/ba-st/Willow-Playground.svg?branch=master)](https://travis-ci.org/ba-st/Willow-Playground)
+<p align="center"><img src="assets/logos/128x128.png">
+ <h1 align="center">Willow-Playground</h1>
+  <p align="center">
+    Willow-Playground provides examples on how to use <a href="https://github.com/ba-st/Willow">Willow</a> to develop a complete interactive web application
+    <br>
+    <a href="docs/"><strong>Explore the docs »</strong></a>
+    <br>
+    <br>
+    <a href="https://github.com/ba-st/Willow-Playground/issues/new?labels=Type%3A+Defect">Report a defect</a>
+    |
+    <a href="https://github.com/ba-st/Willow-Playground/issues/new?labels=Type%3A+Feature">Request feature</a>
+  </p>
+</p>
 
-*Willow-Playground provides examples on how to use [Willow](https://github.com/ba-st/Willow) to develop a complete interactive web application*
+[![GitHub release](https://img.shields.io/github/release/ba-st/Willow-Playground.svg)](https://github.com/ba-st/Willow-Playground/releases/latest)
+[![Build Status](https://travis-ci.org/ba-st/Willow-Playground.svg?branch=release-candidate)](https://travis-ci.org/ba-st/Willow-Playground)
 
 ## Goals
 - Present the different components and features of Willow
 - Offer simple interactive applications, that are both useful are clear to understand
 
-### License:
-The project source code is [MIT](LICENSE) licensed. Any contribution submitted to the code repository is considered to be under the same license.
+## License
+- The code is licensed under [MIT](LICENSE).
+- The documentation is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
-The documentation is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
+## Quick Start
 
-### Highlights:
-- **Supported Platforms**: [Pharo 6.1 / Pharo 7](http://www.pharo.org/)
-- **Source Code Repository** and **Issue Tracking**: In this GitHub repository.
-
-### Get started!
-
-#### Pharo 5/6
-
-Open a Playground and evaluate:
-
-```smalltalk
-Metacello new
-  baseline: 'WillowPlayground';
-  repository: 'github://ba-st/Willow-Playground:master/source';
-  load
-```
-or get a ready to use image from the [releases page](https://github.com/ba-st/Willow-Playground/releases).
+- Download the latest [Pharo 32](https://get.pharo.org/) or [64 bits VM](https://get.pharo.org/64/).
+- Download a ready to use image from the [release page](https://github.com/ba-st/Willow-Playground/releases/latest)
 
 You can now evaluate
 
@@ -43,3 +39,11 @@ and go to [localhost:8080/willow101](http://localhost:8080/willow101) to find an
 To learn how to use Willow, you can check the applications included in this repository:
 - Live Documentation: start by browsing WPLiveDocumentation. Access the application at [localhost:8080/live-docs](http://localhost:8080/live-docs)
 - Test Runner: start by browsing WPTestRunner. Access the application at [localhost:8080/test-runner-bootstrap3](http://localhost:8080/test-runner-bootstrap3)
+
+## Installation
+
+To load the project in a Pharo image, or declare it as a dependency of your own project follow this [instructions](docs/Installation.md).
+
+## Contributing
+
+Check the [Contribution Guidelines](CONTRIBUTING.md)

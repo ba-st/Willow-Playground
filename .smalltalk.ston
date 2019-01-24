@@ -3,6 +3,7 @@ SmalltalkCISpec {
     SCIMetacelloLoadSpec {
       #baseline : 'WillowPlayground',
       #directory : 'source',
+      #load : [ 'Deployment' ],     
       #platforms : [  #pharo ]
     }
   ],
