@@ -39,9 +39,10 @@ WPTestRunnerSuiteSelectionWebView >> initializeIdentifiedTestCaseClassesSelectio
 { #category : #initialization }
 WPTestRunnerSuiteSelectionWebView >> initializePackageSelection [
 
-	packagesListBox := self componentSupplier multipleSelectionListBoxDisplayingAtOnce: 25 applying: [  ].
+	packagesListBox := self componentSupplier
+		multipleSelectionListBoxDisplayingAtOnce: 25
+		applying: [  ].
 	packagesListBox onTrigger
-		serializeWithHiddenInputs;
 		evaluate: [ self session applicationContext setSelectedPackageCategoriesTo: packagesListBox currentSelection ];
 		render: identifiedTestCaseClassesSelection
 ]
@@ -49,10 +50,13 @@ WPTestRunnerSuiteSelectionWebView >> initializePackageSelection [
 { #category : #initialization }
 WPTestRunnerSuiteSelectionWebView >> initializeTestCaseClassesSelection [
 
-	testCaseClassesListBox := self componentSupplier multipleSelectionListBoxDisplayingAtOnce: 25 applying: [  ].
+	testCaseClassesListBox := self componentSupplier
+		multipleSelectionListBoxDisplayingAtOnce: 25
+		applying: [  ].
 	testCaseClassesListBox onTrigger
-		serializeWithHiddenInputs;
-		evaluate: [ self session applicationContext setSelectedTestCaseClassesTo: testCaseClassesListBox currentSelection ]
+		evaluate: [ self session applicationContext
+				setSelectedTestCaseClassesTo: testCaseClassesListBox currentSelection
+			]
 ]
 
 { #category : #private }
