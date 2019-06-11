@@ -25,10 +25,13 @@ WPLiveDocumentationScopeSelectionWebView >> initialize [
 { #category : #initialization }
 WPLiveDocumentationScopeSelectionWebView >> initializeBehaviorsListBox [
 
-	behaviorsListBox := self componentSupplier singleSelectionListBoxDisplayingAtOnce: 30 applying: [ :listBox | listBox labelItemsWith: [ :class | class name ] ].
+	behaviorsListBox := self componentSupplier
+		singleSelectionListBoxDisplayingAtOnce: 30
+		applying: [ :listBox | listBox labelItemsWith: [ :class | class name ] ].
 	behaviorsListBox onTrigger
-		serializeIt;
-		evaluate: [ behaviorsListBox withCurrentSelectionDo: [ :selectedClass | self session applicationContext setSelectedBehaviorTo: selectedClass ] ]
+		evaluate: [ behaviorsListBox
+				withCurrentSelectionDo: [ :selectedClass | self session applicationContext setSelectedBehaviorTo: selectedClass ]
+			]
 ]
 
 { #category : #initialization }
@@ -48,10 +51,13 @@ WPLiveDocumentationScopeSelectionWebView >> initializeIdentifiedBehaviorSelectio
 { #category : #initialization }
 WPLiveDocumentationScopeSelectionWebView >> initializePackagesDropdown [
 
-	packagesDropdown := self componentSupplier dropdownListApplying: [ :dropdown | (dropdown labelItemsWith: [ :package | package name ]) + BootstrapSelectLiveSearchCommand default ].
+	packagesDropdown := self componentSupplier
+		dropdownListApplying:
+			[ :dropdown | ( dropdown labelItemsWith: [ :package | package name ] ) + BootstrapSelectLiveSearchCommand default ].
 	packagesDropdown onTrigger
-		serializeIt;
-		evaluate: [ packagesDropdown withCurrentSelectionDo: [ :selectedPackage | self session applicationContext setSelectedPackageTo: selectedPackage ] ];
+		evaluate: [ packagesDropdown
+				withCurrentSelectionDo: [ :selectedPackage | self session applicationContext setSelectedPackageTo: selectedPackage ]
+			];
 		render: identifiedBehaviorSelection
 ]
 
