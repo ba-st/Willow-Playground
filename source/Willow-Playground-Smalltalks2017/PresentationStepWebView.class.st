@@ -14,7 +14,10 @@ PresentationStepWebView >> browseStepButtonEvaluating: aCallback [
 
 	browseButton := self componentSupplier
 		asynchronicButtonLabeled: 'Browse'
-		applying: [ :theButton | theButton addClass bootstrap buttonDefault + theButton addClass bootstrap buttonSmall + theButton addClass smalltalks2017 browseStep ].
+		applying: [ :theButton | 
+			theButton addClass bootstrap3 buttonDefault + theButton addClass bootstrap3 buttonSmall
+				+ theButton addClass smalltalks2017 browseStep
+			].
 	browseButton onTrigger evaluate: aCallback.
 	^ browseButton
 ]
@@ -31,17 +34,19 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 	aCanvas anchor
 		class: anAnchorClass;
 		class: 'carousel-control';
-		url: ('#<1s>' expandMacrosWith: carouselIdentifier);
+		url: ( '#<1s>' expandMacrosWith: carouselIdentifier );
 		attributeAt: 'role' put: 'button';
 		attributeAt: 'data-slide' put: aSlideTarget;
 		setStyleTo: [ :style | 
 			style
 				maxWidth: 50 px;
-				background: #none ];
+				background: #none
+			];
 		with: [ aCanvas span
-				apply: [ :span | span addClass bootstrap glyphicon + (span setARIAAttribute: 'hidden' to: true) ];
+				apply: [ :span | span addClass bootstrap3 glyphicon + ( span setARIAAttribute: 'hidden' to: true ) ];
 				class: aSpanClass.
-			aCanvas span with: aName applying: [ :div | div addClass bootstrap screenReaderOnly ] ]
+			aCanvas span with: aName applying: [ :div | div addClass bootstrap3 screenReaderOnly ]
+			]
 ]
 
 { #category : #'private-rendering' }
@@ -96,7 +101,7 @@ PresentationStepWebView >> renderPanelWrapping: aRenderable on: aCanvas [
 	panel := self componentSupplier panelBuilder
 		headingDisplaying: self description;
 		wrapping: aRenderable;
-		buildApplying: [ :thePanel | thePanel addClass bootstrap panelDefault ].
+		buildApplying: [ :thePanel | thePanel addClass bootstrap3 panelDefault ].
 
 	aCanvas render: panel
 ]
@@ -111,7 +116,7 @@ PresentationStepWebView >> renderSlidesForAll: aRenderableCollection on: aCanvas
 			component := aCanvas div.
 			component class: 'item'.
 			renderable = aRenderableCollection first
-				ifTrue: [ component apply: [ :div | div addClass bootstrap active ] ].
+				ifTrue: [ component apply: [ :div | div addClass bootstrap3 active ] ].
 			component with: renderable ]
 ]
 

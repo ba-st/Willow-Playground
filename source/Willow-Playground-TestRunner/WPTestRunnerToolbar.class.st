@@ -27,20 +27,22 @@ WPTestRunnerToolbar >> initializeExportResultButton [
 
 	exportResultButton := FileDownloadAnchorWebView
 		labeled: (self label: 'Download' prependedBy: Glyphicons cloudDownload)
-		applying: [ :button | button addClass bootstrap button + button addClass bootstrap buttonDefault + button addClass bootstrap pullRight ]
+		applying: [ :button | button addClass bootstrap3 button + button addClass bootstrap3 buttonDefault + button addClass bootstrap3 pullRight ]
 		obtainingFileUsing: [ WAMimeDocument on: (String streamContents: [ :stream | self session applicationContext currentTestResult fileOutOn: stream ]) mimeType: WAMimeType textPlain fileName: 'test-results.txt' ]
 ]
 
 { #category : #initialization }
 WPTestRunnerToolbar >> initializeRunProfiledButton [
 
-	runProfiledButton := self componentSupplier asynchronicButtonLabeled: (self label: 'Run Profiled' prependedBy: Glyphicons stats) applying: [ :button | button addClass bootstrap buttonDefault ]
+	runProfiledButton := self componentSupplier asynchronicButtonLabeled: (self label: 'Run Profiled' prependedBy: Glyphicons stats) applying: [ :button | button addClass bootstrap3 buttonDefault ]
 ]
 
 { #category : #initialization }
 WPTestRunnerToolbar >> initializeRunSelectedTestsButton [
 
-	runSelectedTestsButton := self componentSupplier asynchronicButtonLabeled: (self label: 'Run Selected' prependedBy: Glyphicons play) applying: [ :button | button addClass bootstrap buttonDefault ]
+	runSelectedTestsButton := self componentSupplier
+		asynchronicButtonLabeled: ( self label: 'Run Selected' prependedBy: Glyphicons play )
+		applying: [ :button | button addClass bootstrap3 buttonDefault ]
 ]
 
 { #category : #private }
@@ -74,8 +76,8 @@ WPTestRunnerToolbar >> renderContentOn: html [
 				with: [ html
 						render: runSelectedTestsButton;
 						render: runProfiledButton ]
-				applying: [ :div | div addClass bootstrap buttonGroup ].
+				applying: [ :div | div addClass bootstrap3 buttonGroup ].
 			html render: exportResultButton ]
-		applying: [ :div | div addClass bootstrap buttonToolbar ].
+		applying: [ :div | div addClass bootstrap3 buttonToolbar ].
 	html div: [ html space ]
 ]

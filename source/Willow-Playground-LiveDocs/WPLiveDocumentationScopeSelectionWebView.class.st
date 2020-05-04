@@ -67,7 +67,7 @@ WPLiveDocumentationScopeSelectionWebView >> labeledViewDisplaying: aLabel boundT
 	^ self componentSupplier
 		labeledFieldApplying: [  ]
 		displaying: aLabel
-		applying: [ :label | label addClass bootstrap screenReaderOnly ]
+		applying: [ :label | label addClass bootstrap3 screenReaderOnly ]
 		boundTo: aField
 		applying: [  ]
 ]

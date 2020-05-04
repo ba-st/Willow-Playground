@@ -46,6 +46,6 @@ WPLiveDocumentationClassDefinitionCard >> renderContentOn: html [
 								definitionData: [ selectedClass sharedPools do: [ :pool | canvas render: pool name ] separatedBy: [ canvas break ] ];
 								definitionTerm: 'Category';
 								definitionData: selectedClass category ]
-						applying: [ :list | list addClass bootstrap definitionListHorizontal ] ];
-				buildApplying: [ :panel | panel addClass bootstrap panelDefault ])
+						applying: [ :list | list addClass bootstrap3 definitionListHorizontal ] ];
+				buildApplying: [ :panel | panel addClass bootstrap3 panelDefault ])
 ]

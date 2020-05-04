@@ -22,7 +22,7 @@ WPTestRunnerTestResultDetailsDialog >> initializeFor: aTestResult [
 	dialog := self componentSupplier dialogBuilder
 		headerTitled: 'Test Result Details';
 		wrapping: [ :canvas | self renderDetailsFor: aTestResult on: canvas ];
-		closeButtonLabeled: 'Close' applying: [ :button | button addClass bootstrap buttonLink ];
+		closeButtonLabeled: 'Close' applying: [ :button | button addClass bootstrap3 buttonLink ];
 		beSelfCleaning;
 		build
 ]
@@ -48,16 +48,16 @@ WPTestRunnerTestResultDetailsDialog >> renderErrorsFor: aTestResult on: html [
 	aTestResult hasErrors
 		ifTrue: [ | errorsTable |
 
-			html render: (HeadingWebView displaying: ('Errors (<1p>)' expandMacrosWith: aTestResult errorCount) withLevel: 4 applying: [ :heading | heading addClass bootstrap textDanger ]).
+			html render: (HeadingWebView displaying: ('Errors (<1p>)' expandMacrosWith: aTestResult errorCount) withLevel: 4 applying: [ :heading | heading addClass bootstrap3 textDanger ]).
 
 			errorsTable := self componentSupplier tableBuilder
 				addColumn: [ :column | 
 					column
-						titled: 'Class' applying: [ :headingCell | headingCell addClass bootstrap textDanger ];
+						titled: 'Class' applying: [ :headingCell | headingCell addClass bootstrap3 textDanger ];
 						rendering: [ :failure | failure class name ] ];
 				addColumn: [ :column | 
 					column
-						titled: 'Selector' applying: [ :headingCell | headingCell addClass bootstrap textDanger ];
+						titled: 'Selector' applying: [ :headingCell | headingCell addClass bootstrap3 textDanger ];
 						rendering: [ :failure | failure selector ] ];
 				build.
 			errorsTable changeContentsTo: aTestResult errors.
@@ -70,16 +70,16 @@ WPTestRunnerTestResultDetailsDialog >> renderFailuresFor: aTestResult on: html [
 	aTestResult hasFailures
 		ifTrue: [ | failuresTable |
 
-			html render: (HeadingWebView displaying: ('Failures (<1p>)' expandMacrosWith: aTestResult failureCount) withLevel: 4 applying: [ :heading | heading addClass bootstrap textWarning ]).
+			html render: (HeadingWebView displaying: ('Failures (<1p>)' expandMacrosWith: aTestResult failureCount) withLevel: 4 applying: [ :heading | heading addClass bootstrap3 textWarning ]).
 
 			failuresTable := self componentSupplier tableBuilder
 				addColumn: [ :column | 
 					column
-						titled: 'Class' applying: [ :headingCell | headingCell addClass bootstrap textWarning ];
+						titled: 'Class' applying: [ :headingCell | headingCell addClass bootstrap3 textWarning ];
 						rendering: [ :failure | failure class name ] ];
 				addColumn: [ :column | 
 					column
-						titled: 'Selector' applying: [ :headingCell | headingCell addClass bootstrap textWarning ];
+						titled: 'Selector' applying: [ :headingCell | headingCell addClass bootstrap3 textWarning ];
 						rendering: [ :failure | failure selector ] ];
 				build.
 			failuresTable changeContentsTo: aTestResult failures.
@@ -91,27 +91,27 @@ WPTestRunnerTestResultDetailsDialog >> summaryFor: aTestResult [
 
 	^ self componentSupplier gridBuilder
 		columnsPerRow: 1;
-		applyingToCells: [ :cell | cell addClass bootstrap textCenter ];
+		applyingToCells: [ :cell | cell addClass bootstrap3 textCenter ];
 		addContent: [ :canvas | 
 			canvas
-				render: (HeadingWebView displaying: 'Summary' withLevel: 4 applying: [ :heading | heading addClass bootstrap textInfo + heading addClass bootstrap textLeft ]);
-				render: (PhrasingContainerWebView wrapping: aTestResult runCount applying: [ :span | span addClass bootstrap label + span addClass bootstrap labelDefault ]);
+				render: (HeadingWebView displaying: 'Summary' withLevel: 4 applying: [ :heading | heading addClass bootstrap3 textInfo + heading addClass bootstrap3 textLeft ]);
+				render: (PhrasingContainerWebView wrapping: aTestResult runCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelDefault ]);
 				space;
 				render: 'run';
 				space;
-				render: (PhrasingContainerWebView wrapping: aTestResult passedCount applying: [ :span | span addClass bootstrap label + span addClass bootstrap labelSuccess ]);
+				render: (PhrasingContainerWebView wrapping: aTestResult passedCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelSuccess ]);
 				space;
 				render: 'passes';
 				space;
-				render: (PhrasingContainerWebView wrapping: aTestResult skippedCount applying: [ :span | span addClass bootstrap label + span addClass bootstrap labelInfo ]);
+				render: (PhrasingContainerWebView wrapping: aTestResult skippedCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelInfo ]);
 				space;
 				render: 'skipped';
 				space;
-				render: (PhrasingContainerWebView wrapping: aTestResult failureCount applying: [ :span | span addClass bootstrap label + span addClass bootstrap labelWarning ]);
+				render: (PhrasingContainerWebView wrapping: aTestResult failureCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelWarning ]);
 				space;
 				render: 'failures';
 				space;
-				render: (PhrasingContainerWebView wrapping: aTestResult errorCount applying: [ :span | span addClass bootstrap label + span addClass bootstrap labelDanger ]);
+				render: (PhrasingContainerWebView wrapping: aTestResult errorCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelDanger ]);
 				space;
 				render: 'errors';
 				space ];

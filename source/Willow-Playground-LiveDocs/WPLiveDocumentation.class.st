@@ -68,21 +68,25 @@ WPLiveDocumentation >> initializeContainerView [
 		containing: WPLiveDocumentationBehaviorWebView new
 		applying: [ :div | 
 			div
-				setStyleTo: [ :style  | 
+				setStyleTo: [ :style | 
 					style
 						maxHeight: 100 vh;
-						overflowY: #scroll ] ].
+						overflowY: #scroll
+					]
+			].
 	scopeSelection := WPLiveDocumentationScopeSelectionWebView new.
-	scopeSelection onBehaviorSelectedTrigger show: SpinKitFlow new whileCallingServerToRender: behaviorDetails.
+	scopeSelection onBehaviorSelectedTrigger
+		show: SpinKitFlow new
+		whileCallingServerToRender: behaviorDetails.
 
 	contentView := GenericContainerWebView
 		wrapping:
-			(self componentSupplier gridBuilder
+			( self componentSupplier gridBuilder
 				columnsWidths: #(3 9);
 				addContent: scopeSelection;
 				addContent: behaviorDetails;
-				build)
-		applying: [ :div | div addClass bootstrap container ]
+				build )
+		applying: [ :div | div addClass bootstrap3 container ]
 ]
 
 { #category : #Accessing }
@@ -94,5 +98,5 @@ WPLiveDocumentation >> jQueryLibrary [
 { #category : #updating }
 WPLiveDocumentation >> requiredLibraries [
 
-	^ {SpinKitDeploymentMetadataLibrary default}
+	^ {( self deploymentMode libraryFor: SpinKitMetadataLibrary ) default}
 ]

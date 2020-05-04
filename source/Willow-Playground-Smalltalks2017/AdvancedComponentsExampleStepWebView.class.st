@@ -60,7 +60,7 @@ AdvancedComponentsExampleStepWebView >> initializeTable [
 	  addColumn: [:column | column titled: 'Decimal'; rendering: [ :number | number ]];
 	  addColumn: [:column | column titled: 'Hex'; rendering: [ :number | number printStringHex ]];
 	  addColumn: [:column | column titled: 'Roman'; rendering: [ :number | number printStringRoman ]];
-	  buildApplying: [ :theTable | theTable addClass bootstrap table ].
+	  buildApplying: [ :theTable | theTable addClass bootstrap3 table ].
 	table changeContentsTo: #(26 51 78)
 ]
 

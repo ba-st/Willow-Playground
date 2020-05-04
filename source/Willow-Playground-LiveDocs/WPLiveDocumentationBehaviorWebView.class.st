@@ -14,7 +14,7 @@ WPLiveDocumentationBehaviorWebView >> buttonToBrowse: aBehavior [
 
 	browseButton := self componentSupplier
 		asynchronicLinkActingAsButtonLabeled: 'Open Browser'
-		applying: [ :button | button addClass bootstrap buttonPrimary + button addClass bootstrap pullRight ].
+		applying: [ :button | button addClass bootstrap3 buttonPrimary + button addClass bootstrap3 pullRight ].
 	browseButton onTrigger evaluate: [ aBehavior browse ].
 	^ browseButton
 ]
@@ -27,7 +27,7 @@ WPLiveDocumentationBehaviorWebView >> classNameHeaderFor: aClass [
 			html
 				render: aClass name;
 				space.
-			html span with: 'CLASS' applying: [ :span | span addClass bootstrap badge ].
+			html span with: 'CLASS' applying: [ :span | span addClass bootstrap3 badge ].
 			html render: (self buttonToBrowse: aClass) ]
 		withLevel: 2
 ]
@@ -102,6 +102,6 @@ WPLiveDocumentationBehaviorWebView >> traitNameHeaderFor: aTrait [
 			html
 				render: aTrait name;
 				space.
-			html span with: 'TRAIT' applying: [ :span | span addClass bootstrap badge ] ]
+			html span with: 'TRAIT' applying: [ :span | span addClass bootstrap3 badge ] ]
 		withLevel: 2
 ]

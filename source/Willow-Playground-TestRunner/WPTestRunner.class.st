@@ -73,7 +73,7 @@ WPTestRunner >> initializeContainerView [
 				addContent: (self toolbarRenderingOnAction: testResult);
 				addContent: WPTestRunnerSuiteSelectionWebView new;
 				build)
-		applying: [ :div | div addClass bootstrap container ]
+		applying: [ :div | div addClass bootstrap3 container ]
 ]
 
 { #category : #accessing }
@@ -85,7 +85,7 @@ WPTestRunner >> jQueryLibrary [
 { #category : #updating }
 WPTestRunner >> requiredLibraries [
 
-	^ {SpinKitDeploymentMetadataLibrary default}
+	^ {( self deploymentMode libraryFor: SpinKitMetadataLibrary ) default}
 ]
 
 { #category : #private }

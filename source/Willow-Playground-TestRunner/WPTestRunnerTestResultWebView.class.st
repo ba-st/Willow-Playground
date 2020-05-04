@@ -14,7 +14,7 @@ WPTestRunnerTestResultWebView >> detailsLinkShowing: testResult [
 
 	showDetailsAnchor := self componentSupplier
 		asynchronicLinkActingAsButtonLabeled: 'See the details here.'
-		applying: [ :anchor | anchor addClass bootstrap alertLink ].
+		applying: [ :anchor | anchor addClass bootstrap3 alertLink ].
 	showDetailsAnchor onTrigger open: (WPTestRunnerTestResultDetailsDialog for: testResult).
 	^ showDetailsAnchor
 ]

@@ -316,11 +316,16 @@ Smalltalks2017FileMetadataLibrary >> reportSessionExpiredToUserUsing: aScripting
 	dialog := BootstrapModalBuilder new
 		beSelfCleaning;
 		dismissableHeaderTitled: 'Session expired';
-		wrapping: (GenericContainerWebView wrapping: [ :html | html paragraph: [ html text: 'Your session is no longer active.' ] ] applying: [  ]);
-		closeButtonLabeled: 'Close' applying: [ :closeButton | closeButton addClass bootstrap buttonLink ];
-		buildApplying: [ :document | document addClass bootstrap modalLarge ].
+		wrapping:
+			( GenericContainerWebView
+				wrapping: [ :html | html paragraph: [ html text: 'Your session is no longer active.' ] ]
+				applying: [  ] );
+		closeButtonLabeled: 'Close'
+			applying: [ :closeButton | closeButton addClass bootstrap3 buttonLink ];
+		buildApplying: [ :document | document addClass bootstrap3 modalLarge ].
 
-	dialog onCloseTrigger executeOnClient: [ JSStream on: 'window.location.replace(window.location.pathname)' ].
+	dialog onCloseTrigger
+		executeOnClient: [ JSStream on: 'window.location.replace(window.location.pathname)' ].
 
 	^ DialogOpener new open: dialog on: aScriptingCanvas
 ]
