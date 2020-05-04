@@ -17,7 +17,7 @@ IntroductionStepWebView >> description [
 IntroductionStepWebView >> loadWillowFromGitHubCode [
  Metacello new
 	baseline: 'Willow';
-	repository: 'github://ba-st/Willow:master/source';
+	repository: 'github://ba-st/Willow:release-candidate/source';
 	load
 ]
 
@@ -25,7 +25,7 @@ IntroductionStepWebView >> loadWillowFromGitHubCode [
 IntroductionStepWebView >> loadWillowPlaygroundFromGitHubCode [
  Metacello new
 	baseline: 'WillowPlayground';
-	repository: 'github://ba-st/Willow-Playground:master/source';
+	repository: 'github://ba-st/Willow-Playground:release-candidate/source';
 	load
 ]
 

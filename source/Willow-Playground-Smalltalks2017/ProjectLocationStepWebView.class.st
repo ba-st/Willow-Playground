@@ -91,7 +91,7 @@ ProjectLocationStepWebView >> projectsWithLocations [
 			'ba-st/Willow'}
 		with:
 			{'Willow-Bootstrap'.
-			'Bootstrap 3 components and plugins'.
+			'Bootstrap 3/4 components and plugins'.
 			self stableLabel.
 			'ba-st/Willow-Bootstrap'}
 		with:

@@ -62,7 +62,8 @@ WPTestRunnerSuiteSelectionWebView >> initializeTestCaseClassesSelection [
 { #category : #private }
 WPTestRunnerSuiteSelectionWebView >> labeledViewDisplaying: aLabel boundTo: aField [
 
-	^ BootstrapLabeledWebView
+	^ self componentSupplier
+		labeledFieldApplying: [  ]
 		displaying: aLabel
 		applying: [  ]
 		boundTo: aField

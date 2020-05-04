@@ -60,7 +60,7 @@ Smalltalks2017Presentation class >> stop [
 { #category : #accessing }
 Smalltalks2017Presentation >> componentSupplierForApplication [
 
-	^ BootstrapComponentSupplier
+	^ Bootstrap3ComponentSupplier
 		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme
 		selectLibrary: ((self deploymentMode libraryFor: BootstrapSelectLibrary) using: self language)
 		datepickerLibrary: ((self deploymentMode libraryFor: BootstrapDatepickerLibrary) using: self language)
@@ -131,7 +131,7 @@ Smalltalks2017Presentation >> nextStepButton [
 			canvas
 				render: self nextStepView shortName;
 				space;
-				render: (BootstrapIconWebView representing: Glyphicons chevronRight) ]
+				render: (Bootstrap3IconWebView representing: Glyphicons chevronRight) ]
 		applying: [ :theButton | theButton addClass bootstrap pullRight + theButton addClass bootstrap buttonDefault ].
 	button onTrigger
 		evaluate: [ currentStepIndex := self nextStepIndex ];
@@ -159,7 +159,7 @@ Smalltalks2017Presentation >> previousStepButton [
 	button := self componentSupplier
 		asynchronicButtonLabeled: [ :canvas | 
 			canvas
-				render: (BootstrapIconWebView representing: Glyphicons chevronLeft);
+				render: (Bootstrap3IconWebView representing: Glyphicons chevronLeft);
 				space;
 				render: self previousStepView shortName ]
 		applying: [ :theButton | theButton addClass bootstrap pullLeft + theButton addClass bootstrap buttonDefault ].
@@ -211,5 +211,5 @@ Smalltalks2017Presentation >> requiredLibraries [
 	" Libraries added here are not considered until the server is restarted.
 	  Including a library with a favicon.ico will automatically use it.	"
 
-	^ {Smalltalks2017FileMetadataLibrary default. 	SpinKitMetadataLibrary default}
+	^ {Smalltalks2017FileMetadataLibrary default. 	SpinKitDeploymentMetadataLibrary default}
 ]

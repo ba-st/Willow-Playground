@@ -48,7 +48,7 @@ WPTestRunnerToolbar >> label: aText prependedBy: anIconClass [
 
 	^ [ :canvas | 
 	canvas
-		render: (BootstrapIconWebView representing: anIconClass);
+		render: (Bootstrap3IconWebView representing: anIconClass);
 		space;
 		render: aText ]
 ]

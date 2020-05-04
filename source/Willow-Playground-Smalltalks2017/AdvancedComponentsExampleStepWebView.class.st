@@ -36,7 +36,7 @@ AdvancedComponentsExampleStepWebView >> initialize [
 { #category : #initialization }
 AdvancedComponentsExampleStepWebView >> initializeDelayed [
 	delayed := DelayedViewRenderer
-		showing: SpinKitCubeGrid new
+		showing: SpinKitGrid new
 		whileEvaluating: [ self makeHeavyCalculations ]
 		thenRendering: [ :canvas | canvas 
 							render: periodical;

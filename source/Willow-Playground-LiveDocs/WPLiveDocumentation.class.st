@@ -31,14 +31,14 @@ WPLiveDocumentation class >> sessionClass [
 { #category : #Accessing }
 WPLiveDocumentation >> componentSupplierForApplication [
 
-	^ BootstrapComponentSupplier
+	^ Bootstrap3ComponentSupplier
 		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme
 		selectLibrary: ((self deploymentMode libraryFor: BootstrapSelectLibrary) using: self language)
 		datepickerLibrary: ((self deploymentMode libraryFor: BootstrapDatepickerLibrary) using: self language)
 		typeaheadLibrary: (self deploymentMode libraryFor: BootstrapTypeaheadLibrary) default
 ]
 
-{ #category : #accessing }
+{ #category : #Accessing }
 WPLiveDocumentation >> contentView [
 
 	^ contentView
@@ -73,7 +73,7 @@ WPLiveDocumentation >> initializeContainerView [
 						maxHeight: 100 vh;
 						overflowY: #scroll ] ].
 	scopeSelection := WPLiveDocumentationScopeSelectionWebView new.
-	scopeSelection onBehaviorSelectedTrigger show: SpinKitTripleBounce new whileCallingServerToRender: behaviorDetails.
+	scopeSelection onBehaviorSelectedTrigger show: SpinKitFlow new whileCallingServerToRender: behaviorDetails.
 
 	contentView := GenericContainerWebView
 		wrapping:
@@ -85,7 +85,7 @@ WPLiveDocumentation >> initializeContainerView [
 		applying: [ :div | div addClass bootstrap container ]
 ]
 
-{ #category : #accessing }
+{ #category : #Accessing }
 WPLiveDocumentation >> jQueryLibrary [
 
 	^ (self deploymentMode libraryFor: JQuery3MetadataLibrary) default
@@ -94,5 +94,5 @@ WPLiveDocumentation >> jQueryLibrary [
 { #category : #updating }
 WPLiveDocumentation >> requiredLibraries [
 
-	^ {SpinKitMetadataLibrary default}
+	^ {SpinKitDeploymentMetadataLibrary default}
 ]

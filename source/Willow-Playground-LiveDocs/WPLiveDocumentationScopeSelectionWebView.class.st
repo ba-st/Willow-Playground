@@ -64,7 +64,8 @@ WPLiveDocumentationScopeSelectionWebView >> initializePackagesDropdown [
 { #category : #private }
 WPLiveDocumentationScopeSelectionWebView >> labeledViewDisplaying: aLabel boundTo: aField [
 
-	^ BootstrapLabeledWebView
+	^ self componentSupplier
+		labeledFieldApplying: [  ]
 		displaying: aLabel
 		applying: [ :label | label addClass bootstrap screenReaderOnly ]
 		boundTo: aField
@@ -82,20 +83,24 @@ WPLiveDocumentationScopeSelectionWebView >> renderContentOn: html [
 
 	html
 		render:
-			(self componentSupplier gridBuilder
+			( self componentSupplier gridBuilder
 				columnsPerRow: 1;
 				addContent:
-					(self componentSupplier
-						fieldSetContaining: (self componentSupplier delayedViewShowing: SpinKitCircle new whileEvaluating: [ packagesDropdown allowAnyOf: self session applicationContext availablePackages ] thenRendering: packagesDropdown)
+					( self componentSupplier
+						fieldSetContaining:
+							( self componentSupplier
+								delayedViewShowing: SpinKitCircle new
+								whileEvaluating: [ packagesDropdown allowAnyOf: self session applicationContext availablePackages ]
+								thenRendering: packagesDropdown )
 						applying: [  ]
 						withLegend: 'Packages'
-						applying: [  ]);
+						applying: [  ] );
 				addContent: [ :canvas | canvas horizontalRule ];
 				addContent:
-					(self componentSupplier
+					( self componentSupplier
 						fieldSetContaining: identifiedBehaviorSelection
 						applying: [  ]
 						withLegend: 'Classes & Traits'
-						applying: [  ]);
-				build)
+						applying: [  ] );
+				build )
 ]
