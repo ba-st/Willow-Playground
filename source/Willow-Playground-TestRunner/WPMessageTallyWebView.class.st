@@ -27,7 +27,7 @@ WPMessageTallyWebView >> formattedPercentagFor: node [
 { #category : #private }
 WPMessageTallyWebView >> headingRendering: aRenderable [
 
-	^ HeadingWebView displaying: aRenderable withLevel: 4 applying: [ :heading | heading addClass bootstrap textInfo ]
+	^ HeadingWebView displaying: aRenderable withLevel: 4 applying: [ :heading | heading addClass bootstrap3 textInfo ]
 ]
 
 { #category : #initialization }
@@ -40,14 +40,14 @@ WPMessageTallyWebView >> initializeFor: aMessageTally [
 WPMessageTallyWebView >> itemRenderingCommandFor: node [
 
 	^ [ :html | 
-	html span with: (self formattedPercentagFor: node) applying: [ :label | label addClass bootstrap label + label addClass bootstrap labelPrimary ].
+	html span with: (self formattedPercentagFor: node) applying: [ :label | label addClass bootstrap3 label + label addClass bootstrap3 labelPrimary ].
 	html space.
 	html span
 		with: [ html
 				render: (self timeFor: node);
 				space;
 				render: 'ms' ]
-		applying: [ :label | label addClass bootstrap label + label addClass bootstrap labelDefault ].
+		applying: [ :label | label addClass bootstrap3 label + label addClass bootstrap3 labelDefault ].
 	html
 		space;
 		render: node method methodClass;
@@ -74,7 +74,7 @@ WPMessageTallyWebView >> renderBoundedContainerWrapping: aRenderable on: html up
 				setStyleTo: [ :style :constants | 
 					style
 						maxHeight: aMaxHeight;
-						overflowY: #scroll ]) + div addClass bootstrap small ]
+						overflowY: #scroll ]) + div addClass bootstrap3 small ]
 ]
 
 { #category : #rendering }
@@ -97,12 +97,12 @@ WPMessageTallyWebView >> renderLeavesOn: html [
 			column
 				titled: 'Percent';
 				rendering: [ :node | self formattedPercentagFor: node ];
-				applyingToEachCell: [ :cell | cell addClass bootstrap textRight ] ];
+				applyingToEachCell: [ :cell | cell addClass bootstrap3 textRight ] ];
 		addColumn: [ :column | 
 			column
 				titled: 'Time (ms)';
 				rendering: [ :node | self timeFor: node ];
-				applyingToEachCell: [ :cell | cell addClass bootstrap textRight ] ];
+				applyingToEachCell: [ :cell | cell addClass bootstrap3 textRight ] ];
 		addColumn: [ :column | 
 			column
 				titled: 'Class';

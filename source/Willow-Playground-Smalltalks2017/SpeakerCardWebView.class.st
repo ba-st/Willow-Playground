@@ -29,14 +29,18 @@ SpeakerCardWebView >> contactInfoByEMail: mailUser andGithub: githubUser [
 		small: [ html definitionList
 				with: [ html
 						definitionTerm: 'Work E-Mail';
-						definitionData: ('<1s>@mercapsoftware.com' expandMacrosWith: mailUser);
+						definitionData: ( '<1s>@mercapsoftware.com' expandMacrosWith: mailUser );
 						definitionTerm: 'Personal E-Mail';
-						definitionData: ('<1s>@gmail.com' expandMacrosWith: mailUser);
+						definitionData: ( '<1s>@gmail.com' expandMacrosWith: mailUser );
 						definitionTerm: 'GitHub Profile';
 						definitionData: [ html anchor
-								url: ('https://www.github.com/<1s>' expandMacrosWith: githubUser);
-								with: githubUser ] ]
-				applying: [ :list | list addClass bootstrap definitionListHorizontal ] ] ]
+								url: ( 'https://www.github.com/<1s>' expandMacrosWith: githubUser );
+								with: githubUser
+							]
+					]
+				applying: [ :list | list addClass bootstrap3 definitionListHorizontal ]
+			]
+	]
 ]
 
 { #category : #private }
@@ -46,19 +50,24 @@ SpeakerCardWebView >> headingShowing: aFullName and: academicDegree withAvatarLo
 		displaying: [ :html | 
 			html
 				render:
-					(ImageWebView
+					( ImageWebView
 						locatedAt: avatarLocation
-						applying: [ :avatar | avatar addClass bootstrap pullRight + avatar addClass bootstrap imageCircle + (avatar setStyleTo: [ :style | style width: 48 px ]) ]);
+						applying: [ :avatar | 
+							avatar addClass bootstrap3 pullRight + avatar addClass bootstrap3 imageCircle
+								+ ( avatar setStyleTo: [ :style | style width: 48 px ] )
+							] );
 				render: aFullName;
 				break;
-				small: ('<1s> at FCEN - UBA' expandMacrosWith: academicDegree);
+				small: ( '<1s> at FCEN - UBA' expandMacrosWith: academicDegree );
 				break;
 				small: [ html
 						render: 'R&D at';
 						space.
 					html anchor
 						url: 'http://www.mercapsoftware.com';
-						with: 'Mercap Software' ] ]
+						with: 'Mercap Software'
+					]
+			]
 		withLevel: 4
 ]
 
@@ -68,9 +77,10 @@ SpeakerCardWebView >> initializeFor: aFullName avatarLocatedAt: avatarLocation a
 	panel := self componentSupplier panelBuilder
 		wrapping: [ :html | 
 			html
-				render: (self headingShowing: aFullName and: academicDegree withAvatarLocatedAt: avatarLocation);
-				render: (self contactInfoByEMail: mailUser andGithub: githubUser) ];
-		buildApplying: [ :card | card addClass bootstrap panelDefault ]
+				render: ( self headingShowing: aFullName and: academicDegree withAvatarLocatedAt: avatarLocation );
+				render: ( self contactInfoByEMail: mailUser andGithub: githubUser )
+			];
+		buildApplying: [ :card | card addClass bootstrap3 panelDefault ]
 ]
 
 { #category : #rendering }

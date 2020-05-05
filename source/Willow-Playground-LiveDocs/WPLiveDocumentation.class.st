@@ -31,14 +31,14 @@ WPLiveDocumentation class >> sessionClass [
 { #category : #Accessing }
 WPLiveDocumentation >> componentSupplierForApplication [
 
-	^ BootstrapComponentSupplier
+	^ Bootstrap3ComponentSupplier
 		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme
 		selectLibrary: ((self deploymentMode libraryFor: BootstrapSelectLibrary) using: self language)
 		datepickerLibrary: ((self deploymentMode libraryFor: BootstrapDatepickerLibrary) using: self language)
 		typeaheadLibrary: (self deploymentMode libraryFor: BootstrapTypeaheadLibrary) default
 ]
 
-{ #category : #accessing }
+{ #category : #Accessing }
 WPLiveDocumentation >> contentView [
 
 	^ contentView
@@ -68,24 +68,28 @@ WPLiveDocumentation >> initializeContainerView [
 		containing: WPLiveDocumentationBehaviorWebView new
 		applying: [ :div | 
 			div
-				setStyleTo: [ :style  | 
+				setStyleTo: [ :style | 
 					style
 						maxHeight: 100 vh;
-						overflowY: #scroll ] ].
+						overflowY: #scroll
+					]
+			].
 	scopeSelection := WPLiveDocumentationScopeSelectionWebView new.
-	scopeSelection onBehaviorSelectedTrigger show: SpinKitTripleBounce new whileCallingServerToRender: behaviorDetails.
+	scopeSelection onBehaviorSelectedTrigger
+		show: SpinKitFlow new
+		whileCallingServerToRender: behaviorDetails.
 
 	contentView := GenericContainerWebView
 		wrapping:
-			(self componentSupplier gridBuilder
+			( self componentSupplier gridBuilder
 				columnsWidths: #(3 9);
 				addContent: scopeSelection;
 				addContent: behaviorDetails;
-				build)
-		applying: [ :div | div addClass bootstrap container ]
+				build )
+		applying: [ :div | div addClass bootstrap3 container ]
 ]
 
-{ #category : #accessing }
+{ #category : #Accessing }
 WPLiveDocumentation >> jQueryLibrary [
 
 	^ (self deploymentMode libraryFor: JQuery3MetadataLibrary) default
@@ -94,5 +98,5 @@ WPLiveDocumentation >> jQueryLibrary [
 { #category : #updating }
 WPLiveDocumentation >> requiredLibraries [
 
-	^ {SpinKitMetadataLibrary default}
+	^ {( self deploymentMode libraryFor: SpinKitMetadataLibrary ) default}
 ]

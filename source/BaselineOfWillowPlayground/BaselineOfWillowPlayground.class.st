@@ -15,13 +15,28 @@ BaselineOfWillowPlayground >> baseline: spec [
 		for: #pharo
 		do: [ self
 				setUpDependencies: spec;
-				baselineWillowPlayground: spec.
+				setUpPackages: spec.
 			spec group: 'Development' with: 'Deployment'
 			]
 ]
 
 { #category : #baselines }
-BaselineOfWillowPlayground >> baselineWillowPlayground: spec [
+BaselineOfWillowPlayground >> setUpDependencies: spec [
+
+	spec
+		baseline: 'WillowBootstrap'
+			with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v12/source' ];
+		project: 'Willow-Bootstrap-Deployment'
+			copyFrom: 'WillowBootstrap'
+			with: [ spec loads: 'Deployment' ].
+
+	spec
+		baseline: 'WillowSpinKit' with: [ spec repository: 'github://ba-st/Willow-SpinKit:v8/source' ];
+		project: 'Willow-SpinKit-Deployment' copyFrom: 'WillowSpinKit' with: [ spec loads: 'Deployment' ]
+]
+
+{ #category : #baselines }
+BaselineOfWillowPlayground >> setUpPackages: spec [
 
 	spec
 		package: 'Willow-Playground-TestRunner'
@@ -33,19 +48,4 @@ BaselineOfWillowPlayground >> baselineWillowPlayground: spec [
 		package: 'Willow-Playground-Smalltalks2017'
 			with: [ spec requires: #('Willow-Playground-TestRunner' 'Willow-Playground-LiveDocs') ];
 		group: 'Deployment' with: 'Willow-Playground-Smalltalks2017'
-]
-
-{ #category : #baselines }
-BaselineOfWillowPlayground >> setUpDependencies: spec [
-
-	spec
-		baseline: 'WillowBootstrap'
-			with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v11/source' ];
-		project: 'Willow-Bootstrap-Deployment'
-			copyFrom: 'WillowBootstrap'
-			with: [ spec loads: 'Deployment' ].
-
-	spec
-		baseline: 'WillowSpinKit' with: [ spec repository: 'github://ba-st/Willow-SpinKit:v7/source' ];
-		project: 'Willow-SpinKit-Deployment' copyFrom: 'WillowSpinKit' with: [ spec loads: 'Deployment' ]
 ]

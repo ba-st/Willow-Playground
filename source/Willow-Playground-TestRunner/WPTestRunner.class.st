@@ -31,7 +31,7 @@ WPTestRunner class >> sessionClass [
 { #category : #Accessing }
 WPTestRunner >> componentSupplierForApplication [
 
-	^ BootstrapComponentSupplier
+	^ Bootstrap3ComponentSupplier
 		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme
 		selectLibrary: ((self deploymentMode libraryFor: BootstrapSelectLibrary) using: self language)
 		datepickerLibrary: ((self deploymentMode libraryFor: BootstrapDatepickerLibrary) using: self language)
@@ -73,7 +73,7 @@ WPTestRunner >> initializeContainerView [
 				addContent: (self toolbarRenderingOnAction: testResult);
 				addContent: WPTestRunnerSuiteSelectionWebView new;
 				build)
-		applying: [ :div | div addClass bootstrap container ]
+		applying: [ :div | div addClass bootstrap3 container ]
 ]
 
 { #category : #accessing }
@@ -85,7 +85,7 @@ WPTestRunner >> jQueryLibrary [
 { #category : #updating }
 WPTestRunner >> requiredLibraries [
 
-	^ {SpinKitMetadataLibrary default}
+	^ {( self deploymentMode libraryFor: SpinKitMetadataLibrary ) default}
 ]
 
 { #category : #private }
@@ -96,12 +96,12 @@ WPTestRunner >> toolbarRenderingOnAction: testResult [
 	toolbar := WPTestRunnerToolbar new.
 
 	toolbar onRunSelectedTestsTrigger
-		transform: testResult into: SpinKitTripleBounce new;
+		transform: testResult into: SpinKitFlow new;
 		evaluate: [ self session applicationContext runTests ];
 		render: testResult.
 
 	toolbar onRunProfiledTrigger
-		transform: testResult into: SpinKitRotatingPlane new;
+		transform: testResult into: SpinKitPlane new;
 		determineBehaviorByEvaluating: [ :response | 
 			self session applicationContext runTestsProfiled.
 			response onReturn

@@ -13,7 +13,9 @@
 </p>
 
 [![GitHub release](https://img.shields.io/github/release/ba-st/Willow-Playground.svg)](https://github.com/ba-st/Willow-Playground/releases/latest)
-[![Build Status](https://travis-ci.org/ba-st/Willow-Playground.svg?branch=release-candidate)](https://travis-ci.org/ba-st/Willow-Playground)
+[![Build Status](https://github.com/ba-st/Willow-Playground/workflows/Build/badge.svg?branch=release-candidate)](https://github.com/ba-st/Willow-Playground/actions?query=workflow%3ABuild)
+[![Pharo 7.0](https://img.shields.io/badge/Pharo-7.0-informational)](https://pharo.org)
+[![Pharo 8.0](https://img.shields.io/badge/Pharo-8.0-informational)](https://pharo.org)
 
 ## Goals
 - Present the different components and features of Willow

@@ -39,5 +39,5 @@ WPLiveDocumentationClassHierarchyCard >> renderContentOn: html [
 							canvas
 								render: class name;
 								break ] ];
-				buildApplying: [ :panel | panel addClass bootstrap panelDefault ])
+				buildApplying: [ :panel | panel addClass bootstrap3 panelDefault ])
 ]

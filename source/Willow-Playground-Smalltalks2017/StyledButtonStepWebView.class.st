@@ -25,11 +25,11 @@ StyledButtonStepWebView >> initialize [
 
 { #category : #initialization }
 StyledButtonStepWebView >> initializeButton [
- button := AsynchronicButtonWebView
-	labeled: 'Primary Bootstrap Button'
-	applying:
-		[ :theButton | theButton addClass bootstrap button + 
-				theButton addClass bootstrap buttonPrimary ]
+
+	button := AsynchronicButtonWebView
+		labeled: 'Primary Bootstrap Button'
+		applying:
+			[ :theButton | theButton addClass bootstrap3 button + theButton addClass bootstrap3 buttonPrimary ]
 ]
 
 { #category : #rendering }
