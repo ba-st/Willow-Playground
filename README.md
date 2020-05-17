@@ -28,7 +28,14 @@
 ## Quick Start
 
 - Download the latest [Pharo 32](https://get.pharo.org/) or [64 bits VM](https://get.pharo.org/64/).
-- Download a ready to use image from the [release page](https://github.com/ba-st/Willow-Playground/releases/latest)
+- Load the latest playground version with
+
+```smalltalk
+Metacello new
+	baseline: 'WillowPlayground';
+	repository: 'github://ba-st/Willow-Playground:release-candidate/source';
+	load.
+```
 
 You can now evaluate
 
@@ -40,7 +47,8 @@ and go to [localhost:8080/willow101](http://localhost:8080/willow101) to find an
 
 To learn how to use Willow, you can check the applications included in this repository:
 - Live Documentation: start by browsing WPLiveDocumentation. Access the application at [localhost:8080/live-docs](http://localhost:8080/live-docs)
-- Test Runner: start by browsing WPTestRunner. Access the application at [localhost:8080/test-runner-bootstrap3](http://localhost:8080/test-runner-bootstrap3)
+- Test Runner (Boostrap 3): start by browsing WPB3TestRunner. Access the application at [localhost:8080/test-runner-bootstrap3](http://localhost:8080/test-runner-bootstrap3)
+- Test Runner (Boostrap 4): start by browsing WPB4TestRunner. Access the application at [localhost:8080/test-runner-bootstrap4](http://localhost:8080/test-runner-bootstrap4)
 
 ## Installation
 
