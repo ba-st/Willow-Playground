@@ -39,9 +39,10 @@ Smalltalks2017Presentation class >> registerAsApplicationUsing: deploymentModeCl
 Smalltalks2017Presentation class >> start [
 
 	Smalltalks2017Presentation registerAsDevelopmentApplication.
-	WPTestRunner registerAsDevelopmentApplication.
+	WPB3TestRunner registerAsDevelopmentApplication.
+	WPB4TestRunner registerAsDevelopmentApplication.
 	WPLiveDocumentation registerAsDevelopmentApplication.
-	(ZnZincServerAdaptor port: 8080)
+	( ZnZincServerAdaptor port: 8080 )
 		codec: GRPharoUtf8Codec new;
 		start
 ]
@@ -52,7 +53,8 @@ Smalltalks2017Presentation class >> stop [
 	ZnServer stopDefault.
 	ZnZincServerAdaptor allInstancesDo: [ :each | each shutDown ].
 	Smalltalks2017Presentation unregisterFromApplications.
-	WPTestRunner unregisterFromApplications.
+	WPB4TestRunner unregisterFromApplications.
+	WPB3TestRunner unregisterFromApplications.
 	WPLiveDocumentation unregisterFromApplications.
 	Smalltalk garbageCollect
 ]

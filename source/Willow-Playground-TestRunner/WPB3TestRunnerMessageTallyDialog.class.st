@@ -2,16 +2,16 @@
 I'm a Dialog showing the message tally results.
 "
 Class {
-	#name : #WPTestRunnerMessageTallyDialog,
+	#name : #WPB3TestRunnerMessageTallyDialog,
 	#superclass : #WAPainter,
 	#instVars : [
 		'dialog'
 	],
-	#category : #'Willow-Playground-TestRunner-WebViews'
+	#category : #'Willow-Playground-TestRunner-WebViews-Bootstrap-3'
 }
 
 { #category : #initialization }
-WPTestRunnerMessageTallyDialog >> initialize [
+WPB3TestRunnerMessageTallyDialog >> initialize [
 
 	super initialize.
 	dialog := self componentSupplier dialogBuilder
@@ -23,16 +23,16 @@ WPTestRunnerMessageTallyDialog >> initialize [
 ]
 
 { #category : #rendering }
-WPTestRunnerMessageTallyDialog >> renderContentOn: html [
+WPB3TestRunnerMessageTallyDialog >> renderContentOn: html [
 
 	html render: dialog
 ]
 
 { #category : #rendering }
-WPTestRunnerMessageTallyDialog >> renderTallyOn: html [
+WPB3TestRunnerMessageTallyDialog >> renderTallyOn: html [
 
 	self session applicationContext
-		withMessageTallyDo: [ :tally | html render: (WPMessageTallyWebView for: tally) ]
+		withMessageTallyDo: [ :tally | html render: (WPB3MessageTallyWebView for: tally) ]
 		ifNone: [ html
 				render: (Bootstrap3IconWebView representing: Glyphicons flash);
 				space;

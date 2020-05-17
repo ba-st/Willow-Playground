@@ -2,18 +2,18 @@
 Im the test runner toolbar
 "
 Class {
-	#name : #WPTestRunnerToolbar,
+	#name : #WPB3TestRunnerToolbar,
 	#superclass : #WAPainter,
 	#instVars : [
 		'runSelectedTestsButton',
 		'runProfiledButton',
 		'exportResultButton'
 	],
-	#category : #'Willow-Playground-TestRunner-WebViews'
+	#category : #'Willow-Playground-TestRunner-WebViews-Bootstrap-3'
 }
 
 { #category : #initialization }
-WPTestRunnerToolbar >> initialize [
+WPB3TestRunnerToolbar >> initialize [
 
 	super initialize.
 	self
@@ -23,7 +23,7 @@ WPTestRunnerToolbar >> initialize [
 ]
 
 { #category : #initialization }
-WPTestRunnerToolbar >> initializeExportResultButton [
+WPB3TestRunnerToolbar >> initializeExportResultButton [
 
 	exportResultButton := FileDownloadAnchorWebView
 		labeled: (self label: 'Download' prependedBy: Glyphicons cloudDownload)
@@ -32,13 +32,13 @@ WPTestRunnerToolbar >> initializeExportResultButton [
 ]
 
 { #category : #initialization }
-WPTestRunnerToolbar >> initializeRunProfiledButton [
+WPB3TestRunnerToolbar >> initializeRunProfiledButton [
 
 	runProfiledButton := self componentSupplier asynchronicButtonLabeled: (self label: 'Run Profiled' prependedBy: Glyphicons stats) applying: [ :button | button addClass bootstrap3 buttonDefault ]
 ]
 
 { #category : #initialization }
-WPTestRunnerToolbar >> initializeRunSelectedTestsButton [
+WPB3TestRunnerToolbar >> initializeRunSelectedTestsButton [
 
 	runSelectedTestsButton := self componentSupplier
 		asynchronicButtonLabeled: ( self label: 'Run Selected' prependedBy: Glyphicons play )
@@ -46,7 +46,7 @@ WPTestRunnerToolbar >> initializeRunSelectedTestsButton [
 ]
 
 { #category : #private }
-WPTestRunnerToolbar >> label: aText prependedBy: anIconClass [
+WPB3TestRunnerToolbar >> label: aText prependedBy: anIconClass [
 
 	^ [ :canvas | 
 	canvas
@@ -56,19 +56,19 @@ WPTestRunnerToolbar >> label: aText prependedBy: anIconClass [
 ]
 
 { #category : #Interaction }
-WPTestRunnerToolbar >> onRunProfiledTrigger [
+WPB3TestRunnerToolbar >> onRunProfiledTrigger [
 
 	^ runProfiledButton onTrigger
 ]
 
 { #category : #Interaction }
-WPTestRunnerToolbar >> onRunSelectedTestsTrigger [
+WPB3TestRunnerToolbar >> onRunSelectedTestsTrigger [
 
 	^ runSelectedTestsButton onTrigger
 ]
 
 { #category : #rendering }
-WPTestRunnerToolbar >> renderContentOn: html [
+WPB3TestRunnerToolbar >> renderContentOn: html [
 
 	html div
 		with: [ 

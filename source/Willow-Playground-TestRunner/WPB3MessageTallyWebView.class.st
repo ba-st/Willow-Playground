@@ -2,22 +2,22 @@
 I'm a web view showing a message tally result
 "
 Class {
-	#name : #WPMessageTallyWebView,
+	#name : #WPB3MessageTallyWebView,
 	#superclass : #WAPainter,
 	#instVars : [
 		'rootTally'
 	],
-	#category : #'Willow-Playground-TestRunner-WebViews'
+	#category : #'Willow-Playground-TestRunner-WebViews-Bootstrap-3'
 }
 
 { #category : #'instance creation' }
-WPMessageTallyWebView class >> for: aMessageTally [
+WPB3MessageTallyWebView class >> for: aMessageTally [
 
 	^ self new initializeFor: aMessageTally
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> formattedPercentagFor: node [
+WPB3MessageTallyWebView >> formattedPercentagFor: node [
 
 	^ (GRNumberPrinter new
 		precision: 2;
@@ -25,19 +25,19 @@ WPMessageTallyWebView >> formattedPercentagFor: node [
 ]
 
 { #category : #private }
-WPMessageTallyWebView >> headingRendering: aRenderable [
+WPB3MessageTallyWebView >> headingRendering: aRenderable [
 
 	^ HeadingWebView displaying: aRenderable withLevel: 4 applying: [ :heading | heading addClass bootstrap3 textInfo ]
 ]
 
 { #category : #initialization }
-WPMessageTallyWebView >> initializeFor: aMessageTally [
+WPB3MessageTallyWebView >> initializeFor: aMessageTally [
 
 	rootTally := aMessageTally
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> itemRenderingCommandFor: node [
+WPB3MessageTallyWebView >> itemRenderingCommandFor: node [
 
 	^ [ :html | 
 	html span with: (self formattedPercentagFor: node) applying: [ :label | label addClass bootstrap3 label + label addClass bootstrap3 labelPrimary ].
@@ -59,13 +59,13 @@ WPMessageTallyWebView >> itemRenderingCommandFor: node [
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> percentageFor: node [
+WPB3MessageTallyWebView >> percentageFor: node [
 
 	^ Percentage ratio: (node tally / rootTally tally) 
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> renderBoundedContainerWrapping: aRenderable on: html upTo: aMaxHeight [
+WPB3MessageTallyWebView >> renderBoundedContainerWrapping: aRenderable on: html upTo: aMaxHeight [
 
 	html div
 		with: aRenderable
@@ -78,7 +78,7 @@ WPMessageTallyWebView >> renderBoundedContainerWrapping: aRenderable on: html up
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> renderContentOn: html [
+WPB3MessageTallyWebView >> renderContentOn: html [
 
 	self
 		renderTreeOn: html;
@@ -86,7 +86,7 @@ WPMessageTallyWebView >> renderContentOn: html [
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> renderLeavesOn: html [
+WPB3MessageTallyWebView >> renderLeavesOn: html [
 
 	| leavesTable |
 
@@ -119,14 +119,14 @@ WPMessageTallyWebView >> renderLeavesOn: html [
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> renderTreeOn: html [
+WPB3MessageTallyWebView >> renderTreeOn: html [
 
 	html render: (self headingRendering: 'Tree').
 	self renderBoundedContainerWrapping: (self unorderedListRendering: rootTally receivers) on: html upTo: 40 vh
 ]
 
 { #category : #private }
-WPMessageTallyWebView >> tallyLeavesSorted [
+WPB3MessageTallyWebView >> tallyLeavesSorted [
 
 	| dict |
 
@@ -136,13 +136,13 @@ WPMessageTallyWebView >> tallyLeavesSorted [
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> timeFor: node [
+WPB3MessageTallyWebView >> timeFor: node [
 
 	^ ((self percentageFor: node) * rootTally time) rounded
 ]
 
 { #category : #rendering }
-WPMessageTallyWebView >> unorderedListRendering: tallies [
+WPB3MessageTallyWebView >> unorderedListRendering: tallies [
 
 	^ (tallies isNil or: [ tallies isEmpty ])
 		ifTrue: [ [  ] ]
