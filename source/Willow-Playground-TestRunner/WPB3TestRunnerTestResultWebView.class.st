@@ -2,25 +2,25 @@
 I will show the test result
 "
 Class {
-	#name : #WPTestRunnerTestResultWebView,
+	#name : #WPB3TestRunnerTestResultWebView,
 	#superclass : #WAPainter,
-	#category : #'Willow-Playground-TestRunner-WebViews'
+	#category : #'Willow-Playground-TestRunner-WebViews-Bootstrap-3'
 }
 
 { #category : #rendering }
-WPTestRunnerTestResultWebView >> detailsLinkShowing: testResult [
+WPB3TestRunnerTestResultWebView >> detailsLinkShowing: testResult [
 
 	| showDetailsAnchor |
 
 	showDetailsAnchor := self componentSupplier
 		asynchronicLinkActingAsButtonLabeled: 'See the details here.'
 		applying: [ :anchor | anchor addClass bootstrap3 alertLink ].
-	showDetailsAnchor onTrigger open: (WPTestRunnerTestResultDetailsDialog for: testResult).
+	showDetailsAnchor onTrigger open: (WPB3TestRunnerTestResultDetailsDialog for: testResult).
 	^ showDetailsAnchor
 ]
 
 { #category : #rendering }
-WPTestRunnerTestResultWebView >> renderContentOn: html [
+WPB3TestRunnerTestResultWebView >> renderContentOn: html [
 
 	| notificationBuilder testResult |
 

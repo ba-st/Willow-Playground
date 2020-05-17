@@ -2,22 +2,22 @@
 I show the test result details
 "
 Class {
-	#name : #WPTestRunnerTestResultDetailsDialog,
+	#name : #WPB3TestRunnerTestResultDetailsDialog,
 	#superclass : #WAPainter,
 	#instVars : [
 		'dialog'
 	],
-	#category : #'Willow-Playground-TestRunner-WebViews'
+	#category : #'Willow-Playground-TestRunner-WebViews-Bootstrap-3'
 }
 
 { #category : #'instance creation' }
-WPTestRunnerTestResultDetailsDialog class >> for: aTestResult [
+WPB3TestRunnerTestResultDetailsDialog class >> for: aTestResult [
 
 	^ self new initializeFor: aTestResult
 ]
 
 { #category : #initialization }
-WPTestRunnerTestResultDetailsDialog >> initializeFor: aTestResult [
+WPB3TestRunnerTestResultDetailsDialog >> initializeFor: aTestResult [
 
 	dialog := self componentSupplier dialogBuilder
 		headerTitled: 'Test Result Details';
@@ -28,13 +28,13 @@ WPTestRunnerTestResultDetailsDialog >> initializeFor: aTestResult [
 ]
 
 { #category : #rendering }
-WPTestRunnerTestResultDetailsDialog >> renderContentOn: html [
+WPB3TestRunnerTestResultDetailsDialog >> renderContentOn: html [
 
 	html render: dialog
 ]
 
 { #category : #rendering }
-WPTestRunnerTestResultDetailsDialog >> renderDetailsFor: aTestResult on: html [
+WPB3TestRunnerTestResultDetailsDialog >> renderDetailsFor: aTestResult on: html [
 
 	html render: (self summaryFor: aTestResult).
 	self
@@ -43,7 +43,7 @@ WPTestRunnerTestResultDetailsDialog >> renderDetailsFor: aTestResult on: html [
 ]
 
 { #category : #rendering }
-WPTestRunnerTestResultDetailsDialog >> renderErrorsFor: aTestResult on: html [
+WPB3TestRunnerTestResultDetailsDialog >> renderErrorsFor: aTestResult on: html [
 
 	aTestResult hasErrors
 		ifTrue: [ | errorsTable |
@@ -65,7 +65,7 @@ WPTestRunnerTestResultDetailsDialog >> renderErrorsFor: aTestResult on: html [
 ]
 
 { #category : #rendering }
-WPTestRunnerTestResultDetailsDialog >> renderFailuresFor: aTestResult on: html [
+WPB3TestRunnerTestResultDetailsDialog >> renderFailuresFor: aTestResult on: html [
 
 	aTestResult hasFailures
 		ifTrue: [ | failuresTable |
@@ -87,7 +87,7 @@ WPTestRunnerTestResultDetailsDialog >> renderFailuresFor: aTestResult on: html [
 ]
 
 { #category : #rendering }
-WPTestRunnerTestResultDetailsDialog >> summaryFor: aTestResult [
+WPB3TestRunnerTestResultDetailsDialog >> summaryFor: aTestResult [
 
 	^ self componentSupplier gridBuilder
 		columnsPerRow: 1;

@@ -2,7 +2,7 @@
 I'm a web version of the test runner 
 "
 Class {
-	#name : #WPTestRunner,
+	#name : #WPB3TestRunner,
 	#superclass : #WillowApplication,
 	#instVars : [
 		'contentView'
@@ -11,25 +11,25 @@ Class {
 }
 
 { #category : #accessing }
-WPTestRunner class >> applicationTitle [
+WPB3TestRunner class >> applicationTitle [
 
 	^ 'Test Runner'
 ]
 
 { #category : #accessing }
-WPTestRunner class >> handlerName [
+WPB3TestRunner class >> handlerName [
 
 	^ 'test-runner-bootstrap3'
 ]
 
 { #category : #accessing }
-WPTestRunner class >> sessionClass [
+WPB3TestRunner class >> sessionClass [
 
 	^ WPTestRunnerSession
 ]
 
 { #category : #Accessing }
-WPTestRunner >> componentSupplierForApplication [
+WPB3TestRunner >> componentSupplierForApplication [
 
 	^ Bootstrap3ComponentSupplier
 		withBootstrapLibrary: (self deploymentMode libraryFor: Bootstrap3MetadataLibrary) withoutOptionalTheme
@@ -39,31 +39,31 @@ WPTestRunner >> componentSupplierForApplication [
 ]
 
 { #category : #accessing }
-WPTestRunner >> contentView [
+WPB3TestRunner >> contentView [
 
 	^ contentView
 ]
 
 { #category : #hooks }
-WPTestRunner >> initialRequest: request [
+WPB3TestRunner >> initialRequest: request [
 
 	super initialRequest: request.
 	self initializeContainerView
 ]
 
 { #category : #initialization }
-WPTestRunner >> initialize [
+WPB3TestRunner >> initialize [
 
 	super initialize.
 	contentView := [ :canvas |  ]
 ]
 
 { #category : #private }
-WPTestRunner >> initializeContainerView [
+WPB3TestRunner >> initializeContainerView [
 
 	| testResult |
 
-	testResult := IdentifiedWebView forDivNamed: 'test-result' containing: WPTestRunnerTestResultWebView new.
+	testResult := IdentifiedWebView forDivNamed: 'test-result' containing: WPB3TestRunnerTestResultWebView new.
 	contentView := GenericContainerWebView
 		wrapping:
 			(self componentSupplier gridBuilder
@@ -77,23 +77,23 @@ WPTestRunner >> initializeContainerView [
 ]
 
 { #category : #accessing }
-WPTestRunner >> jQueryLibrary [
+WPB3TestRunner >> jQueryLibrary [
 
 	^ (self deploymentMode libraryFor: JQuery3MetadataLibrary) default
 ]
 
 { #category : #updating }
-WPTestRunner >> requiredLibraries [
+WPB3TestRunner >> requiredLibraries [
 
 	^ {( self deploymentMode libraryFor: SpinKitMetadataLibrary ) default}
 ]
 
 { #category : #private }
-WPTestRunner >> toolbarRenderingOnAction: testResult [
+WPB3TestRunner >> toolbarRenderingOnAction: testResult [
 
 	| toolbar |
 
-	toolbar := WPTestRunnerToolbar new.
+	toolbar := WPB3TestRunnerToolbar new.
 
 	toolbar onRunSelectedTestsTrigger
 		transform: testResult into: SpinKitFlow new;
@@ -105,7 +105,7 @@ WPTestRunner >> toolbarRenderingOnAction: testResult [
 		determineBehaviorByEvaluating: [ :response | 
 			self session applicationContext runTestsProfiled.
 			response onReturn
-				open: WPTestRunnerMessageTallyDialog new;
+				open: WPB3TestRunnerMessageTallyDialog new;
 				render: testResult ].
 
 	^ toolbar

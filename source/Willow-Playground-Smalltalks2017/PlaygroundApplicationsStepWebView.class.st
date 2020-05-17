@@ -41,5 +41,5 @@ PlaygroundApplicationsStepWebView >> testRunnerAnchor [
 
 	^ self componentSupplier
 		asynchronicLinkLabeled: 'Open the Test Runner!'
-		applying: (OpenLocationCommand forNewBrowsingContextNavigatingTo:WPTestRunner handlerName)
+		applying: (OpenLocationCommand forNewBrowsingContextNavigatingTo:WPB3TestRunner handlerName)
 ]
