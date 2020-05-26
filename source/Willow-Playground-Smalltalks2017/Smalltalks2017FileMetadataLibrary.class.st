@@ -148,7 +148,7 @@ Smalltalks2017FileMetadataLibrary >> highlightsmalltalkminJs [
 
 	^ WAFileLibraryResource
 		filepath: 'highlight-smalltalk.min.js'
-		mimeType: WAMimeType textJavascript
+		mimeType: WAMimeType applicationJavascript
 		cacheDuration: self class defaultCacheDuration
 		contents: (GRDelayedSend receiver: self selector: #highlightsmalltalkminJsContent)
 ]
@@ -385,7 +385,7 @@ Smalltalks2017FileMetadataLibrary >> willowplaygrounderrorhandlerJs [
 
 	^ WAFileLibraryResource
 		filepath: 'willow-playground-error-handler.js'
-		mimeType: WAMimeType textJavascript
+		mimeType: WAMimeType applicationJavascript
 		cacheDuration: self class defaultCacheDuration
 		contents: (GRDelayedSend receiver: self selector: #willowplaygrounderrorhandlerJsContent)
 ]
