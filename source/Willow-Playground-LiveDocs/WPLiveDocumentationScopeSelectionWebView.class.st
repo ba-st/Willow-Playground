@@ -29,7 +29,7 @@ WPLiveDocumentationScopeSelectionWebView >> initializeBehaviorsListBox [
 		singleSelectionListBoxDisplayingAtOnce: 30
 		applying: [ :listBox | listBox labelItemsWith: [ :class | class name ] ].
 	behaviorsListBox onTrigger
-		evaluate: [ behaviorsListBox
+		serverDo: [ behaviorsListBox
 				withCurrentSelectionDo: [ :selectedClass | self session applicationContext setSelectedBehaviorTo: selectedClass ]
 			]
 ]
@@ -55,7 +55,7 @@ WPLiveDocumentationScopeSelectionWebView >> initializePackagesDropdown [
 		dropdownListApplying:
 			[ :dropdown | ( dropdown labelItemsWith: [ :package | package name ] ) + BootstrapSelectLiveSearchCommand default ].
 	packagesDropdown onTrigger
-		evaluate: [ packagesDropdown
+		serverDo: [ packagesDropdown
 				withCurrentSelectionDo: [ :selectedPackage | self session applicationContext setSelectedPackageTo: selectedPackage ]
 			];
 		render: identifiedBehaviorSelection

@@ -103,16 +103,17 @@ WPB4TestRunner >> toolbarRenderingOnAction: testResult [
 
 	toolbar onRunSelectedTestsTrigger
 		transform: testResult into: SpinKitFlow new;
-		evaluate: [ self session applicationContext runTests ];
+		serverDo: [ self session applicationContext runTests ];
 		render: testResult.
 
 	toolbar onRunProfiledTrigger
 		transform: testResult into: SpinKitPlane new;
-		determineBehaviorByEvaluating: [ :response | 
+		serverDo: [ :request | 
 			self session applicationContext runTestsProfiled.
-			response onReturn
+			request onRespond
 				open: WPB4TestRunnerMessageTallyDialog new;
-				render: testResult ].
+				render: testResult
+			].
 
 	^ toolbar
 ]

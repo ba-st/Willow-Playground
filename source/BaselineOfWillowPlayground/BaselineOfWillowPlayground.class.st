@@ -25,7 +25,7 @@ BaselineOfWillowPlayground >> setUpDependencies: spec [
 
 	spec
 		baseline: 'WillowBootstrap'
-			with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v12/source' ];
+			with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v14/source' ];
 		project: 'Willow-Bootstrap-Deployment'
 			copyFrom: 'WillowBootstrap'
 			with: [ spec loads: 'Deployment' ].

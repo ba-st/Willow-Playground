@@ -101,7 +101,7 @@ Smalltalks2017Presentation >> initializeStepViews [
 		add: IntroductionStepWebView new;
 		add: RenderingStepWebView new;
 		add: NonInteractiveButtonStepWebView new;
-		add: ButtonExecutingOnClientStepWebView new;
+		add: UserAgentButtonStepWebView new;
 		add: ButtonEvaluatingBlockStepWebView new;
 		add: ButtonRenderingComponentStepWebView new;
 		add: FormTriggeringStepWebView new;
@@ -138,7 +138,7 @@ Smalltalks2017Presentation >> nextStepButton [
 		applying:
 			[ :theButton | theButton addClass bootstrap3 pullRight + theButton addClass bootstrap3 buttonDefault ].
 	button onTrigger
-		evaluate: [ currentStepIndex := self nextStepIndex ];
+		serverDo: [ currentStepIndex := self nextStepIndex ];
 		render: currentStepView.
 	^ button
 ]
@@ -170,7 +170,7 @@ Smalltalks2017Presentation >> previousStepButton [
 		applying:
 			[ :theButton | theButton addClass bootstrap3 pullLeft + theButton addClass bootstrap3 buttonDefault ].
 	button onTrigger
-		evaluate: [ currentStepIndex := self previousStepIndex ];
+		serverDo: [ currentStepIndex := self previousStepIndex ];
 		render: currentStepView.
 	^ button
 ]

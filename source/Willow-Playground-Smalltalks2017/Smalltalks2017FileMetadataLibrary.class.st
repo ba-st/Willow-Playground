@@ -325,7 +325,7 @@ Smalltalks2017FileMetadataLibrary >> reportSessionExpiredToUserUsing: aScripting
 		buildApplying: [ :document | document addClass bootstrap3 modalLarge ].
 
 	dialog onCloseTrigger
-		executeOnClient: [ JSStream on: 'window.location.replace(window.location.pathname)' ].
+		userAgentDo: [ JSStream on: 'window.location.replace(window.location.pathname)' ].
 
 	^ DialogOpener new open: dialog on: aScriptingCanvas
 ]

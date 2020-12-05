@@ -97,16 +97,17 @@ WPB3TestRunner >> toolbarRenderingOnAction: testResult [
 
 	toolbar onRunSelectedTestsTrigger
 		transform: testResult into: SpinKitFlow new;
-		evaluate: [ self session applicationContext runTests ];
+		serverDo: [ self session applicationContext runTests ];
 		render: testResult.
 
 	toolbar onRunProfiledTrigger
 		transform: testResult into: SpinKitPlane new;
-		determineBehaviorByEvaluating: [ :response | 
+		serverDo: [ :request | 
 			self session applicationContext runTestsProfiled.
-			response onReturn
+			request onRespond
 				open: WPB3TestRunnerMessageTallyDialog new;
-				render: testResult ].
+				render: testResult
+			].
 
 	^ toolbar
 ]
