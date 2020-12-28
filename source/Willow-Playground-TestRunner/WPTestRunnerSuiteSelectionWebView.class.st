@@ -42,7 +42,7 @@ WPTestRunnerSuiteSelectionWebView >> initializePackageSelection [
 	packagesListBox := self componentSupplier
 		multipleSelectionListBoxDisplayingAtOnce: 25
 		applying: [  ].
-	packagesListBox onTrigger
+	packagesListBox on trigger
 		serverDo: [ self session applicationContext setSelectedPackageCategoriesTo: packagesListBox currentSelection ];
 		render: identifiedTestCaseClassesSelection
 ]
@@ -53,7 +53,7 @@ WPTestRunnerSuiteSelectionWebView >> initializeTestCaseClassesSelection [
 	testCaseClassesListBox := self componentSupplier
 		multipleSelectionListBoxDisplayingAtOnce: 25
 		applying: [  ].
-	testCaseClassesListBox onTrigger
+	testCaseClassesListBox on trigger
 		serverDo: [ self session applicationContext
 				setSelectedTestCaseClassesTo: testCaseClassesListBox currentSelection
 			]

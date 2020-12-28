@@ -15,7 +15,7 @@ WPB3TestRunnerTestResultWebView >> detailsLinkShowing: testResult [
 	showDetailsAnchor := self componentSupplier
 		asynchronicLinkActingAsButtonLabeled: 'See the details here.'
 		applying: [ :anchor | anchor addClass bootstrap3 alertLink ].
-	showDetailsAnchor onTrigger open: (WPB3TestRunnerTestResultDetailsDialog for: testResult).
+	showDetailsAnchor on trigger open: ( WPB3TestRunnerTestResultDetailsDialog for: testResult ).
 	^ showDetailsAnchor
 ]
 

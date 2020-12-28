@@ -33,9 +33,9 @@ ButtonRenderingComponentStepWebView >> initialize [
 
 { #category : #initialization }
 ButtonRenderingComponentStepWebView >> initializeButton [
+
 	button := AsynchronicButtonWebView labeled: 'Click for a change'.
-	button onTrigger
-		render: companionView
+	button on trigger render: companionView
 ]
 
 { #category : #initialization }

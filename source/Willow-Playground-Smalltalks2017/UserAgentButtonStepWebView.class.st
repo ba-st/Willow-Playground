@@ -27,7 +27,7 @@ UserAgentButtonStepWebView >> initialize [
 UserAgentButtonStepWebView >> initializeButton [
 
 	button := AsynchronicButtonWebView labeled: 'Now it''s time to click'.
-	button onTrigger userAgentDo: [ :canvas | canvas javascript alert: 'You just clicked a button' ]
+	button on trigger userAgentDo: [ :canvas | canvas javascript alert: 'You just clicked a button' ]
 ]
 
 { #category : #rendering }

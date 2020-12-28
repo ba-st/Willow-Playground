@@ -58,13 +58,13 @@ WPB3TestRunnerToolbar >> label: aText prependedBy: anIconClass [
 { #category : #Interaction }
 WPB3TestRunnerToolbar >> onRunProfiledTrigger [
 
-	^ runProfiledButton onTrigger
+	^ runProfiledButton on trigger
 ]
 
 { #category : #Interaction }
 WPB3TestRunnerToolbar >> onRunSelectedTestsTrigger [
 
-	^ runSelectedTestsButton onTrigger
+	^ runSelectedTestsButton on trigger
 ]
 
 { #category : #rendering }

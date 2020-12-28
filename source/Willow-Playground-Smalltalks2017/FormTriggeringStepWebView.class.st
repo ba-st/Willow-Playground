@@ -35,7 +35,7 @@ FormTriggeringStepWebView >> initialize [
 FormTriggeringStepWebView >> initializeButton [
 
 	button := AsynchronicButtonWebView labeled: 'Ask it!'.
-	button onTrigger
+	button on trigger
 		serializeContainerForm;
 		disable;
 		serverDo: [ :request | 

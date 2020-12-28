@@ -27,7 +27,7 @@ ButtonEvaluatingBlockStepWebView >> initialize [
 ButtonEvaluatingBlockStepWebView >> initializeButton [
 
 	button := AsynchronicButtonWebView labeled: 'Click... then check your image'.
-	button onTrigger serverDo: [ 'The button was clicked on the browser' inspect ]
+	button on trigger serverDo: [ 'The button was clicked on the browser' inspect ]
 ]
 
 { #category : #rendering }

@@ -137,7 +137,7 @@ Smalltalks2017Presentation >> nextStepButton [
 			]
 		applying:
 			[ :theButton | theButton addClass bootstrap3 pullRight + theButton addClass bootstrap3 buttonDefault ].
-	button onTrigger
+	button on trigger
 		serverDo: [ currentStepIndex := self nextStepIndex ];
 		render: currentStepView.
 	^ button
@@ -169,7 +169,7 @@ Smalltalks2017Presentation >> previousStepButton [
 			]
 		applying:
 			[ :theButton | theButton addClass bootstrap3 pullLeft + theButton addClass bootstrap3 buttonDefault ].
-	button onTrigger
+	button on trigger
 		serverDo: [ currentStepIndex := self previousStepIndex ];
 		render: currentStepView.
 	^ button

@@ -18,7 +18,7 @@ PresentationStepWebView >> browseStepButtonEvaluating: aCallback [
 			theButton addClass bootstrap3 buttonDefault + theButton addClass bootstrap3 buttonSmall
 				+ theButton addClass smalltalks2017 browseStep
 			].
-	browseButton onTrigger serverDo: aCallback.
+	browseButton on trigger serverDo: aCallback.
 	^ browseButton
 ]
 

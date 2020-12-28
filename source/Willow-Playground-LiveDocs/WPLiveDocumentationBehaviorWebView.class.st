@@ -15,7 +15,7 @@ WPLiveDocumentationBehaviorWebView >> buttonToBrowse: aBehavior [
 	browseButton := self componentSupplier
 		asynchronicLinkActingAsButtonLabeled: 'Open Browser'
 		applying: [ :button | button addClass bootstrap3 buttonPrimary + button addClass bootstrap3 pullRight ].
-	browseButton onTrigger serverDo: [ aBehavior browse ].
+	browseButton on trigger serverDo: [ aBehavior browse ].
 	^ browseButton
 ]
 
