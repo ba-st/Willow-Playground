@@ -51,7 +51,7 @@ FormTriggeringStepWebView >> initializeField [
 
 
 	input := TextFieldWebView
-		 singleLineTriggeringOnChangeApplying: [ :theInput |  ]
+		 singleLineApplying: [ :theInput |  ]
 		
 		
 		
