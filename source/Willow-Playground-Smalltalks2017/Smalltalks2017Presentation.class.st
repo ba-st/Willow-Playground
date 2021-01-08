@@ -88,10 +88,10 @@ Smalltalks2017Presentation >> initialRequest: request [
 { #category : #initialization }
 Smalltalks2017Presentation >> initializeCurrentStepView [
 
-	currentStepView := IdentifiedWebView
-		forDivNamed: 'currentStep'
-		containing: [ :canvas | self renderCurrentStepOn: canvas ]
-		applying: [ :div | div addClass smalltalks2017 presentationArea ]
+	currentStepView := self componentSupplier
+		divisionContainerWrapping: [ :canvas | self renderCurrentStepOn: canvas ]
+		applying: [ :div | div addClass smalltalks2017 presentationArea ].
+	currentStepView beIdentifiable
 ]
 
 { #category : #initialization }
@@ -120,7 +120,7 @@ Smalltalks2017Presentation >> initializeStepViews [
 { #category : #accessing }
 Smalltalks2017Presentation >> jQueryLibrary [
 
-	^(self deploymentMode libraryFor: JQuery3MetadataLibrary) default
+	^ ( self deploymentMode libraryFor: JQuery3MetadataLibrary ) default
 ]
 
 { #category : #'private - accessing' }

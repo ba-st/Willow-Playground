@@ -94,26 +94,46 @@ WPB3TestRunnerTestResultDetailsDialog >> summaryFor: aTestResult [
 		applyingToCells: [ :cell | cell addClass bootstrap3 textCenter ];
 		addContent: [ :canvas | 
 			canvas
-				render: (HeadingWebView displaying: 'Summary' withLevel: 4 applying: [ :heading | heading addClass bootstrap3 textInfo + heading addClass bootstrap3 textLeft ]);
-				render: (PhrasingContainerWebView wrapping: aTestResult runCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelDefault ]);
+				render:
+					( HeadingWebView
+						displaying: 'Summary'
+						withLevel: 4
+						applying: [ :heading | heading addClass bootstrap3 textInfo + heading addClass bootstrap3 textLeft ] );
+				render:
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult runCount
+						applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelDefault ] );
 				space;
 				render: 'run';
 				space;
-				render: (PhrasingContainerWebView wrapping: aTestResult passedCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelSuccess ]);
+				render:
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult passedCount
+						applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelSuccess ] );
 				space;
 				render: 'passes';
 				space;
-				render: (PhrasingContainerWebView wrapping: aTestResult skippedCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelInfo ]);
+				render:
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult skippedCount
+						applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelInfo ] );
 				space;
 				render: 'skipped';
 				space;
-				render: (PhrasingContainerWebView wrapping: aTestResult failureCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelWarning ]);
+				render:
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult failureCount
+						applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelWarning ] );
 				space;
 				render: 'failures';
 				space;
-				render: (PhrasingContainerWebView wrapping: aTestResult errorCount applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelDanger ]);
+				render:
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult errorCount
+						applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelDanger ] );
 				space;
 				render: 'errors';
-				space ];
+				space
+			];
 		build
 ]

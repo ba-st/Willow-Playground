@@ -79,8 +79,8 @@ WPLiveDocumentation >> initializeContainerView [
 		show: SpinKitFlow new
 		whileCallingServerToRender: behaviorDetails.
 
-	contentView := GenericContainerWebView
-		wrapping:
+	contentView := self componentSupplier
+		divisionContainerWrapping:
 			( self componentSupplier gridBuilder
 				columnsWidths: #(3 9);
 				addContent: scopeSelection;

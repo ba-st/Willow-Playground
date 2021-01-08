@@ -70,8 +70,8 @@ WPB4TestRunner >> initializeContainerView [
 	testResult := IdentifiedWebView
 		forDivNamed: 'test-result'
 		containing: WPB4TestRunnerTestResultWebView new.
-	contentView := GenericContainerWebView
-		wrapping:
+	contentView := self componentSupplier
+		divisionContainerWrapping:
 			( self componentSupplier gridBuilder
 				columnsPerRow: 1;
 				addContent: ( HeadingWebView displaying: 'Willow Based Test Runner' withLevel: 1 );

@@ -317,8 +317,9 @@ Smalltalks2017FileMetadataLibrary >> reportSessionExpiredToUserUsing: aScripting
 		beSelfCleaning;
 		dismissableHeaderTitled: 'Session expired';
 		wrapping:
-			( GenericContainerWebView
+			( ContainerWebView
 				wrapping: [ :html | html paragraph: [ html text: 'Your session is no longer active.' ] ]
+				intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
 				applying: [  ] );
 		closeButtonLabeled: 'Close'
 			applying: [ :closeButton | closeButton addClass bootstrap3 buttonLink ];

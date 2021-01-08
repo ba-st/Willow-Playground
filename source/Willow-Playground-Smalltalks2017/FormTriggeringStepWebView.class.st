@@ -78,7 +78,7 @@ FormTriggeringStepWebView >> renderFormOn: aCanvas [
 	aCanvas form
 		doNotSubmit;
 		with: [
-			input identifyIn: aCanvas.
+			input identifierOn: aCanvas.
 			self renderQuestionComponentsOn: aCanvas ]
 
  
