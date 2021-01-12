@@ -63,9 +63,9 @@ WPB3TestRunner >> initializeContainerView [
 
 	| testResult |
 
-	testResult := IdentifiedWebView
-		forDivNamed: 'test-result'
-		containing: WPB3TestRunnerTestResultWebView new.
+	testResult := self componentSupplier
+		divisionContainerWrapping: WPB3TestRunnerTestResultWebView new
+		applying: [  ].
 	contentView := self componentSupplier
 		divisionContainerWrapping:
 			( self componentSupplier gridBuilder

@@ -40,9 +40,10 @@ ButtonRenderingComponentStepWebView >> initializeButton [
 
 { #category : #initialization }
 ButtonRenderingComponentStepWebView >> initializeCompanionView [
-	companionView := IdentifiedWebView
-		forSpanNamed: 'Companion'
-		containing: [ :canvas | canvas strong: self currentTime ]
+
+	companionView := self componentSupplier
+		inlineContainerWrapping: [ :canvas | canvas strong: self currentTime ]
+		applying: [  ]
 ]
 
 { #category : #rendering }

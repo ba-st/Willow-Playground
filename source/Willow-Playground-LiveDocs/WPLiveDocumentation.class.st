@@ -63,9 +63,8 @@ WPLiveDocumentation >> initializeContainerView [
 
 	| behaviorDetails scopeSelection |
 
-	behaviorDetails := IdentifiedWebView
-		forDivNamed: 'behavior-details'
-		containing: WPLiveDocumentationBehaviorWebView new
+	behaviorDetails := self componentSupplier
+		divisionContainerWrapping: WPLiveDocumentationBehaviorWebView new
 		applying: [ :div | 
 			div
 				setStyleTo: [ :style | 

@@ -37,15 +37,16 @@ WPLiveDocumentationScopeSelectionWebView >> initializeBehaviorsListBox [
 { #category : #initialization }
 WPLiveDocumentationScopeSelectionWebView >> initializeIdentifiedBehaviorSelection [
 
-	identifiedBehaviorSelection := IdentifiedWebView
-		forDivNamed: 'behavior-selection'
-		containing: [ :canvas | 
+	identifiedBehaviorSelection := self componentSupplier
+		divisionContainerWrapping: [ :canvas | 
 			canvas
 				render:
-					(self componentSupplier
+					( self componentSupplier
 						delayedViewShowing: SpinKitCircle new
 						whileEvaluating: [ behaviorsListBox allowAnyOf: self session applicationContext availableBehaviors ]
-						thenRendering: (self labeledViewDisplaying: 'Classes & Traits' boundTo: behaviorsListBox)) ]
+						thenRendering: ( self labeledViewDisplaying: 'Classes & Traits' boundTo: behaviorsListBox ) )
+			]
+		applying: [  ]
 ]
 
 { #category : #initialization }

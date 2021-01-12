@@ -25,15 +25,16 @@ WPTestRunnerSuiteSelectionWebView >> initialize [
 { #category : #initialization }
 WPTestRunnerSuiteSelectionWebView >> initializeIdentifiedTestCaseClassesSelection [
 
-	identifiedTestCaseClassesSelection := IdentifiedWebView
-		forDivNamed: 'test-case-selection'
-		containing: [ :canvas | 
+	identifiedTestCaseClassesSelection := self componentSupplier
+		divisionContainerWrapping: [ :canvas | 
 			canvas
 				render:
-					(self componentSupplier
+					( self componentSupplier
 						delayedViewShowing: SpinKitCircle new
 						whileEvaluating: [ testCaseClassesListBox allowAnyOf: self session applicationContext availableTestCaseClasses ]
-						thenRendering: (self labeledViewDisplaying: 'Test Cases' boundTo: testCaseClassesListBox)) ]
+						thenRendering: ( self labeledViewDisplaying: 'Test Cases' boundTo: testCaseClassesListBox ) )
+			]
+		applying: [  ]
 ]
 
 { #category : #initialization }
