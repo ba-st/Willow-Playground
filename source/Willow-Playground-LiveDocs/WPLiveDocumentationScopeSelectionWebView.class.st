@@ -28,8 +28,8 @@ WPLiveDocumentationScopeSelectionWebView >> initializeBehaviorsListBox [
 	behaviorsListBox := self componentSupplier
 		singleSelectionListBoxDisplayingAtOnce: 30
 		applying: [ :listBox | listBox labelItemsWith: [ :class | class name ] ].
-	behaviorsListBox onTrigger
-		evaluate: [ behaviorsListBox
+	behaviorsListBox on trigger
+		serverDo: [ behaviorsListBox
 				withCurrentSelectionDo: [ :selectedClass | self session applicationContext setSelectedBehaviorTo: selectedClass ]
 			]
 ]
@@ -37,15 +37,16 @@ WPLiveDocumentationScopeSelectionWebView >> initializeBehaviorsListBox [
 { #category : #initialization }
 WPLiveDocumentationScopeSelectionWebView >> initializeIdentifiedBehaviorSelection [
 
-	identifiedBehaviorSelection := IdentifiedWebView
-		forDivNamed: 'behavior-selection'
-		containing: [ :canvas | 
+	identifiedBehaviorSelection := self componentSupplier
+		divisionContainerWrapping: [ :canvas | 
 			canvas
 				render:
-					(self componentSupplier
+					( self componentSupplier
 						delayedViewShowing: SpinKitCircle new
 						whileEvaluating: [ behaviorsListBox allowAnyOf: self session applicationContext availableBehaviors ]
-						thenRendering: (self labeledViewDisplaying: 'Classes & Traits' boundTo: behaviorsListBox)) ]
+						thenRendering: ( self labeledViewDisplaying: 'Classes & Traits' boundTo: behaviorsListBox ) )
+			]
+		applying: [  ]
 ]
 
 { #category : #initialization }
@@ -54,8 +55,8 @@ WPLiveDocumentationScopeSelectionWebView >> initializePackagesDropdown [
 	packagesDropdown := self componentSupplier
 		dropdownListApplying:
 			[ :dropdown | ( dropdown labelItemsWith: [ :package | package name ] ) + BootstrapSelectLiveSearchCommand default ].
-	packagesDropdown onTrigger
-		evaluate: [ packagesDropdown
+	packagesDropdown on trigger
+		serverDo: [ packagesDropdown
 				withCurrentSelectionDo: [ :selectedPackage | self session applicationContext setSelectedPackageTo: selectedPackage ]
 			];
 		render: identifiedBehaviorSelection
@@ -75,7 +76,7 @@ WPLiveDocumentationScopeSelectionWebView >> labeledViewDisplaying: aLabel boundT
 { #category : #configuring }
 WPLiveDocumentationScopeSelectionWebView >> onBehaviorSelectedTrigger [
 
-	^ behaviorsListBox onTrigger 
+	^ behaviorsListBox on trigger
 ]
 
 { #category : #rendering }

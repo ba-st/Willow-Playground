@@ -25,15 +25,16 @@ WPTestRunnerSuiteSelectionWebView >> initialize [
 { #category : #initialization }
 WPTestRunnerSuiteSelectionWebView >> initializeIdentifiedTestCaseClassesSelection [
 
-	identifiedTestCaseClassesSelection := IdentifiedWebView
-		forDivNamed: 'test-case-selection'
-		containing: [ :canvas | 
+	identifiedTestCaseClassesSelection := self componentSupplier
+		divisionContainerWrapping: [ :canvas | 
 			canvas
 				render:
-					(self componentSupplier
+					( self componentSupplier
 						delayedViewShowing: SpinKitCircle new
 						whileEvaluating: [ testCaseClassesListBox allowAnyOf: self session applicationContext availableTestCaseClasses ]
-						thenRendering: (self labeledViewDisplaying: 'Test Cases' boundTo: testCaseClassesListBox)) ]
+						thenRendering: ( self labeledViewDisplaying: 'Test Cases' boundTo: testCaseClassesListBox ) )
+			]
+		applying: [  ]
 ]
 
 { #category : #initialization }
@@ -42,8 +43,8 @@ WPTestRunnerSuiteSelectionWebView >> initializePackageSelection [
 	packagesListBox := self componentSupplier
 		multipleSelectionListBoxDisplayingAtOnce: 25
 		applying: [  ].
-	packagesListBox onTrigger
-		evaluate: [ self session applicationContext setSelectedPackageCategoriesTo: packagesListBox currentSelection ];
+	packagesListBox on trigger
+		serverDo: [ self session applicationContext setSelectedPackageCategoriesTo: packagesListBox currentSelection ];
 		render: identifiedTestCaseClassesSelection
 ]
 
@@ -53,8 +54,8 @@ WPTestRunnerSuiteSelectionWebView >> initializeTestCaseClassesSelection [
 	testCaseClassesListBox := self componentSupplier
 		multipleSelectionListBoxDisplayingAtOnce: 25
 		applying: [  ].
-	testCaseClassesListBox onTrigger
-		evaluate: [ self session applicationContext
+	testCaseClassesListBox on trigger
+		serverDo: [ self session applicationContext
 				setSelectedTestCaseClassesTo: testCaseClassesListBox currentSelection
 			]
 ]

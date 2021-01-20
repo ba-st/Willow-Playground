@@ -33,16 +33,17 @@ ButtonRenderingComponentStepWebView >> initialize [
 
 { #category : #initialization }
 ButtonRenderingComponentStepWebView >> initializeButton [
+
 	button := AsynchronicButtonWebView labeled: 'Click for a change'.
-	button onTrigger
-		render: companionView
+	button on trigger render: companionView
 ]
 
 { #category : #initialization }
 ButtonRenderingComponentStepWebView >> initializeCompanionView [
-	companionView := IdentifiedWebView
-		forSpanNamed: 'Companion'
-		containing: [ :canvas | canvas strong: self currentTime ]
+
+	companionView := self componentSupplier
+		inlineContainerWrapping: [ :canvas | canvas strong: self currentTime ]
+		applying: [  ]
 ]
 
 { #category : #rendering }

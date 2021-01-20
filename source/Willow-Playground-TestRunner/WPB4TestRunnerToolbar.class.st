@@ -56,13 +56,13 @@ WPB4TestRunnerToolbar >> initializeRunSelectedTestsButton [
 { #category : #Interaction }
 WPB4TestRunnerToolbar >> onRunProfiledTrigger [
 
-	^ runProfiledButton onTrigger
+	^ runProfiledButton on trigger
 ]
 
 { #category : #Interaction }
 WPB4TestRunnerToolbar >> onRunSelectedTestsTrigger [
 
-	^ runSelectedTestsButton onTrigger
+	^ runSelectedTestsButton on trigger
 ]
 
 { #category : #rendering }

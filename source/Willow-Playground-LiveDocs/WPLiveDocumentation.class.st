@@ -63,9 +63,8 @@ WPLiveDocumentation >> initializeContainerView [
 
 	| behaviorDetails scopeSelection |
 
-	behaviorDetails := IdentifiedWebView
-		forDivNamed: 'behavior-details'
-		containing: WPLiveDocumentationBehaviorWebView new
+	behaviorDetails := self componentSupplier
+		divisionContainerWrapping: WPLiveDocumentationBehaviorWebView new
 		applying: [ :div | 
 			div
 				setStyleTo: [ :style | 
@@ -79,8 +78,8 @@ WPLiveDocumentation >> initializeContainerView [
 		show: SpinKitFlow new
 		whileCallingServerToRender: behaviorDetails.
 
-	contentView := GenericContainerWebView
-		wrapping:
+	contentView := self componentSupplier
+		divisionContainerWrapping:
 			( self componentSupplier gridBuilder
 				columnsWidths: #(3 9);
 				addContent: scopeSelection;

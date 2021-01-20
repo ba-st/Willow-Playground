@@ -97,36 +97,36 @@ WPB4TestRunnerTestResultDetailsDialog >> summaryFor: aTestResult [
 						withLevel: 4
 						applying: [ :heading | heading addClass bootstrap4 textInfo + heading addClass bootstrap4 textLeft ] );
 				render:
-					( PhrasingContainerWebView
-						wrapping: aTestResult runCount
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult runCount
 						applying: [ :span | span addClass bootstrap4 badge + span addClass bootstrap4 badgeSecondary ] );
 				space;
 				render: 'run';
 				space;
 				render:
-					( PhrasingContainerWebView
-						wrapping: aTestResult passedCount
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult passedCount
 						applying: [ :span | span addClass bootstrap4 badge + span addClass bootstrap4 badgeSuccess ] );
 				space;
 				render: 'passes';
 				space;
 				render:
-					( PhrasingContainerWebView
-						wrapping: aTestResult skippedCount
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult skippedCount
 						applying: [ :span | span addClass bootstrap4 badge + span addClass bootstrap4 badgeInfo ] );
 				space;
 				render: 'skipped';
 				space;
 				render:
-					( PhrasingContainerWebView
-						wrapping: aTestResult failureCount
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult failureCount
 						applying: [ :span | span addClass bootstrap4 badge + span addClass bootstrap4 badgeWarning ] );
 				space;
 				render: 'failures';
 				space;
 				render:
-					( PhrasingContainerWebView
-						wrapping: aTestResult errorCount
+					( self componentSupplier
+						inlineContainerWrapping: aTestResult errorCount
 						applying: [ :span | span addClass bootstrap4 badge + span addClass bootstrap4 badgeDanger ] );
 				space;
 				render: 'errors';

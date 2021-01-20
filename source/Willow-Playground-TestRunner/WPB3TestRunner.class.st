@@ -63,16 +63,18 @@ WPB3TestRunner >> initializeContainerView [
 
 	| testResult |
 
-	testResult := IdentifiedWebView forDivNamed: 'test-result' containing: WPB3TestRunnerTestResultWebView new.
-	contentView := GenericContainerWebView
-		wrapping:
-			(self componentSupplier gridBuilder
+	testResult := self componentSupplier
+		divisionContainerWrapping: WPB3TestRunnerTestResultWebView new
+		applying: [  ].
+	contentView := self componentSupplier
+		divisionContainerWrapping:
+			( self componentSupplier gridBuilder
 				columnsPerRow: 1;
-				addContent: (HeadingWebView displaying: 'Willow Based Test Runner' withLevel: 1);
+				addContent: ( HeadingWebView displaying: 'Willow Based Test Runner' withLevel: 1 );
 				addContent: testResult;
-				addContent: (self toolbarRenderingOnAction: testResult);
+				addContent: ( self toolbarRenderingOnAction: testResult );
 				addContent: WPTestRunnerSuiteSelectionWebView new;
-				build)
+				build )
 		applying: [ :div | div addClass bootstrap3 container ]
 ]
 
@@ -97,16 +99,17 @@ WPB3TestRunner >> toolbarRenderingOnAction: testResult [
 
 	toolbar onRunSelectedTestsTrigger
 		transform: testResult into: SpinKitFlow new;
-		evaluate: [ self session applicationContext runTests ];
+		serverDo: [ self session applicationContext runTests ];
 		render: testResult.
 
 	toolbar onRunProfiledTrigger
 		transform: testResult into: SpinKitPlane new;
-		determineBehaviorByEvaluating: [ :response | 
+		serverDo: [ :request | 
 			self session applicationContext runTestsProfiled.
-			response onReturn
+			request onRespond
 				open: WPB3TestRunnerMessageTallyDialog new;
-				render: testResult ].
+				render: testResult
+			].
 
 	^ toolbar
 ]

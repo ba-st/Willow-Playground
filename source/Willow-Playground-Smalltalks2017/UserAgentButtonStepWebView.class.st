@@ -2,7 +2,7 @@
 I'm a step showing a button executing code on the client.
 "
 Class {
-	#name : #ButtonExecutingOnClientStepWebView,
+	#name : #UserAgentButtonStepWebView,
 	#superclass : #PresentationStepWebView,
 	#instVars : [
 		'button'
@@ -11,27 +11,27 @@ Class {
 }
 
 { #category : #accessing }
-ButtonExecutingOnClientStepWebView >> description [
+UserAgentButtonStepWebView >> description [
 
 	^ 'This button will trigger an action on the browser'
 ]
 
 { #category : #initialization }
-ButtonExecutingOnClientStepWebView >> initialize [
+UserAgentButtonStepWebView >> initialize [
 
 	super initialize.
 	self initializeButton
 ]
 
 { #category : #initialization }
-ButtonExecutingOnClientStepWebView >> initializeButton [
+UserAgentButtonStepWebView >> initializeButton [
 
 	button := AsynchronicButtonWebView labeled: 'Now it''s time to click'.
-	button onTrigger executeOnClient: [ :canvas | canvas javascript alert: 'You just clicked a button' ]
+	button on trigger userAgentDo: [ :canvas | canvas javascript alert: 'You just clicked a button' ]
 ]
 
 { #category : #rendering }
-ButtonExecutingOnClientStepWebView >> renderContentOn: aCanvas [
+UserAgentButtonStepWebView >> renderContentOn: aCanvas [
 
 	self renderPanelWrapping: button on: aCanvas.
 	
@@ -40,7 +40,7 @@ ButtonExecutingOnClientStepWebView >> renderContentOn: aCanvas [
 ]
 
 { #category : #accessing }
-ButtonExecutingOnClientStepWebView >> shortName [
+UserAgentButtonStepWebView >> shortName [
 
-	^ 'A Client Effect Button'
+	^ 'A User Agent Effect Button'
 ]

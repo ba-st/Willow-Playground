@@ -26,7 +26,7 @@ ComponentWithCommandsStepWebView >> initialize [
 { #category : #initialization }
 ComponentWithCommandsStepWebView >> initializeField [
  input := TextFieldWebView
-	singleLineTriggeringOnChangeApplying:
+	singleLineApplying:
 		[ :theField |	theField bePasswordInput + 
 				(theField setPlaceholderTo: 'Tell me your secrets') ]
 ]

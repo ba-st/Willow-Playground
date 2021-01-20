@@ -155,15 +155,15 @@ ProjectLocationStepWebView >> shortName [
 { #category : #'private-accessing' }
 ProjectLocationStepWebView >> stableLabel [
 
-	^ PhrasingContainerWebView
-		wrapping: 'STABLE'
+	^ self componentSupplier
+		inlineContainerWrapping: 'STABLE'
 		applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelSuccess ]
 ]
 
 { #category : #'private-accessing' }
 ProjectLocationStepWebView >> workInProgressLabel [
 
-	^ PhrasingContainerWebView
-		wrapping: 'WIP'
+	^ self componentSupplier
+		inlineContainerWrapping: 'WIP'
 		applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelWarning ]
 ]

@@ -88,10 +88,10 @@ Smalltalks2017Presentation >> initialRequest: request [
 { #category : #initialization }
 Smalltalks2017Presentation >> initializeCurrentStepView [
 
-	currentStepView := IdentifiedWebView
-		forDivNamed: 'currentStep'
-		containing: [ :canvas | self renderCurrentStepOn: canvas ]
-		applying: [ :div | div addClass smalltalks2017 presentationArea ]
+	currentStepView := self componentSupplier
+		divisionContainerWrapping: [ :canvas | self renderCurrentStepOn: canvas ]
+		applying: [ :div | div addClass smalltalks2017 presentationArea ].
+	currentStepView beIdentifiable
 ]
 
 { #category : #initialization }
@@ -101,7 +101,7 @@ Smalltalks2017Presentation >> initializeStepViews [
 		add: IntroductionStepWebView new;
 		add: RenderingStepWebView new;
 		add: NonInteractiveButtonStepWebView new;
-		add: ButtonExecutingOnClientStepWebView new;
+		add: UserAgentButtonStepWebView new;
 		add: ButtonEvaluatingBlockStepWebView new;
 		add: ButtonRenderingComponentStepWebView new;
 		add: FormTriggeringStepWebView new;
@@ -120,7 +120,7 @@ Smalltalks2017Presentation >> initializeStepViews [
 { #category : #accessing }
 Smalltalks2017Presentation >> jQueryLibrary [
 
-	^(self deploymentMode libraryFor: JQuery3MetadataLibrary) default
+	^ ( self deploymentMode libraryFor: JQuery3MetadataLibrary ) default
 ]
 
 { #category : #'private - accessing' }
@@ -137,8 +137,8 @@ Smalltalks2017Presentation >> nextStepButton [
 			]
 		applying:
 			[ :theButton | theButton addClass bootstrap3 pullRight + theButton addClass bootstrap3 buttonDefault ].
-	button onTrigger
-		evaluate: [ currentStepIndex := self nextStepIndex ];
+	button on trigger
+		serverDo: [ currentStepIndex := self nextStepIndex ];
 		render: currentStepView.
 	^ button
 ]
@@ -169,8 +169,8 @@ Smalltalks2017Presentation >> previousStepButton [
 			]
 		applying:
 			[ :theButton | theButton addClass bootstrap3 pullLeft + theButton addClass bootstrap3 buttonDefault ].
-	button onTrigger
-		evaluate: [ currentStepIndex := self previousStepIndex ];
+	button on trigger
+		serverDo: [ currentStepIndex := self previousStepIndex ];
 		render: currentStepView.
 	^ button
 ]

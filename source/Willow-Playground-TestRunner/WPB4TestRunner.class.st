@@ -67,11 +67,11 @@ WPB4TestRunner >> initializeContainerView [
 
 	| testResult |
 
-	testResult := IdentifiedWebView
-		forDivNamed: 'test-result'
-		containing: WPB4TestRunnerTestResultWebView new.
-	contentView := GenericContainerWebView
-		wrapping:
+	testResult := self componentSupplier
+		divisionContainerWrapping: WPB4TestRunnerTestResultWebView new
+		applying: [  ].
+	contentView := self componentSupplier
+		divisionContainerWrapping:
 			( self componentSupplier gridBuilder
 				columnsPerRow: 1;
 				addContent: ( HeadingWebView displaying: 'Willow Based Test Runner' withLevel: 1 );
@@ -103,16 +103,17 @@ WPB4TestRunner >> toolbarRenderingOnAction: testResult [
 
 	toolbar onRunSelectedTestsTrigger
 		transform: testResult into: SpinKitFlow new;
-		evaluate: [ self session applicationContext runTests ];
+		serverDo: [ self session applicationContext runTests ];
 		render: testResult.
 
 	toolbar onRunProfiledTrigger
 		transform: testResult into: SpinKitPlane new;
-		determineBehaviorByEvaluating: [ :response | 
+		serverDo: [ :request | 
 			self session applicationContext runTestsProfiled.
-			response onReturn
+			request onRespond
 				open: WPB4TestRunnerMessageTallyDialog new;
-				render: testResult ].
+				render: testResult
+			].
 
 	^ toolbar
 ]

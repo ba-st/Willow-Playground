@@ -33,14 +33,17 @@ FormTriggeringStepWebView >> initialize [
 
 { #category : #initialization }
 FormTriggeringStepWebView >> initializeButton [
+
 	button := AsynchronicButtonWebView labeled: 'Ask it!'.
-	button onTrigger
+	button on trigger
 		serializeContainerForm;
 		disable;
-		determineBehaviorByEvaluating: [ :response | | answer |
+		serverDo: [ :request | 
+			| answer |
+
 			answer := self askDeveloper: input contents.
-			response onReturn
-				setValueTo: answer thenTriggerChangeOf: input ]
+			request onRespond setValueTo: answer thenTriggerChangeOf: input
+			]
 ]
 
 { #category : #initialization }
@@ -48,7 +51,7 @@ FormTriggeringStepWebView >> initializeField [
 
 
 	input := TextFieldWebView
-		 singleLineTriggeringOnChangeApplying: [ :theInput |  ]
+		 singleLineApplying: [ :theInput |  ]
 		
 		
 		
@@ -75,7 +78,7 @@ FormTriggeringStepWebView >> renderFormOn: aCanvas [
 	aCanvas form
 		doNotSubmit;
 		with: [
-			input identifyIn: aCanvas.
+			input identifierOn: aCanvas.
 			self renderQuestionComponentsOn: aCanvas ]
 
  
