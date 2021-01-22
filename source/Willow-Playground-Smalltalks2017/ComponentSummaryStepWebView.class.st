@@ -38,7 +38,7 @@ ComponentSummaryStepWebView >> initializeCheckboxView [
 { #category : #initialization }
 ComponentSummaryStepWebView >> initializeDropDownListView [
 	dropdown := SingleSelectionWebView
-		dropDownListApplying: [ :theDropdown |  ]
+		dropDownListApplying: [  ]
 		applyingToOptions: [  ].
 	dropdown
 		allowAnyOf: #('Smartphone' 'Tablet' 'Destkop' 'Notebook' 'Arduino')
