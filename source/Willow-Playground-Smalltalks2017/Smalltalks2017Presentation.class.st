@@ -43,7 +43,7 @@ Smalltalks2017Presentation class >> start [
 	WPB4TestRunner registerAsDevelopmentApplication.
 	WPLiveDocumentation registerAsDevelopmentApplication.
 	( ZnZincServerAdaptor port: 8080 )
-		codec: GRPharoUtf8Codec new;
+		codec: ( GRCodec forEncoding: 'utf8' );
 		start
 ]
 
