@@ -1,5 +1,5 @@
 "
-I'm a step showing a button with some sytle.
+I'm a step showing a button with some style.
 "
 Class {
 	#name : #StyledButtonStepWebView,
