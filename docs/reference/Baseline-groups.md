@@ -1,7 +1,7 @@
 # Baseline Groups
 
-Willow Playground includes the following groups in its Baseline that can be used as
-loading targets:
+Willow Playground includes the following groups in its Baseline that can be used
+as loading targets:
 
 - `Deployment` will load all the packages needed in a deployed application
 - `Tests` will load the test cases
