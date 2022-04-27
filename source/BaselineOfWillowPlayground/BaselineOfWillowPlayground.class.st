@@ -11,18 +11,24 @@ Class {
 BaselineOfWillowPlayground >> baseline: spec [
 
 	<baseline>
-	spec
-		for: #pharo
-		do: [ self
-				setUpDependencies: spec;
-				setUpPackages: spec.
-			spec group: 'Development' with: 'Deployment'
-			]
+	spec for: #pharo do: [ 
+		self
+			setUpDependencies: spec;
+			setUpPackages: spec.
+		spec
+			group: 'Development'
+			with: #( 'Deployment' 'Willow-Development' ) ]
 ]
 
 { #category : #baselines }
 BaselineOfWillowPlayground >> setUpDependencies: spec [
 
+	spec
+		baseline: 'Willow'
+		with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v14' ];
+		project: 'Willow-Development'
+		copyFrom: 'Willow'
+		with: [ spec loads: 'Development' ].
 	spec
 		baseline: 'WillowBootstrap'
 		with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v13' ];
