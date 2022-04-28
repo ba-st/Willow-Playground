@@ -1,9 +1,8 @@
 # Stage 1: Load the project
-FROM ghcr.io/ba-st/pharo:v10.0.0 as loader
+FROM ghcr.io/ba-st/pharo-loader:v10.0.0 as loader
 
 COPY ./source ./source
 COPY ./.git/ ./.git/
-RUN pharo eval --save "EpMonitor current disable"
 RUN pharo metacello install gitlocal://./source \
   BaselineOfWillowPlayground --groups=Deployment
 
