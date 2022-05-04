@@ -1,10 +1,9 @@
 # Willow Playground Documentation
 
-What is this thing? “the motto”, the goals, the vision.
+Willow-Playground provides examples on how to use [Willow](https://github.com/ba-st/Willow)
+to develop a complete interactive web application.
 
 To learn about the project, [install it](how-to/how-to-load-in-pharo.md).
-
-Links to additional documentation.
 
 ---
 
