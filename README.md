@@ -49,9 +49,9 @@ To learn how to use Willow, you can check the applications included in this repo
 
 - Live Documentation: start by browsing `WPLiveDocumentation`. Access the
   application at [localhost:8080/live-docs](http://localhost:8080/live-docs)
-- Test Runner (Boostrap 3): start by browsing `WPB3TestRunner`. Access the
+- Test Runner (Bootstrap 3): start by browsing `WPB3TestRunner`. Access the
   application at [localhost:8080/test-runner-bootstrap3](http://localhost:8080/test-runner-bootstrap3)
-- Test Runner (Boostrap 4): start by browsing `WPB4TestRunner`. Access the
+- Test Runner (Bootstrap 4): start by browsing `WPB4TestRunner`. Access the
   application at [localhost:8080/test-runner-bootstrap4](http://localhost:8080/test-runner-bootstrap4)
 
 ## Contributing
