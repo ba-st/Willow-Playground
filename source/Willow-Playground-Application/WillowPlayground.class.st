@@ -66,9 +66,12 @@ WillowPlayground >> basicStartWithin: context [
 ]
 
 { #category : #initialization }
-WillowPlayground >> initializeRunningIn: anApplicationMode configuredBy: aConfigurationProvider [
+WillowPlayground >> initializeRunningIn: anApplicationMode configuredBy: aConfigurationProvider controlledBy: aCommandServer [
 
-	super initializeRunningIn: anApplicationMode configuredBy: aConfigurationProvider.
+	super
+		initializeRunningIn: anApplicationMode
+		configuredBy: aConfigurationProvider
+		controlledBy: aCommandServer.
 	stackTraceDumper := self newStackTraceDumperOnStandardError
 ]
 
