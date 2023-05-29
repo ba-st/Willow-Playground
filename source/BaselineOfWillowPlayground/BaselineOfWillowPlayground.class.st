@@ -25,20 +25,20 @@ BaselineOfWillowPlayground >> setUpDependencies: spec [
 
 	spec
 		baseline: 'Willow'
-		with: [ spec repository: 'github://ba-st/Willow:v14' ];
+		with: [ spec repository: 'github://ba-st/Willow:v15' ];
 		project: 'Willow-Development'
 		copyFrom: 'Willow'
 		with: [ spec loads: 'Development' ].
 	spec
 		baseline: 'WillowBootstrap'
-		with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v13' ];
+		with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v14' ];
 		project: 'Willow-Bootstrap-Deployment'
 		copyFrom: 'WillowBootstrap'
 		with: [ spec loads: 'Deployment' ].
 
 	spec
 		baseline: 'WillowSpinKit'
-		with: [ spec repository: 'github://ba-st/Willow-SpinKit:v9' ];
+		with: [ spec repository: 'github://ba-st/Willow-SpinKit:v10' ];
 		project: 'Willow-SpinKit-Deployment'
 		copyFrom: 'WillowSpinKit'
 		with: [ spec loads: 'Deployment' ].
