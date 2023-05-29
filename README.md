@@ -9,7 +9,7 @@ to develop a complete interactive web application.
 [![Markdown Lint](https://github.com/ba-st/Willow-Playground/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/ba-st/Willow-Playground/actions/workflows/markdown-lint.yml)
 
 [![GitHub release](https://img.shields.io/github/release/ba-st/Willow-Playground.svg)](https://github.com/ba-st/Willow-Playground/releases/latest)
-[![Pharo 10](https://img.shields.io/badge/Pharo-10-informational)](https://pharo.org)
+[![Pharo 11](https://img.shields.io/badge/Pharo-11-informational)](https://pharo.org)
 
 ## Goals
 
