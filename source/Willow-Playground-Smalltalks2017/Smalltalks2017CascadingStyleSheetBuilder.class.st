@@ -2,15 +2,17 @@
 I generate the necessary CSS
 "
 Class {
-	#name : #Smalltalks2017CascadingStyleSheetBuilder,
-	#superclass : #ReflectiveCascadingStyleSheetBuilder,
+	#name : 'Smalltalks2017CascadingStyleSheetBuilder',
+	#superclass : 'ReflectiveCascadingStyleSheetBuilder',
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-Libraries'
+	#category : 'Willow-Playground-Smalltalks2017-Libraries',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'Libraries'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 Smalltalks2017CascadingStyleSheetBuilder class >> initialize [
 
 	<ignoreForCoverage>
@@ -25,7 +27,7 @@ Smalltalks2017CascadingStyleSheetBuilder class >> initialize [
 		bind: #presentationArea to: 'presentationArea'
 ]
 
-{ #category : #'style declaration' }
+{ #category : 'style declaration' }
 Smalltalks2017CascadingStyleSheetBuilder >> declareBrowseStepButtonStyleIn: aBuilder [
 
 	aBuilder
@@ -40,7 +42,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareBrowseStepButtonStyleIn: aBui
 		declareRuleSetFor: [ :selector | (selector div class: 'carousel-inner') button class: self smalltalks2017 >> #browseStep ] with: [ :style | style right: 2 vh ]
 ]
 
-{ #category : #'style declaration' }
+{ #category : 'style declaration' }
 Smalltalks2017CascadingStyleSheetBuilder >> declareDisabledButtonStyleIn: aBuilder [
 
 	aBuilder
@@ -52,7 +54,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareDisabledButtonStyleIn: aBuild
 				cursor: #notAllowed ]
 ]
 
-{ #category : #'style declaration' }
+{ #category : 'style declaration' }
 Smalltalks2017CascadingStyleSheetBuilder >> declarePresentationAreaStyleIn: aBuilder [
 
 	aBuilder
@@ -64,7 +66,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declarePresentationAreaStyleIn: aBui
 				marginRight: #auto ]
 ]
 
-{ #category : #'style declaration' }
+{ #category : 'style declaration' }
 Smalltalks2017CascadingStyleSheetBuilder >> declareScreenshotStyleIn: aBuilder [
 
 	aBuilder
@@ -76,13 +78,13 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareScreenshotStyleIn: aBuilder [
 				paddingBottom: 40 px ]
 ]
 
-{ #category : #'style declaration' }
+{ #category : 'style declaration' }
 Smalltalks2017CascadingStyleSheetBuilder >> declareSourceCodeStyleIn: aBuilder [
 
 	aBuilder declareRuleSetFor: [ :selector | selector preformatted ] with: [ :style | style fontSize: 1.1 em ]
 ]
 
-{ #category : #'style declaration' }
+{ #category : 'style declaration' }
 Smalltalks2017CascadingStyleSheetBuilder >> declareStepButtonsStyleIn: aBuilder [
 
 	aBuilder
@@ -94,7 +96,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareStepButtonsStyleIn: aBuilder 
 				bottom: 3 vh ]
 ]
 
-{ #category : #'style declaration' }
+{ #category : 'style declaration' }
 Smalltalks2017CascadingStyleSheetBuilder >> declareStepContentStyleIn: aBuilder [
 
 	aBuilder
@@ -105,7 +107,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareStepContentStyleIn: aBuilder 
 				fontSize: #larger ]
 ]
 
-{ #category : #'style declaration' }
+{ #category : 'style declaration' }
 Smalltalks2017CascadingStyleSheetBuilder >> declareUnorderedListStyleIn: aBuilder [
 
 	aBuilder
@@ -121,7 +123,7 @@ Smalltalks2017CascadingStyleSheetBuilder >> declareUnorderedListStyleIn: aBuilde
 				width: 25 vw ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Smalltalks2017CascadingStyleSheetBuilder >> smalltalks2017 [
 
 	^ self classification >> #smalltalks2017

@@ -2,33 +2,35 @@
 I'm a web version of the Pharo live documentation
 "
 Class {
-	#name : #WPLiveDocumentation,
-	#superclass : #WillowApplication,
+	#name : 'WPLiveDocumentation',
+	#superclass : 'WillowApplication',
 	#instVars : [
 		'contentView'
 	],
-	#category : #'Willow-Playground-LiveDocs-Application'
+	#category : 'Willow-Playground-LiveDocs-Application',
+	#package : 'Willow-Playground-LiveDocs',
+	#tag : 'Application'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WPLiveDocumentation class >> applicationTitle [
 
 	^ 'Pharo Live Documentation'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WPLiveDocumentation class >> handlerName [
 
 	^ 'live-docs'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WPLiveDocumentation class >> sessionClass [
 
 	^ WPLiveDocumentationSession
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WPLiveDocumentation >> componentSupplierForApplication [
 
 	^ Bootstrap3ComponentSupplier
@@ -38,27 +40,27 @@ WPLiveDocumentation >> componentSupplierForApplication [
 		typeaheadLibrary: (self deploymentMode libraryFor: BootstrapTypeaheadLibrary) default
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WPLiveDocumentation >> contentView [
 
 	^ contentView
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 WPLiveDocumentation >> initialRequest: request [
 
 	super initialRequest: request.
 	self initializeContainerView
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentation >> initialize [
 
 	super initialize.
 	contentView := [ :canvas |  ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentation >> initializeContainerView [
 
 	| behaviorDetails scopeSelection |
@@ -88,13 +90,13 @@ WPLiveDocumentation >> initializeContainerView [
 		applying: [ :div | div addClass bootstrap3 container ]
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 WPLiveDocumentation >> jQueryLibrary [
 
 	^ (self deploymentMode libraryFor: JQuery3MetadataLibrary) default
 ]
 
-{ #category : #updating }
+{ #category : 'updating' }
 WPLiveDocumentation >> requiredLibraries [
 
 	^ {( self deploymentMode libraryFor: SpinKitMetadataLibrary ) default}

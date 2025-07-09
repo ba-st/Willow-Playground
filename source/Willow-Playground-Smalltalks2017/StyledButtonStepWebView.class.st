@@ -2,28 +2,30 @@
 I'm a step showing a button with some style.
 "
 Class {
-	#name : #StyledButtonStepWebView,
-	#superclass : #PresentationStepWebView,
+	#name : 'StyledButtonStepWebView',
+	#superclass : 'PresentationStepWebView',
 	#instVars : [
 		'button'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StyledButtonStepWebView >> description [
 
 	^ 'You can add special styles to components'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StyledButtonStepWebView >> initialize [
 
 	super initialize.
 	self initializeButton
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StyledButtonStepWebView >> initializeButton [
 
 	button := AsynchronicButtonWebView
@@ -32,7 +34,7 @@ StyledButtonStepWebView >> initializeButton [
 			[ :theButton | theButton addClass bootstrap3 button + theButton addClass bootstrap3 buttonPrimary ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 StyledButtonStepWebView >> renderContentOn: aCanvas [
 
 	self renderPanelWrapping: button on: aCanvas.
@@ -41,7 +43,7 @@ StyledButtonStepWebView >> renderContentOn: aCanvas [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StyledButtonStepWebView >> shortName [
 
 	^ 'A Styled Button'

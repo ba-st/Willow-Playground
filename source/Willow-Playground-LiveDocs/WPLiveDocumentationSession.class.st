@@ -2,21 +2,23 @@
 I'm a Live Documentation session
 "
 Class {
-	#name : #WPLiveDocumentationSession,
-	#superclass : #WillowSession,
+	#name : 'WPLiveDocumentationSession',
+	#superclass : 'WillowSession',
 	#instVars : [
 		'applicationContext'
 	],
-	#category : #'Willow-Playground-LiveDocs-Application'
+	#category : 'Willow-Playground-LiveDocs-Application',
+	#package : 'Willow-Playground-LiveDocs',
+	#tag : 'Application'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WPLiveDocumentationSession >> applicationContext [
 
 	^ applicationContext
 ]
 
-{ #category : #Controlling }
+{ #category : 'Controlling' }
 WPLiveDocumentationSession >> startUpApplicationContextFor: liveDocumenationApp [
 
 	super startUpApplicationContextFor: liveDocumenationApp.

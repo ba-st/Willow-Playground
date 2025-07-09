@@ -2,15 +2,17 @@
 I'm an speaker card
 "
 Class {
-	#name : #SpeakerCardWebView,
-	#superclass : #WAPainter,
+	#name : 'SpeakerCardWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'panel'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SpeakerCardWebView class >> for: aFullName avatarLocatedAt: avatarLocation academicDegree: academicDegree email: mailUser githubUser: githubUser [
 
 	^ self new
@@ -21,7 +23,7 @@ SpeakerCardWebView class >> for: aFullName avatarLocatedAt: avatarLocation acade
 		githubUser: githubUser
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SpeakerCardWebView >> contactInfoByEMail: mailUser andGithub: githubUser [
 
 	^ [ :html | 
@@ -43,7 +45,7 @@ SpeakerCardWebView >> contactInfoByEMail: mailUser andGithub: githubUser [
 	]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 SpeakerCardWebView >> headingShowing: aFullName and: academicDegree withAvatarLocatedAt: avatarLocation [
 
 	^ HeadingWebView
@@ -71,7 +73,7 @@ SpeakerCardWebView >> headingShowing: aFullName and: academicDegree withAvatarLo
 		withLevel: 4
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SpeakerCardWebView >> initializeFor: aFullName avatarLocatedAt: avatarLocation academicDegree: academicDegree email: mailUser githubUser: githubUser [
 
 	panel := self componentSupplier panelBuilder
@@ -83,7 +85,7 @@ SpeakerCardWebView >> initializeFor: aFullName avatarLocatedAt: avatarLocation a
 		buildApplying: [ :card | card addClass bootstrap3 panelDefault ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SpeakerCardWebView >> renderContentOn: html [
 
 	html render: panel

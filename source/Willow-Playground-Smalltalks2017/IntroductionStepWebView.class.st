@@ -2,18 +2,20 @@
 I'm the introduction step 
 "
 Class {
-	#name : #IntroductionStepWebView,
-	#superclass : #PresentationStepWebView,
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#name : 'IntroductionStepWebView',
+	#superclass : 'PresentationStepWebView',
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 IntroductionStepWebView >> description [
 
 	^ 'Welcome to Willow 101: Feature Showcase'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 IntroductionStepWebView >> loadWillowFromGitHubCode [
  Metacello new
 	baseline: 'Willow';
@@ -21,7 +23,7 @@ IntroductionStepWebView >> loadWillowFromGitHubCode [
 	load
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 IntroductionStepWebView >> loadWillowPlaygroundFromGitHubCode [
  Metacello new
 	baseline: 'WillowPlayground';
@@ -29,7 +31,7 @@ IntroductionStepWebView >> loadWillowPlaygroundFromGitHubCode [
 	load
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 IntroductionStepWebView >> renderContentOn: aCanvas [
 
 	| grid |
@@ -58,13 +60,13 @@ IntroductionStepWebView >> renderContentOn: aCanvas [
 				applying: [  ])
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 IntroductionStepWebView >> shortName [
 
 	^ 'Introduction'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 IntroductionStepWebView >> willowLogoView [
 
 	^ ImageWebView

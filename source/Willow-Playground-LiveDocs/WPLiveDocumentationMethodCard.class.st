@@ -2,22 +2,24 @@
 I'm a panel showing an specific method 
 "
 Class {
-	#name : #WPLiveDocumentationMethodCard,
-	#superclass : #WAPainter,
+	#name : 'WPLiveDocumentationMethodCard',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'method',
 		'methodPanel'
 	],
-	#category : #'Willow-Playground-LiveDocs-WebViews'
+	#category : 'Willow-Playground-LiveDocs-WebViews',
+	#package : 'Willow-Playground-LiveDocs',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WPLiveDocumentationMethodCard class >> for: aMethod [
 
 	^self new initializeFor: aMethod 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationMethodCard >> initializeFor: aMethod [
 
 	method := aMethod.
@@ -29,7 +31,7 @@ WPLiveDocumentationMethodCard >> initializeFor: aMethod [
 		buildApplying: [ :panel | panel addClass bootstrap3 panelDefault ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationMethodCard >> panelContentFor: aMethod [
 
 	| tabsBuilder |
@@ -50,13 +52,13 @@ WPLiveDocumentationMethodCard >> panelContentFor: aMethod [
 		build
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationMethodCard >> renderContentOn: html [
 
 	html render: methodPanel
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationMethodCard >> sourceCodeFor: aMethod [
 
 	^ [ :canvas | 
@@ -69,7 +71,7 @@ WPLiveDocumentationMethodCard >> sourceCodeFor: aMethod [
 						with: aMethod ast body formattedCode) ] ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationMethodCard >> symbolicBytecodesFor: aMethod [
 
 	^ [ :canvas | 

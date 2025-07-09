@@ -2,12 +2,14 @@
 I'm a step showing a command summary.
 "
 Class {
-	#name : #CommandSummaryStepWebView,
-	#superclass : #PresentationStepWebView,
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#name : 'CommandSummaryStepWebView',
+	#superclass : 'PresentationStepWebView',
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 CommandSummaryStepWebView >> anchorToBrowse: method [
 
 	| anchor |
@@ -19,20 +21,20 @@ CommandSummaryStepWebView >> anchorToBrowse: method [
 	^ anchor
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 CommandSummaryStepWebView >> availableCommands [
 
 	^ WebComponentCommandBuilder localMethods
 		sorted: [ :a :b | a selector <= b selector ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 CommandSummaryStepWebView >> description [
 
 	^ 'There are many commands to choose from'
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 CommandSummaryStepWebView >> renderContentOn: aCanvas [
 
 	| anchors list |
@@ -47,7 +49,7 @@ CommandSummaryStepWebView >> renderContentOn: aCanvas [
 	self renderPanelWrapping: list on: aCanvas
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 CommandSummaryStepWebView >> shortName [
 
 	^ 'Command Summary'

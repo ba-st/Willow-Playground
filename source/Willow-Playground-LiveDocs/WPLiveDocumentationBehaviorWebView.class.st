@@ -2,12 +2,14 @@
 í'm a web view showing the details for a class or trait
 "
 Class {
-	#name : #WPLiveDocumentationBehaviorWebView,
-	#superclass : #WAPainter,
-	#category : #'Willow-Playground-LiveDocs-WebViews'
+	#name : 'WPLiveDocumentationBehaviorWebView',
+	#superclass : 'WAPainter',
+	#category : 'Willow-Playground-LiveDocs-WebViews',
+	#package : 'Willow-Playground-LiveDocs',
+	#tag : 'WebViews'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentationBehaviorWebView >> buttonToBrowse: aBehavior [
 
 	| browseButton |
@@ -19,7 +21,7 @@ WPLiveDocumentationBehaviorWebView >> buttonToBrowse: aBehavior [
 	^ browseButton
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentationBehaviorWebView >> classNameHeaderFor: aClass [
 
 	^ HeadingWebView
@@ -32,7 +34,7 @@ WPLiveDocumentationBehaviorWebView >> classNameHeaderFor: aClass [
 		withLevel: 2
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentationBehaviorWebView >> emptyPlaceholder [
 
 	^ self componentSupplier notificationBuilder
@@ -50,7 +52,7 @@ WPLiveDocumentationBehaviorWebView >> emptyPlaceholder [
 		build
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentationBehaviorWebView >> renderClass: aClass on: html [
 
 	html
@@ -64,7 +66,7 @@ WPLiveDocumentationBehaviorWebView >> renderClass: aClass on: html [
 	self renderMethodsIn: aClass on: html
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 WPLiveDocumentationBehaviorWebView >> renderContentOn: html [
 
 	self session applicationContext
@@ -77,15 +79,16 @@ WPLiveDocumentationBehaviorWebView >> renderContentOn: html [
 				render: self emptyPlaceholder ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentationBehaviorWebView >> renderMethodsIn: aBehavior on: html [
 
-	(aBehavior methods sorted: [ :a :b | a selector < b selector ])
-		select: [ :method | method isExtension not and: [ (method protocol includesSubstring: 'private') not ] ]
-		thenDo: [ :method | html render: (WPLiveDocumentationMethodCard for: method) ]
+	( aBehavior methods sorted: [ :a :b | a selector < b selector ] )
+		select: [ :method |
+				method isExtension not and: [ ( method protocol name includesSubstring: 'private' ) not ] ]
+		thenDo: [ :method | html render: ( WPLiveDocumentationMethodCard for: method ) ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentationBehaviorWebView >> renderTrait: trait on: html [
 
 	html
@@ -94,7 +97,7 @@ WPLiveDocumentationBehaviorWebView >> renderTrait: trait on: html [
 	self renderMethodsIn: trait on: html
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentationBehaviorWebView >> traitNameHeaderFor: aTrait [
 
 	^ HeadingWebView

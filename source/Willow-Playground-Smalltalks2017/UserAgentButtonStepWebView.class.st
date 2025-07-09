@@ -2,35 +2,37 @@
 I'm a step showing a button executing code on the client.
 "
 Class {
-	#name : #UserAgentButtonStepWebView,
-	#superclass : #PresentationStepWebView,
+	#name : 'UserAgentButtonStepWebView',
+	#superclass : 'PresentationStepWebView',
 	#instVars : [
 		'button'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 UserAgentButtonStepWebView >> description [
 
 	^ 'This button will trigger an action on the browser'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 UserAgentButtonStepWebView >> initialize [
 
 	super initialize.
 	self initializeButton
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 UserAgentButtonStepWebView >> initializeButton [
 
 	button := AsynchronicButtonWebView labeled: 'Now it''s time to click'.
 	button on trigger userAgentDo: [ :canvas | canvas javascript alert: 'You just clicked a button' ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 UserAgentButtonStepWebView >> renderContentOn: aCanvas [
 
 	self renderPanelWrapping: button on: aCanvas.
@@ -39,7 +41,7 @@ UserAgentButtonStepWebView >> renderContentOn: aCanvas [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 UserAgentButtonStepWebView >> shortName [
 
 	^ 'A User Agent Effect Button'

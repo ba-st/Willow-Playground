@@ -2,29 +2,31 @@
 I'm the presentation :)
 "
 Class {
-	#name : #Smalltalks2017Presentation,
-	#superclass : #WillowApplication,
+	#name : 'Smalltalks2017Presentation',
+	#superclass : 'WillowApplication',
 	#instVars : [
 		'currentStepView',
 		'currentStepIndex',
 		'stepViews'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-Application'
+	#category : 'Willow-Playground-Smalltalks2017-Application',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'Application'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Smalltalks2017Presentation class >> applicationTitle [
 
 	^ 'Willow 101'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Smalltalks2017Presentation class >> handlerName [
 
 	^ 'willow101'
 ]
 
-{ #category : #'private-utility' }
+{ #category : 'private-utility' }
 Smalltalks2017Presentation class >> registerAsApplicationUsing: deploymentModeClass [
 
 	| application |
@@ -35,7 +37,7 @@ Smalltalks2017Presentation class >> registerAsApplicationUsing: deploymentModeCl
 	^ application
 ]
 
-{ #category : #'private-utility' }
+{ #category : 'private-utility' }
 Smalltalks2017Presentation class >> start [
 
 	Smalltalks2017Presentation registerAsDevelopmentApplication.
@@ -47,7 +49,7 @@ Smalltalks2017Presentation class >> start [
 		start
 ]
 
-{ #category : #'private-utility' }
+{ #category : 'private-utility' }
 Smalltalks2017Presentation class >> stop [
 
 	ZnServer stopDefault.
@@ -59,7 +61,7 @@ Smalltalks2017Presentation class >> stop [
 	Smalltalk garbageCollect
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Smalltalks2017Presentation >> componentSupplierForApplication [
 
 	^ Bootstrap3ComponentSupplier
@@ -69,13 +71,13 @@ Smalltalks2017Presentation >> componentSupplierForApplication [
 		typeaheadLibrary: (self deploymentMode libraryFor: BootstrapTypeaheadLibrary) new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Smalltalks2017Presentation >> contentView [
 
 	^ currentStepView
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 Smalltalks2017Presentation >> initialRequest: request [
 
 	super initialRequest: request.
@@ -85,7 +87,7 @@ Smalltalks2017Presentation >> initialRequest: request [
 	self initializeCurrentStepView
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 Smalltalks2017Presentation >> initializeCurrentStepView [
 
 	currentStepView := self componentSupplier
@@ -94,7 +96,7 @@ Smalltalks2017Presentation >> initializeCurrentStepView [
 	currentStepView beIdentifiable
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 Smalltalks2017Presentation >> initializeStepViews [
 
 	stepViews := OrderedCollection new
@@ -117,13 +119,13 @@ Smalltalks2017Presentation >> initializeStepViews [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Smalltalks2017Presentation >> jQueryLibrary [
 
 	^ ( self deploymentMode libraryFor: JQuery3MetadataLibrary ) default
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 Smalltalks2017Presentation >> nextStepButton [
 
 	| button |
@@ -143,19 +145,19 @@ Smalltalks2017Presentation >> nextStepButton [
 	^ button
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 Smalltalks2017Presentation >> nextStepIndex [
 
 	^ currentStepIndex + 1 min: stepViews size
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 Smalltalks2017Presentation >> nextStepView [
 
 	^ stepViews at: self nextStepIndex
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 Smalltalks2017Presentation >> previousStepButton [
 
 	| button |
@@ -175,19 +177,19 @@ Smalltalks2017Presentation >> previousStepButton [
 	^ button
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 Smalltalks2017Presentation >> previousStepIndex [
 
 	^ currentStepIndex - 1 max: 1
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 Smalltalks2017Presentation >> previousStepView [
 
 	^ stepViews at: self previousStepIndex
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 Smalltalks2017Presentation >> renderCurrentStepOn: aCanvas [
 
 	| view |
@@ -199,7 +201,7 @@ Smalltalks2017Presentation >> renderCurrentStepOn: aCanvas [
 	self renderStepButtonsOn: aCanvas
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 Smalltalks2017Presentation >> renderStepButtonsOn: aCanvas [
 
 	aCanvas div
@@ -211,7 +213,7 @@ Smalltalks2017Presentation >> renderStepButtonsOn: aCanvas [
 		applying: [ :div | div addClass smalltalks2017 stepButtonContainer ]
 ]
 
-{ #category : #updating }
+{ #category : 'updating' }
 Smalltalks2017Presentation >> requiredLibraries [
 
 	" Libraries added here are not considered until the server is restarted.
