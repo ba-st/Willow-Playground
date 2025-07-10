@@ -2,23 +2,25 @@
 I'm a step showing a componente summary.
 "
 Class {
-	#name : #ComponentSummaryStepWebView,
-	#superclass : #PresentationStepWebView,
+	#name : 'ComponentSummaryStepWebView',
+	#superclass : 'PresentationStepWebView',
 	#instVars : [
 		'checkbox',
 		'image',
 		'dropdown'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentSummaryStepWebView >> description [
 
 	^ 'There are many more components to choose from'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentSummaryStepWebView >> initialize [
 
 	super initialize.
@@ -27,7 +29,7 @@ ComponentSummaryStepWebView >> initialize [
 	self initializeImageView
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentSummaryStepWebView >> initializeCheckboxView [
 	checkbox := CheckboxWebView
 		labeled: 'Make a choice'
@@ -35,7 +37,7 @@ ComponentSummaryStepWebView >> initializeCheckboxView [
 		applying: [ :theCheckbox |  ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentSummaryStepWebView >> initializeDropDownListView [
 	dropdown := SingleSelectionWebView
 		dropDownListApplying: [  ]
@@ -44,7 +46,7 @@ ComponentSummaryStepWebView >> initializeDropDownListView [
 		allowAnyOf: #('Smartphone' 'Tablet' 'Destkop' 'Notebook' 'Arduino')
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentSummaryStepWebView >> initializeImageView [
 	image := ImageWebView
 		locatedAt:
@@ -52,7 +54,7 @@ ComponentSummaryStepWebView >> initializeImageView [
 		applying: [ :theImage |  ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ComponentSummaryStepWebView >> renderContentOn: aCanvas [
 
 	self
@@ -76,7 +78,7 @@ ComponentSummaryStepWebView >> renderContentOn: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentSummaryStepWebView >> shortName [
 
 	^ 'Component Summary'

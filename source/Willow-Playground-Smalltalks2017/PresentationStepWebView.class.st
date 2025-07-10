@@ -2,12 +2,14 @@
 I'm an abstract presentation step. Providing facilities used by all the steps.
 "
 Class {
-	#name : #PresentationStepWebView,
-	#superclass : #WAPainter,
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#name : 'PresentationStepWebView',
+	#superclass : 'WAPainter',
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 PresentationStepWebView >> browseStepButtonEvaluating: aCallback [
 
 	| browseButton |
@@ -22,13 +24,13 @@ PresentationStepWebView >> browseStepButtonEvaluating: aCallback [
 	^ browseButton
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PresentationStepWebView >> description [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo: aSlideTarget anchorStyledWith: anAnchorClass spanStyledWith: aSpanClass named: aName on: aCanvas [
 
 	aCanvas anchor
@@ -49,7 +51,7 @@ PresentationStepWebView >> renderCarouselControlIn: carouselIdentifier slidingTo
 			]
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderCarouselControlsIn: carouselIdentifier on: aCanvas [
 
 	self
@@ -68,7 +70,7 @@ PresentationStepWebView >> renderCarouselControlsIn: carouselIdentifier on: aCan
 		on: aCanvas
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderCarouselSlidesContainerForAll: aRenderableCollection on: aCanvas [
 
 	aCanvas div
@@ -77,7 +79,7 @@ PresentationStepWebView >> renderCarouselSlidesContainerForAll: aRenderableColle
 		with: [ self renderSlidesForAll: aRenderableCollection on: aCanvas ]
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderCarouselWithAll: aRenderableCollection on: aCanvas [
 
 	| carouselIdentifier |
@@ -93,7 +95,7 @@ PresentationStepWebView >> renderCarouselWithAll: aRenderableCollection on: aCan
 			self renderCarouselControlsIn: carouselIdentifier on: aCanvas ]
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderPanelWrapping: aRenderable on: aCanvas [
 
 	| panel |
@@ -106,7 +108,7 @@ PresentationStepWebView >> renderPanelWrapping: aRenderable on: aCanvas [
 	aCanvas render: panel
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderSlidesForAll: aRenderableCollection on: aCanvas [
 
 	aRenderableCollection
@@ -120,7 +122,7 @@ PresentationStepWebView >> renderSlidesForAll: aRenderableCollection on: aCanvas
 			component with: renderable ]
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderSourceOf: aSelector andBrowseButton: aButtonOptional on: aCanvas [
 
 	| sourceCodeString |
@@ -141,13 +143,13 @@ PresentationStepWebView >> renderSourceOf: aSelector andBrowseButton: aButtonOpt
   });')
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderSourceOf: aSelector on: aCanvas [
 
 	self renderSourceOf: aSelector andBrowseButton: Optional unused on: aCanvas
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 PresentationStepWebView >> renderSourceOf: aSelector withBrowseButtonOn: aCanvas [
 
 	self
@@ -156,7 +158,7 @@ PresentationStepWebView >> renderSourceOf: aSelector withBrowseButtonOn: aCanvas
 		on: aCanvas
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PresentationStepWebView >> shortName [
 
 	self subclassResponsibility

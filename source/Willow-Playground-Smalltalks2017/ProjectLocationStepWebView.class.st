@@ -2,12 +2,14 @@
 I'm a step showing the related projects and his locations.
 "
 Class {
-	#name : #ProjectLocationStepWebView,
-	#superclass : #PresentationStepWebView,
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#name : 'ProjectLocationStepWebView',
+	#superclass : 'PresentationStepWebView',
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ProjectLocationStepWebView >> contactFieldSet [
 
 	^ self componentSupplier gridBuilder
@@ -16,13 +18,13 @@ ProjectLocationStepWebView >> contactFieldSet [
 		build
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ProjectLocationStepWebView >> description [
 
 	^ 'Download Willow today!'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ProjectLocationStepWebView >> gabrielCard [
 
 	^ SpeakerCardWebView
@@ -33,7 +35,7 @@ ProjectLocationStepWebView >> gabrielCard [
 		githubUser: 'gcotelli'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ProjectLocationStepWebView >> gitHubImageView [
 
 	^ ImageWebView
@@ -41,7 +43,7 @@ ProjectLocationStepWebView >> gitHubImageView [
 		applying: [ :image | image setStyleTo: [ :style | style width: 22 px ] ]
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ProjectLocationStepWebView >> maxiCard [
 
 	^ SpeakerCardWebView
@@ -52,7 +54,7 @@ ProjectLocationStepWebView >> maxiCard [
 		githubUser: 'mtabacman'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ProjectLocationStepWebView >> projectsTableView [
 
 	| tableBuilder projectTable |
@@ -90,7 +92,7 @@ ProjectLocationStepWebView >> projectsTableView [
 	^ projectTable
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ProjectLocationStepWebView >> projectsWithLocations [
 
 	^ Array
@@ -126,7 +128,7 @@ ProjectLocationStepWebView >> projectsWithLocations [
 			'ba-st/Willow-Playground'}
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ProjectLocationStepWebView >> renderContentOn: aCanvas [
 
 	aCanvas
@@ -146,13 +148,13 @@ ProjectLocationStepWebView >> renderContentOn: aCanvas [
 	aCanvas render: self contactFieldSet
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ProjectLocationStepWebView >> shortName [
 
 	^ 'Project Location'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ProjectLocationStepWebView >> stableLabel [
 
 	^ self componentSupplier
@@ -160,7 +162,7 @@ ProjectLocationStepWebView >> stableLabel [
 		applying: [ :span | span addClass bootstrap3 label + span addClass bootstrap3 labelSuccess ]
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ProjectLocationStepWebView >> workInProgressLabel [
 
 	^ self componentSupplier

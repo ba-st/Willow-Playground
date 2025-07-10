@@ -2,42 +2,44 @@
 I'm a step showing real apps screenshots.
 "
 Class {
-	#name : #ScreenshotsStepWebView,
-	#superclass : #PresentationStepWebView,
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#name : 'ScreenshotsStepWebView',
+	#superclass : 'PresentationStepWebView',
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ScreenshotsStepWebView >> abbacoScreenshot [
 
 	^ self screenshotFor: #abbacoPng describedBy: 'Abbaco'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ScreenshotsStepWebView >> description [
 
 	^ 'Real applications using Willow'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ScreenshotsStepWebView >> eraForRolemasterScreenshot [
 
 	^ self screenshotFor: #eraJpg describedBy: 'ERA for Rolemaster'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ScreenshotsStepWebView >> orderManagementScreenshot [
 
 	^ self screenshotFor: #omPng describedBy: 'Mercap Order Management'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ScreenshotsStepWebView >> portfolioScreenshot [
 
 	^ self screenshotFor: #portfolioPng describedBy: 'Mercap Portfolio'
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ScreenshotsStepWebView >> renderContentOn: aCanvas [
 
 	self
@@ -50,7 +52,7 @@ ScreenshotsStepWebView >> renderContentOn: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ScreenshotsStepWebView >> screenshotFor: aSymbol describedBy: aCaption [
 
 	^ [ :html | 
@@ -64,13 +66,13 @@ ScreenshotsStepWebView >> screenshotFor: aSymbol describedBy: aCaption [
 		with: aCaption ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ScreenshotsStepWebView >> shortName [
 
 	^ 'Applications'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ScreenshotsStepWebView >> tradingRoomScreenshot [
 
 	^ self screenshotFor: #tradingRoomJpg describedBy: 'Mercap Trading Room'

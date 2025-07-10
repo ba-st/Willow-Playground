@@ -7,7 +7,7 @@ RUN pharo metacello install gitlocal://./source \
   BaselineOfWillowPlayground --groups=Deployment
 
 # Stage 2: Copy the Pharo image into the base
-FROM ghcr.io/ba-st/launchpad:v4
+FROM ghcr.io/ba-st/launchpad:v7
 
 COPY --from=loader /opt/pharo/Pharo.image ./
 COPY --from=loader /opt/pharo/Pharo*.sources ./

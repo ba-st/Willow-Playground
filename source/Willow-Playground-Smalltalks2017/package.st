@@ -1,1 +1,1 @@
-Package { #name : #'Willow-Playground-Smalltalks2017' }
+Package { #name : 'Willow-Playground-Smalltalks2017' }

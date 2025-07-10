@@ -2,23 +2,25 @@
 I'm a step showing a non interactive button
 "
 Class {
-	#name : #NonInteractiveButtonStepWebView,
-	#superclass : #PresentationStepWebView,
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#name : 'NonInteractiveButtonStepWebView',
+	#superclass : 'PresentationStepWebView',
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NonInteractiveButtonStepWebView >> description [
 
 	^ 'Starting small: a non-interactive button'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 NonInteractiveButtonStepWebView >> nonInteractiveButton [
 	^ AsynchronicButtonWebView labeled: 'Nothing to do'
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 NonInteractiveButtonStepWebView >> renderContentOn: aCanvas [
 
 	self renderPanelWrapping: self nonInteractiveButton on: aCanvas.
@@ -27,7 +29,7 @@ NonInteractiveButtonStepWebView >> renderContentOn: aCanvas [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NonInteractiveButtonStepWebView >> shortName [
 
 	^ 'A Simple Button'

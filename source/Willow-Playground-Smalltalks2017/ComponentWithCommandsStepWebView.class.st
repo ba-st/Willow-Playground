@@ -2,28 +2,30 @@
 I'm a step showing a component with commands.
 "
 Class {
-	#name : #ComponentWithCommandsStepWebView,
-	#superclass : #PresentationStepWebView,
+	#name : 'ComponentWithCommandsStepWebView',
+	#superclass : 'PresentationStepWebView',
 	#instVars : [
 		'input'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentWithCommandsStepWebView >> description [
 
 	^ 'Components can be configured with many commands'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentWithCommandsStepWebView >> initialize [
 
 	super initialize.
 	self initializeField 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentWithCommandsStepWebView >> initializeField [
  input := TextFieldWebView
 	singleLineApplying:
@@ -31,7 +33,7 @@ ComponentWithCommandsStepWebView >> initializeField [
 				(theField setPlaceholderTo: 'Tell me your secrets') ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ComponentWithCommandsStepWebView >> renderContentOn: aCanvas [
 
 	self renderPanelWrapping: input on: aCanvas.
@@ -40,7 +42,7 @@ ComponentWithCommandsStepWebView >> renderContentOn: aCanvas [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentWithCommandsStepWebView >> shortName [
 
 	^ 'Commands To Components'

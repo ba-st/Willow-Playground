@@ -2,27 +2,29 @@
 I'm a panel showing the class hierarchy
 "
 Class {
-	#name : #WPLiveDocumentationClassHierarchyCard,
-	#superclass : #WAPainter,
+	#name : 'WPLiveDocumentationClassHierarchyCard',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'selectedClass'
 	],
-	#category : #'Willow-Playground-LiveDocs-WebViews'
+	#category : 'Willow-Playground-LiveDocs-WebViews',
+	#package : 'Willow-Playground-LiveDocs',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 WPLiveDocumentationClassHierarchyCard class >> for: aClass [
 
 	^ self new initializeFor: aClass
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationClassHierarchyCard >> initializeFor: aClass [
 
 	selectedClass := aClass
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationClassHierarchyCard >> renderContentOn: html [
 
 	html

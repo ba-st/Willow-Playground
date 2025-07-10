@@ -2,17 +2,19 @@
 I'm a web view responsible for selecting the current scope (class or trait to navigate)
 "
 Class {
-	#name : #WPLiveDocumentationScopeSelectionWebView,
-	#superclass : #WAPainter,
+	#name : 'WPLiveDocumentationScopeSelectionWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'identifiedBehaviorSelection',
 		'behaviorsListBox',
 		'packagesDropdown'
 	],
-	#category : #'Willow-Playground-LiveDocs-WebViews'
+	#category : 'Willow-Playground-LiveDocs-WebViews',
+	#package : 'Willow-Playground-LiveDocs',
+	#tag : 'WebViews'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationScopeSelectionWebView >> initialize [
 
 	super initialize.
@@ -22,7 +24,7 @@ WPLiveDocumentationScopeSelectionWebView >> initialize [
 		initializeBehaviorsListBox
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationScopeSelectionWebView >> initializeBehaviorsListBox [
 
 	behaviorsListBox := self componentSupplier
@@ -34,7 +36,7 @@ WPLiveDocumentationScopeSelectionWebView >> initializeBehaviorsListBox [
 			]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationScopeSelectionWebView >> initializeIdentifiedBehaviorSelection [
 
 	identifiedBehaviorSelection := self componentSupplier
@@ -49,7 +51,7 @@ WPLiveDocumentationScopeSelectionWebView >> initializeIdentifiedBehaviorSelectio
 		applying: [  ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WPLiveDocumentationScopeSelectionWebView >> initializePackagesDropdown [
 
 	packagesDropdown := self componentSupplier
@@ -62,7 +64,7 @@ WPLiveDocumentationScopeSelectionWebView >> initializePackagesDropdown [
 		render: identifiedBehaviorSelection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 WPLiveDocumentationScopeSelectionWebView >> labeledViewDisplaying: aLabel boundTo: aField [
 
 	^ self componentSupplier
@@ -73,13 +75,13 @@ WPLiveDocumentationScopeSelectionWebView >> labeledViewDisplaying: aLabel boundT
 		applying: [  ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 WPLiveDocumentationScopeSelectionWebView >> onBehaviorSelectedTrigger [
 
 	^ behaviorsListBox on trigger
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 WPLiveDocumentationScopeSelectionWebView >> renderContentOn: html [
 
 	html

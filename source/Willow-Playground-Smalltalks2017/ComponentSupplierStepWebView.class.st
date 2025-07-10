@@ -2,23 +2,25 @@
 I'm a step showing the component supplier.
 "
 Class {
-	#name : #ComponentSupplierStepWebView,
-	#superclass : #PresentationStepWebView,
+	#name : 'ComponentSupplierStepWebView',
+	#superclass : 'PresentationStepWebView',
 	#instVars : [
 		'button',
 		'dropdown',
 		'field'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentSupplierStepWebView >> description [
 
 	^ 'The supplier provides access to customized components'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentSupplierStepWebView >> initialize [
 
 	super initialize.
@@ -27,28 +29,28 @@ ComponentSupplierStepWebView >> initialize [
 	self initializeField
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentSupplierStepWebView >> initializeButton [
 	button := self componentSupplier
 		asynchronicButtonLabeled: 'I am a button'
 		applying: [ :theButton |  ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentSupplierStepWebView >> initializeDropdown [
 	dropdown := self componentSupplier
 		dropdownListApplying: [ :theDropdown |  ].
 	dropdown allowAnyOf: self supplyingSelectors
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ComponentSupplierStepWebView >> initializeField [
 
 	field := self componentSupplier dateFieldApplying: [ :theField |  ]
  
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ComponentSupplierStepWebView >> renderContentOn: aCanvas [
 
 	self
@@ -70,16 +72,16 @@ ComponentSupplierStepWebView >> renderContentOn: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ComponentSupplierStepWebView >> shortName [
 
 	^ 'Component Supplier'
 ]
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ComponentSupplierStepWebView >> supplyingSelectors [
 
-	^ (self componentSupplier class localMethods
-		select: [ :method | method category = 'Supplying' ]
-		thenCollect: #selector) sorted
+	^ ( self componentSupplier class localMethods
+		    select: [ :method | method protocolName = 'Supplying' ]
+		    thenCollect: #selector ) sorted
 ]

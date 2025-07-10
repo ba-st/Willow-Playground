@@ -2,30 +2,32 @@
 I'm a step showing some complex components.
 "
 Class {
-	#name : #AdvancedComponentsExampleStepWebView,
-	#superclass : #PresentationStepWebView,
+	#name : 'AdvancedComponentsExampleStepWebView',
+	#superclass : 'PresentationStepWebView',
 	#instVars : [
 		'tableBuilder',
 		'table',
 		'periodical',
 		'delayed'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 AdvancedComponentsExampleStepWebView >> currentTime [
 
 	^ GRPrinter isoTime print: Time now
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AdvancedComponentsExampleStepWebView >> description [
 
 	^ 'Some components provide additional features'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AdvancedComponentsExampleStepWebView >> initialize [
 
 	super initialize.
@@ -33,7 +35,7 @@ AdvancedComponentsExampleStepWebView >> initialize [
 	self initializePeriodical.
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AdvancedComponentsExampleStepWebView >> initializeDelayed [
 	delayed := DelayedViewRenderer
 		showing: SpinKitGrid new
@@ -43,7 +45,7 @@ AdvancedComponentsExampleStepWebView >> initializeDelayed [
 							render: table ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AdvancedComponentsExampleStepWebView >> initializePeriodical [
 	periodical := PeriodicallyRenderedWebView
 		evaluating: [  ] every: 1000 millisecondsThenRendering:
@@ -53,7 +55,7 @@ AdvancedComponentsExampleStepWebView >> initializePeriodical [
 		until: [ false ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AdvancedComponentsExampleStepWebView >> initializeTable [
 
 	table := TableWebViewBuilder new
@@ -64,13 +66,13 @@ AdvancedComponentsExampleStepWebView >> initializeTable [
 	table changeContentsTo: #(26 51 78)
 ]
 
-{ #category : #'private-computing' }
+{ #category : 'private-computing' }
 AdvancedComponentsExampleStepWebView >> makeHeavyCalculations [
 
 	^ (Delay forSeconds: 2) wait
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 AdvancedComponentsExampleStepWebView >> renderContentOn: aCanvas [
 
 	self initializeDelayed.
@@ -85,7 +87,7 @@ AdvancedComponentsExampleStepWebView >> renderContentOn: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AdvancedComponentsExampleStepWebView >> shortName [
 
 	^ 'Advanced components'

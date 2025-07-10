@@ -2,28 +2,30 @@
 I'm a step showing a form triggering.
 "
 Class {
-	#name : #FormTriggeringStepWebView,
-	#superclass : #PresentationStepWebView,
+	#name : 'FormTriggeringStepWebView',
+	#superclass : 'PresentationStepWebView',
 	#instVars : [
 		'button',
 		'input'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 FormTriggeringStepWebView >> askDeveloper: aQuestion [
 
 	^ UIManager default textEntry: aQuestion
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FormTriggeringStepWebView >> description [
 
 	^ 'This button "submits" the form'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 FormTriggeringStepWebView >> initialize [
 
 	super initialize.
@@ -31,7 +33,7 @@ FormTriggeringStepWebView >> initialize [
 	self initializeButton
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 FormTriggeringStepWebView >> initializeButton [
 
 	button := AsynchronicButtonWebView labeled: 'Ask it!'.
@@ -46,7 +48,7 @@ FormTriggeringStepWebView >> initializeButton [
 			]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 FormTriggeringStepWebView >> initializeField [
 
 
@@ -58,7 +60,7 @@ FormTriggeringStepWebView >> initializeField [
 		 
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 FormTriggeringStepWebView >> renderContentOn: aCanvas [
 
 	self renderPanelWrapping: [ :canvas | self renderFormOn: canvas ] on: aCanvas.
@@ -72,7 +74,7 @@ FormTriggeringStepWebView >> renderContentOn: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 FormTriggeringStepWebView >> renderFormOn: aCanvas [
 
 	aCanvas form
@@ -84,7 +86,7 @@ FormTriggeringStepWebView >> renderFormOn: aCanvas [
  
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 FormTriggeringStepWebView >> renderQuestionComponentsOn: aCanvas [
 
 	aCanvas
@@ -99,7 +101,7 @@ FormTriggeringStepWebView >> renderQuestionComponentsOn: aCanvas [
 				build)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FormTriggeringStepWebView >> shortName [
 
 	^ 'Form To Submit'

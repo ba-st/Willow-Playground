@@ -2,12 +2,13 @@
 Baseline to load the Willow Playground
 "
 Class {
-	#name : #BaselineOfWillowPlayground,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfWillowPlayground
+	#name : 'BaselineOfWillowPlayground',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfWillowPlayground',
+	#package : 'BaselineOfWillowPlayground'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfWillowPlayground >> baseline: spec [
 
 	<baseline>
@@ -20,7 +21,7 @@ BaselineOfWillowPlayground >> baseline: spec [
 			with: #( 'Deployment' 'Willow-Development' ) ]
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfWillowPlayground >> setUpDependencies: spec [
 
 	spec
@@ -45,13 +46,13 @@ BaselineOfWillowPlayground >> setUpDependencies: spec [
 
 	spec
 		baseline: 'Launchpad'
-		with: [ spec repository: 'github://ba-st/Launchpad:v4' ];
+		with: [ spec repository: 'github://ba-st/Launchpad:v7' ];
 		project: 'Launchpad-Deployment'
 		copyFrom: 'Launchpad'
 		with: [ spec loads: 'Deployment' ]
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfWillowPlayground >> setUpPackages: spec [
 
 	spec

@@ -2,28 +2,30 @@
 I'm a step showing the rendering basics.
 "
 Class {
-	#name : #ButtonRenderingComponentStepWebView,
-	#superclass : #PresentationStepWebView,
+	#name : 'ButtonRenderingComponentStepWebView',
+	#superclass : 'PresentationStepWebView',
 	#instVars : [
 		'button',
 		'companionView'
 	],
-	#category : #'Willow-Playground-Smalltalks2017-WebViews'
+	#category : 'Willow-Playground-Smalltalks2017-WebViews',
+	#package : 'Willow-Playground-Smalltalks2017',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private-accessing' }
+{ #category : 'private-accessing' }
 ButtonRenderingComponentStepWebView >> currentTime [
 
 	^ GRPrinter isoTime print: Time now
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ButtonRenderingComponentStepWebView >> description [
 
 	^ 'This button will "render" content next to it'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ButtonRenderingComponentStepWebView >> initialize [
 
 	super initialize.
@@ -31,14 +33,14 @@ ButtonRenderingComponentStepWebView >> initialize [
 	self initializeButton
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ButtonRenderingComponentStepWebView >> initializeButton [
 
 	button := AsynchronicButtonWebView labeled: 'Click for a change'.
 	button on trigger render: companionView
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ButtonRenderingComponentStepWebView >> initializeCompanionView [
 
 	companionView := self componentSupplier
@@ -46,7 +48,7 @@ ButtonRenderingComponentStepWebView >> initializeCompanionView [
 		applying: [  ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 ButtonRenderingComponentStepWebView >> renderContentOn: aCanvas [
 
 	self
@@ -68,7 +70,7 @@ ButtonRenderingComponentStepWebView >> renderContentOn: aCanvas [
 		on: aCanvas
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ButtonRenderingComponentStepWebView >> shortName [
 
 	^ 'A Rendering Button'
