@@ -39,7 +39,7 @@ to develop a complete interactive web application.
 - Or use the docker containers:
 
   ```bash
-  docker run -p 8080:8080 ghrc.io/ba-st/willow-playground:release-candidate
+  docker run -p 8080:8080 ghcr.io/ba-st/willow-playground:release-candidate
   ```
   
 - Go to [localhost:8080/willow101](http://localhost:8080/willow101) to find an
