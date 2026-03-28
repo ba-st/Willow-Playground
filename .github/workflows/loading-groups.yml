@@ -5,19 +5,16 @@ on: [push,pull_request,workflow_dispatch]
 jobs:
    group-loading:
     runs-on: ubuntu-latest
+    name: Pharo64-13
     strategy:
       fail-fast: false
       matrix:
-        smalltalk: [ Pharo64-12 ]
         load-spec: [ deployment, development ]
-    name: ${{ matrix.smalltalk }} + ${{ matrix.load-spec }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: hpi-swa/setup-smalltalkCI@v1
+      - uses: actions/checkout@v6
+      - uses: ba-st-actions/pharo-ci@v10
         with:
-          smalltalk-image: ${{ matrix.smalltalk }}
-      - name: Load group in image
-        run: smalltalkci -s ${{ matrix.smalltalk }} .smalltalkci/loading.${{ matrix.load-spec }}.ston
+          spec: .smalltalkci/.loading.${{ matrix.load-spec }}.ston
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        timeout-minutes: 15
+        timeout-minutes: 10
