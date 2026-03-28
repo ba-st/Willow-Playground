@@ -21,55 +21,49 @@ BaselineOfWillowPlayground >> baseline: spec [
 			with: #( 'Deployment' 'Willow-Development' ) ]
 ]
 
+{ #category : 'accessing' }
+BaselineOfWillowPlayground >> projectClass [
+
+  ^ MetacelloCypressBaselineProject
+]
+
 { #category : 'baselines' }
 BaselineOfWillowPlayground >> setUpDependencies: spec [
 
-	spec
-		baseline: 'Willow'
-		with: [ spec repository: 'github://ba-st/Willow:v16' ];
-		project: 'Willow-Development'
-		copyFrom: 'Willow'
-		with: [ spec loads: 'Development' ].
-	spec
-		baseline: 'WillowBootstrap'
-		with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v15' ];
-		project: 'Willow-Bootstrap-Deployment'
-		copyFrom: 'WillowBootstrap'
-		with: [ spec loads: 'Deployment' ].
+  spec
+    baseline: 'Willow' with: [ spec repository: 'github://ba-st/Willow:v16' ];
+    project: 'Willow-Development' copyFrom: 'Willow' with: [ spec loads: 'Development' ].
+  spec
+    baseline: 'WillowBootstrap' with: [ spec repository: 'github://ba-st/Willow-Bootstrap:v15' ];
+    project: 'Willow-Bootstrap-Deployment'
+    copyFrom: 'WillowBootstrap'
+    with: [ spec loads: 'Deployment' ].
 
-	spec
-		baseline: 'WillowSpinKit'
-		with: [ spec repository: 'github://ba-st/Willow-SpinKit:v11' ];
-		project: 'Willow-SpinKit-Deployment'
-		copyFrom: 'WillowSpinKit'
-		with: [ spec loads: 'Deployment' ].
+  spec
+    baseline: 'WillowSpinKit' with: [ spec repository: 'github://ba-st/Willow-SpinKit:v11' ];
+    project: 'Willow-SpinKit-Deployment'
+    copyFrom: 'WillowSpinKit'
+    with: [ spec loads: 'Deployment' ].
 
-	spec
-		baseline: 'Launchpad'
-		with: [ spec repository: 'github://ba-st/Launchpad:v7' ];
-		project: 'Launchpad-Deployment'
-		copyFrom: 'Launchpad'
-		with: [ spec loads: 'Deployment' ]
+  spec
+    baseline: 'Launchpad' with: [ spec repository: 'github://ba-st/Launchpad:v7' ];
+    project: 'Launchpad-Deployment' copyFrom: 'Launchpad' with: [ spec loads: 'Deployment' ]
 ]
 
 { #category : 'baselines' }
 BaselineOfWillowPlayground >> setUpPackages: spec [
 
-	spec
-		package: 'Willow-Playground-TestRunner' with: [ 
-			spec requires:
-					#( 'Willow-Bootstrap-Deployment' 'Willow-SpinKit-Deployment' ) ];
-		group: 'Deployment' with: 'Willow-Playground-TestRunner';
-		package: 'Willow-Playground-LiveDocs' with: [ 
-			spec requires:
-					#( 'Willow-Bootstrap-Deployment' 'Willow-SpinKit-Deployment' ) ];
-		group: 'Deployment' with: 'Willow-Playground-LiveDocs';
-		package: 'Willow-Playground-Smalltalks2017' with: [ 
-			spec requires:
-					#( 'Willow-Playground-TestRunner' 'Willow-Playground-LiveDocs' ) ];
-		group: 'Deployment' with: 'Willow-Playground-Smalltalks2017';
-		package: 'Willow-Playground-Application' with: [ 
-			spec requires:
-					#( 'Launchpad-Deployment' 'Willow-Playground-Smalltalks2017' ) ];
-		group: 'Deployment' with: 'Willow-Playground-Application'
+  spec
+    package: 'Willow-Playground-TestRunner'
+    with: [ spec requires: #( 'Willow-Bootstrap-Deployment' 'Willow-SpinKit-Deployment' ) ];
+    group: 'Deployment' with: 'Willow-Playground-TestRunner';
+    package: 'Willow-Playground-LiveDocs'
+    with: [ spec requires: #( 'Willow-Bootstrap-Deployment' 'Willow-SpinKit-Deployment' ) ];
+    group: 'Deployment' with: 'Willow-Playground-LiveDocs';
+    package: 'Willow-Playground-Smalltalks2017'
+    with: [ spec requires: #( 'Willow-Playground-TestRunner' 'Willow-Playground-LiveDocs' ) ];
+    group: 'Deployment' with: 'Willow-Playground-Smalltalks2017';
+    package: 'Willow-Playground-Application'
+    with: [ spec requires: #( 'Launchpad-Deployment' 'Willow-Playground-Smalltalks2017' ) ];
+    group: 'Deployment' with: 'Willow-Playground-Application'
 ]
