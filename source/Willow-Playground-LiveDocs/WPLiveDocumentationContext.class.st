@@ -22,7 +22,7 @@ WPLiveDocumentationContext >> availableBehaviors [
 { #category : 'Querying' }
 WPLiveDocumentationContext >> availablePackages [
 
-	^ RPackageOrganizer default packages sorted: [ :a :b | a name < b name ]
+  ^ PackageOrganizer default packages sorted: [ :a :b | a name < b name ]
 ]
 
 { #category : 'initialization' }
