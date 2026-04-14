@@ -1,1 +1,1 @@
-Package { #name : #'Willow-Playground-Application' }
+Package { #name : 'Willow-Playground-Application' }

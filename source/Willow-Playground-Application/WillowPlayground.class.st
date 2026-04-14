@@ -1,22 +1,23 @@
 Class {
-	#name : #WillowPlayground,
-	#superclass : #LaunchpadApplication,
+	#name : 'WillowPlayground',
+	#superclass : 'LaunchpadApplication',
 	#instVars : [
 		'stackTraceDumper'
 	],
 	#classVars : [
 		'Version'
 	],
-	#category : #'Willow-Playground-Application'
+	#category : 'Willow-Playground-Application',
+	#package : 'Willow-Playground-Application'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowPlayground class >> commandName [
 
 	^ 'playground'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowPlayground class >> configurationParameters [
 
 	^ { OptionalConfigurationParameter
@@ -26,46 +27,46 @@ WillowPlayground class >> configurationParameters [
 		   convertingWith: #asNumber }
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowPlayground class >> description [
 
 	^ 'The Willow Playground'
 ]
 
-{ #category : #initialization }
+{ #category : 'class initialization' }
 WillowPlayground class >> initialize [
 
-	<ignoreForCoverage>
-	self version: ( VersionFromRepositoryResolver new valueFor: #BaselineOfWillowPlayground )
+  <ignoreForCoverage>
+  self version: ( VersionFromRepositoryResolver new valueFor: 'Willow-Playground' )
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowPlayground class >> version [
 
 	^ Version
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowPlayground class >> version: aVersion [
 
 	Version := aVersion
 ]
 
-{ #category : #'private - activation' }
+{ #category : 'private - activation/deactivation' }
 WillowPlayground >> basicStartWithin: context [
 
-	LaunchpadLogRecord emitInfo: 'Registering web applications'.
-	Smalltalks2017Presentation registerAsDeployedApplication.
-	WPB3TestRunner registerAsDeployedApplication.
-	WPB4TestRunner registerAsDeployedApplication.
-	WPLiveDocumentation registerAsDeployedApplication.
-	LaunchpadLogRecord emitInfo: 'Starting HTTP web server'.
-	(ZnZincServerAdaptor port: self configuration port)
-		codec: (GRCodec forEncoding: 'utf8');
-		start
+  LogRecord emitInfo: 'Registering web applications'.
+  Smalltalks2017Presentation registerAsDeployedApplication.
+  WPB3TestRunner registerAsDeployedApplication.
+  WPB4TestRunner registerAsDeployedApplication.
+  WPLiveDocumentation registerAsDeployedApplication.
+  LogRecord emitInfo: 'Starting HTTP web server'.
+  ( ZnZincServerAdaptor port: self configuration port )
+    codec: ( GRCodec forEncoding: 'utf8' );
+    start
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 WillowPlayground >> initializeRunningIn: anApplicationMode configuredBy: aConfigurationProvider controlledBy: aCommandServer [
 
 	super
@@ -75,7 +76,7 @@ WillowPlayground >> initializeRunningIn: anApplicationMode configuredBy: aConfig
 	stackTraceDumper := self newStackTraceDumperOnStandardError
 ]
 
-{ #category : #'error handling' }
+{ #category : 'error handling' }
 WillowPlayground >> stackTraceDumper [
 
 	^ stackTraceDumper
