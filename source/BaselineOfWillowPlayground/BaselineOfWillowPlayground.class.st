@@ -46,7 +46,7 @@ BaselineOfWillowPlayground >> setUpDependencies: spec [
     with: [ spec loads: 'Deployment' ].
 
   spec
-    baseline: 'Launchpad' with: [ spec repository: 'github://ba-st/Launchpad:v7' ];
+    baseline: 'Launchpad' with: [ spec repository: 'github://ba-st/Launchpad:v8' ];
     project: 'Launchpad-Deployment' copyFrom: 'Launchpad' with: [ spec loads: 'Deployment' ]
 ]
 
